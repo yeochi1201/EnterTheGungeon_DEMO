@@ -5,29 +5,44 @@ using static UnityEngine.GraphicsBuffer;
 
 public class BulletPlayer : MonoBehaviour
 {
+    [Header("Player Move Property")]
+    [SerializeField] float playerSpeed = 5;
+    Rigidbody2D playerRigdbody;   
+
+    [Header("Gun Property")]
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject gunPivot;
-
-    [SerializeField] Vector2 muzzleDirection;        
-
+    [SerializeField] Vector2 muzzleDirection;
     Vector2 target;
     Vector2 mouse;
     float angle;
 
+
     private void Awake()
     {
-        
+        playerRigdbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         FollowMouse();
+        PlayerMove();
 
         if (Input.GetMouseButtonDown(0)) 
         {            
             Shooting();            
         }
+    }
+
+    public void PlayerMove()
+    {
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+
+        Vector2 playerVelocty = new Vector2(inputX, inputY);
+
+        playerRigdbody.velocity = playerVelocty * playerSpeed;
     }
 
     public void FollowMouse()

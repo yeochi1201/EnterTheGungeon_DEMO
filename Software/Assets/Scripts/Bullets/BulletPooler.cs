@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BulletOwner //Bullet 발사 주체
+public enum BulletOwner //Bullet Owner
 {
     PLAYER,
     ENEMY,    
     MAX_SIZE,
 }
 
-public class BulletPooler : MonoBehaviour
+public class BulletPooler : MonoBehaviour //Bullet Object Pooling
 {
     public static BulletPooler Instance;
 
@@ -48,7 +48,7 @@ public class BulletPooler : MonoBehaviour
         }        
     }
 
-    public GameObject GetBullet(BulletOwner _bulletOwner)//Bullet 가져오기
+    public GameObject GetBullet(BulletOwner _bulletOwner) //Get Bullet
     {
         if (bulletPool[(int)_bulletOwner] == null)
         {
