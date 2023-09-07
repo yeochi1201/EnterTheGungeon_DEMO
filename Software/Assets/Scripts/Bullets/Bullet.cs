@@ -39,6 +39,9 @@ public class Bullet : MonoBehaviour
     private Vector3 currentPosition;
     [SerializeField] double velocity;
 
+    GameObject targetObject;
+    Vector2 guidedDirection;
+    float startGuideTime = 0f;
 
     private void Awake()
     {        
@@ -54,7 +57,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         ProjectileMoving();
-        SpeedCheck();
+        SpeedCheck();        
     }
 
     void SpeedCheck() //스피드 체크
@@ -83,8 +86,13 @@ public class Bullet : MonoBehaviour
                 bulletSpeed = Mathf.Abs(10 * Mathf.Sin(anomalyTime * 5));
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
-            case BulletType.MISSILE_GUIDED:
-                //Vector
+            case BulletType.MISSILE_GUIDED:                
+                startGuideTime += Time.deltaTime;
+                bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
+                if(startGuideTime > 0.5f)
+                {
+                    bulletDirection = GuideDirection();
+                }                                
                 break;
             default:
                 Debug.Log("TYPE SET");
@@ -97,6 +105,15 @@ public class Bullet : MonoBehaviour
         bulletDirection = _direction;
     }
 
+    Vector2 GuideDirection()
+    {
+        targetObject = GameObject.Find("Target").gameObject; //Change Player
+        guidedDirection = (targetObject.transform.position - transform.position).normalized;
+
+        return guidedDirection;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -105,7 +122,8 @@ public class Bullet : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Enemy"))
         {
-            //Damaged()
+            transform.position = transform.parent.position;
+            this.gameObject.SetActive(false);
         }
         else if(collision.gameObject.CompareTag("Wall"))
         {
