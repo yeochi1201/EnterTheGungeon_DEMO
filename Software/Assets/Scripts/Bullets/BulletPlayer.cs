@@ -58,7 +58,7 @@ public class BulletPlayer : MonoBehaviour
 
         GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);        
         _bullet.transform.position = muzzle.transform.position;        
-        _bullet.GetComponent<Bullet>().GetDirection(muzzleDirection);
+        _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
         _bullet.SetActive(true);
     }
 }

@@ -261,9 +261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078d4c82de5522f4c8c3ede5b78090b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletType: 5
+  bulletType: 2
   bulletDamage: 0
   bulletSpeed: 31.3
+  expiredTimer: 3
   velocity: 0
 --- !u!50 &6955189011649077639
 Rigidbody2D:

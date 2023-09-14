@@ -12,16 +12,18 @@ public enum BulletType
     BASIC_SMALL, //Basic Bullet
     BASIC_LARGE, //Basic Big Bullet
     ANOMALY, //Anomaly Speed Bullet
-    WAG, //Horizontal Moving Bullet
+    //WAG, //Horizontal Moving Bullet
     MISSILE_GUIDED, //Guided Missile
-    MISSILE_HOWITZER, //Howitzer Missile
-    BLINK, //Blingking Bullet
-    TRAIL, //Trail Bullet       
-    LASER, //Laser
-    TRIANGLE, //Triangle Shape Bullet
-    SNAKE, //Snake Tail Game Bullet    
-    HE, //HEAT Bullet
-    FLARE, //Flare Bullet   
+    //MISSILE_HOWITZER, //Howitzer Missile
+    BOUNCE, //Bounce Bullet
+    SPIRAL, //Spiral Bullet
+    //BLINK, //Blingking Bullet
+    //TRAIL, //Trail Bullet       
+    //LASER, //Laser
+    //TRIANGLE, //Triangle Shape Bullet
+    //SNAKE, //Snake Tail Game Bullet    
+    //HE, //HEAT Bullet
+    //FLARE, //Flare Bullet   
     MAX_SIZE
 }
 
@@ -33,13 +35,15 @@ public class Bullet : MonoBehaviour
         public override void OnInspectorGUI()
         {
             Bullet bullet = (Bullet)target;
-            
+
             EditorGUILayout.LabelField("Bullet Type", EditorStyles.boldLabel);
             bullet.bulletType = (BulletType)EditorGUILayout.EnumPopup("Bullet Type", bullet.bulletType);
             EditorGUILayout.Space();
 
             EditorGUILayout.LabelField("Common Bullet Properties", EditorStyles.boldLabel);
             bullet.bulletSpeed = EditorGUILayout.FloatField("Bullet Speed", bullet.bulletSpeed);
+            bullet.expiredTime = EditorGUILayout.FloatField("Bullet Expired Time", bullet.expiredTime);
+            bullet.expiredTimer = EditorGUILayout.FloatField("Bullet Expired Timer", bullet.expiredTimer);
             EditorGUILayout.Space();
 
             EditorGUILayout.LabelField(bullet.bulletType + " Type Properties", EditorStyles.boldLabel);
@@ -49,17 +53,12 @@ public class Bullet : MonoBehaviour
                 case BulletType.BASIC_SMALL:
                     break;
                 case BulletType.BASIC_LARGE:
-                    break;                
-                case BulletType.ANOMALY:                    
+                    break;
+                case BulletType.ANOMALY:
                     bullet.anomalyTime = EditorGUILayout.FloatField("Anomaly Time", bullet.anomalyTime);
                     break;
-                case BulletType.WAG:
-                    break;                
                 case BulletType.MISSILE_GUIDED:
                     bullet.startGuideTime = EditorGUILayout.FloatField("Start Guide Time", bullet.startGuideTime);
-                    break;
-                case BulletType.MISSILE_HOWITZER:
-                    bullet.startGuideTime = EditorGUILayout.FloatField("Start Impact Time", bullet.startGuideTime);
                     break;
                 default:
                     break;
@@ -74,10 +73,12 @@ public class Bullet : MonoBehaviour
 
     //Bullet Type
     [SerializeField] public BulletType bulletType;
-    
+
     //Common Bullet Properties
-    [SerializeField] float bulletDamage;    
-    [SerializeField] [Range(0f, 100f)] float bulletSpeed;
+    [SerializeField] float bulletDamage;
+    [SerializeField][Range(0f, 100f)] float bulletSpeed;
+    [SerializeField] float expiredTimer = 3f;
+    float expiredTime = 0f;
 
     Rigidbody2D bulletRigidbody;
     Vector2 bulletDirection;
@@ -89,7 +90,7 @@ public class Bullet : MonoBehaviour
 
     //ANOMALY Properties
     float anomalyTime = 0f;
-   
+
     //MISSILE_GUIDED Properties
     GameObject targetObject;
     Vector2 guidedDirection;
@@ -100,7 +101,7 @@ public class Bullet : MonoBehaviour
 
 
     private void Awake()
-    {        
+    {
         bulletRigidbody = transform.GetComponent<Rigidbody2D>();
     }
 
@@ -113,7 +114,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         ProjectileMoving();
-        SpeedCheck();        
+        SpeedCheck();
     }
 
     void SpeedCheck() //Speed Check
@@ -130,35 +131,47 @@ public class Bullet : MonoBehaviour
         switch (bulletType)
         {
             case BulletType.BASIC_SMALL:
-                
-                bulletSpeed = 30f;
+
+                bulletSpeed = 15f;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
             case BulletType.BASIC_LARGE:
                 bulletSpeed = 30f;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
-            case BulletType.ANOMALY:                
-                anomalyTime += Time.deltaTime;                                
+            case BulletType.ANOMALY:
+                anomalyTime += Time.deltaTime;
                 bulletSpeed = Mathf.Abs(10 * Mathf.Sin(anomalyTime * 5));
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
-            case BulletType.MISSILE_GUIDED:                
+            case BulletType.MISSILE_GUIDED:
                 startGuideTime += Time.deltaTime;
+                expiredTime += Time.deltaTime;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
 
-                if(startGuideTime > 0.5f)
+                if (startGuideTime > 0.5f)
                 {
-                    bulletDirection = GuideDirection();
-                }                                
-                break;
-            case BulletType.MISSILE_HOWITZER:   
-                transform.gameObject.GetComponent<Collider2D>().enabled = false;
-                bulletSpeed = 30f;
-                bulletRigidbody.velocity = Vector2.up * bulletSpeed * 25 * Time.deltaTime;
-                break;
-            case BulletType.WAG:
+                    bulletDirection = GetGuideDirection();
+                }
 
+                if (expiredTime > expiredTimer)
+                {
+                    BulletExpired();
+                    startGuideTime = 0;
+                    expiredTime = 0;
+                }
+
+                break;
+            case BulletType.BOUNCE:
+                expiredTimer = 5f;
+                expiredTime += Time.deltaTime;
+                bulletSpeed = 30f;
+                bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
+                if (expiredTimer < expiredTime)
+                {
+                    BulletExpired();
+                    expiredTime = 0;
+                }
                 break;
             default:
                 Debug.Log("TYPE SET");
@@ -166,12 +179,22 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void GetDirection(Vector2 _direction) //Muzzle Direction
+    public void SetDirection(Vector2 _direction) //Muzzle Direction
     {
         bulletDirection = _direction;
     }
 
-    Vector2 GuideDirection() //Missle Guide Direction
+    public void SetBulletType(BulletType _bulletType)
+    {
+        bulletType = _bulletType;
+    }
+
+    public float GetDamaged()
+    {
+        return bulletDamage;
+    }
+
+    Vector2 GetGuideDirection() //Missle Guide Direction
     {
         targetObject = GameObject.Find("Target").gameObject; //Change Player
         guidedDirection = (targetObject.transform.position - transform.position).normalized;
@@ -179,22 +202,36 @@ public class Bullet : MonoBehaviour
         return guidedDirection;
     }
 
+    public void BulletExpired()
+    {
+        transform.position = transform.parent.position;
+        this.gameObject.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (bulletType != BulletType.BOUNCE)
         {
-            //Damaged()
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                //Damaged()
+            }
+            else if (collision.gameObject.CompareTag("Enemy"))
+            {
+                BulletExpired();
+            }
+            else if (collision.gameObject.CompareTag("Wall"))
+            {
+                BulletExpired();
+            }
         }
-        else if(collision.gameObject.CompareTag("Enemy"))
+        else if (bulletType == BulletType.BOUNCE)
         {
-            transform.position = transform.parent.position;
-            this.gameObject.SetActive(false);
+            if (collision.gameObject.CompareTag("Wall"))
+            {
+                bulletDirection *= -1;
+            }
         }
-        else if(collision.gameObject.CompareTag("Wall"))
-        {
-            transform.position = transform.parent.position;
-            this.gameObject.SetActive(false);
-        }
+
     }
 }
