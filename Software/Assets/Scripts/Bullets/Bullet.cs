@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.TestTools;
 using static UnityEngine.GraphicsBuffer;
 
@@ -12,7 +13,7 @@ public enum BulletType
     BASIC_SMALL, //Basic Bullet
     BASIC_LARGE, //Basic Big Bullet
     ANOMALY, //Anomaly Speed Bullet
-    //WAG, //Horizontal Moving Bullet
+    ZIGZAG, //Horizontal Moving Bullet
     MISSILE_GUIDED, //Guided Missile
     //MISSILE_HOWITZER, //Howitzer Missile
     BOUNCE, //Bounce Bullet
@@ -35,14 +36,14 @@ public class Bullet : MonoBehaviour
         public override void OnInspectorGUI()
         {
             Bullet bullet = (Bullet)target;
-
+            
             EditorGUILayout.LabelField("Bullet Type", EditorStyles.boldLabel);
             bullet.bulletType = (BulletType)EditorGUILayout.EnumPopup("Bullet Type", bullet.bulletType);
             EditorGUILayout.Space();
 
             EditorGUILayout.LabelField("Common Bullet Properties", EditorStyles.boldLabel);
             bullet.bulletSpeed = EditorGUILayout.FloatField("Bullet Speed", bullet.bulletSpeed);
-            bullet.expiredTime = EditorGUILayout.FloatField("Bullet Expired Time", bullet.expiredTime);
+            bullet.expiredTime =  EditorGUILayout.FloatField("Bullet Expired Time", bullet.expiredTime);
             bullet.expiredTimer = EditorGUILayout.FloatField("Bullet Expired Timer", bullet.expiredTimer);
             EditorGUILayout.Space();
 
@@ -53,12 +54,12 @@ public class Bullet : MonoBehaviour
                 case BulletType.BASIC_SMALL:
                     break;
                 case BulletType.BASIC_LARGE:
-                    break;
-                case BulletType.ANOMALY:
+                    break;                
+                case BulletType.ANOMALY:                    
                     bullet.anomalyTime = EditorGUILayout.FloatField("Anomaly Time", bullet.anomalyTime);
-                    break;
-                case BulletType.MISSILE_GUIDED:
-                    bullet.startGuideTime = EditorGUILayout.FloatField("Start Guide Time", bullet.startGuideTime);
+                    break;         
+                case BulletType.MISSILE_GUIDED:                    
+                    bullet.startGuideTime = EditorGUILayout.FloatField("Start Guide Time", bullet.startGuideTime);                    
                     break;
                 default:
                     break;
@@ -73,11 +74,11 @@ public class Bullet : MonoBehaviour
 
     //Bullet Type
     [SerializeField] public BulletType bulletType;
-
+    
     //Common Bullet Properties
-    [SerializeField] float bulletDamage;
-    [SerializeField][Range(0f, 100f)] float bulletSpeed;
-    [SerializeField] float expiredTimer = 3f;
+    [SerializeField] float bulletDamage;    
+    [SerializeField] [Range(0f, 100f)] float bulletSpeed;
+    [SerializeField]float expiredTimer = 3f;
     float expiredTime = 0f;
 
     Rigidbody2D bulletRigidbody;
@@ -90,18 +91,20 @@ public class Bullet : MonoBehaviour
 
     //ANOMALY Properties
     float anomalyTime = 0f;
-
+   
     //MISSILE_GUIDED Properties
     GameObject targetObject;
     Vector2 guidedDirection;
     float startGuideTime = 0f;
-
+    
     //MISSILE_HOWITZER Properties
-    float impactTime = 2f;
 
+    //SPARIAL Properties
+
+    //ZIGZAG Properties
 
     private void Awake()
-    {
+    {        
         bulletRigidbody = transform.GetComponent<Rigidbody2D>();
     }
 
@@ -114,7 +117,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         ProjectileMoving();
-        SpeedCheck();
+        SpeedCheck();        
     }
 
     void SpeedCheck() //Speed Check
@@ -130,54 +133,58 @@ public class Bullet : MonoBehaviour
     {
         switch (bulletType)
         {
-            case BulletType.BASIC_SMALL:
-
-                bulletSpeed = 15f;
+            case BulletType.BASIC_SMALL:                
+                bulletSpeed = 8f;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
             case BulletType.BASIC_LARGE:
                 bulletSpeed = 30f;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
-            case BulletType.ANOMALY:
-                anomalyTime += Time.deltaTime;
+            case BulletType.ANOMALY:                
+                anomalyTime += Time.deltaTime;                                
                 bulletSpeed = Mathf.Abs(10 * Mathf.Sin(anomalyTime * 5));
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
                 break;
-            case BulletType.MISSILE_GUIDED:
+            case BulletType.MISSILE_GUIDED:                
                 startGuideTime += Time.deltaTime;
                 expiredTime += Time.deltaTime;
-                bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
+                bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;                                
 
-                if (startGuideTime > 0.5f)
+                if(startGuideTime > 0.5f)
                 {
                     bulletDirection = GetGuideDirection();
-                }
+                }                                
 
-                if (expiredTime > expiredTimer)
+                if(expiredTime > expiredTimer)
                 {
                     BulletExpired();
                     startGuideTime = 0;
                     expiredTime = 0;
                 }
-
                 break;
             case BulletType.BOUNCE:
                 expiredTimer = 5f;
                 expiredTime += Time.deltaTime;
                 bulletSpeed = 30f;
                 bulletRigidbody.velocity = bulletDirection * bulletSpeed * 25 * Time.deltaTime;
-                if (expiredTimer < expiredTime)
+                if(expiredTimer < expiredTime)
                 {
                     BulletExpired();
                     expiredTime = 0;
                 }
+                break;
+            case BulletType.SPIRAL:
+                //TODO         
+                break;
+            case BulletType.ZIGZAG:                
                 break;
             default:
                 Debug.Log("TYPE SET");
                 break;
         }
     }
+
 
     public void SetDirection(Vector2 _direction) //Muzzle Direction
     {
@@ -210,7 +217,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (bulletType != BulletType.BOUNCE)
+        if(bulletType != BulletType.BOUNCE)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
@@ -225,13 +232,13 @@ public class Bullet : MonoBehaviour
                 BulletExpired();
             }
         }
-        else if (bulletType == BulletType.BOUNCE)
+        else if(bulletType == BulletType.BOUNCE)
         {
             if (collision.gameObject.CompareTag("Wall"))
             {
                 bulletDirection *= -1;
             }
         }
-
+        
     }
 }

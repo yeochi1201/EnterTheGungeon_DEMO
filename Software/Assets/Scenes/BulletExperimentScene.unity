@@ -631,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPattern: 0
   muzzle: {fileID: 1793598466}
+  target: {fileID: 0}
 --- !u!50 &357717953
 Rigidbody2D:
   serializedVersion: 4
@@ -1506,9 +1507,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
-  playerBulletPoolCount: 100
+  playerBulletPoolCount: 1000
   enemyBulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
-  enemyBulletPoolCount: 100
+  enemyBulletPoolCount: 1000
 --- !u!4 &1822609152
 Transform:
   m_ObjectHideFlags: 0
