@@ -77,6 +77,7 @@ public class BulletPatternManager : MonoBehaviour
                     GameObject bullet = BulletPooler.Instance.GetBullet(BulletOwner.ENEMY);
                     bullet.transform.position = muzzle.transform.position;
                     bullet.GetComponent<Bullet>().SetDirection(muzzle.transform.right);
+                    bullet.GetComponent<Bullet>().SetBulletType(BulletType.BASIC_SMALL);
                     bullet.gameObject.SetActive(true);
 
                     muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
@@ -104,6 +105,7 @@ public class BulletPatternManager : MonoBehaviour
                     GameObject bullet = BulletPooler.Instance.GetBullet(BulletOwner.ENEMY);
                     bullet.transform.position = muzzle.transform.position;
                     bullet.GetComponent<Bullet>().SetDirection(muzzle.transform.right);
+                    bullet.GetComponent<Bullet>().SetBulletType(BulletType.BASIC_SMALL);
                     bullet.gameObject.SetActive(true);
                 }
 
@@ -113,9 +115,6 @@ public class BulletPatternManager : MonoBehaviour
         }
 
     }
-
-
-
 
     IEnumerator CircleRotatePattern(int _bulletCount, int patternCount) //
     {
@@ -131,6 +130,7 @@ public class BulletPatternManager : MonoBehaviour
                 GameObject bullet = BulletPooler.Instance.GetBullet(BulletOwner.ENEMY);
                 bullet.transform.position = muzzle.transform.position;
                 bullet.GetComponent<Bullet>().SetDirection(muzzle.transform.right);
+                bullet.GetComponent<Bullet>().SetBulletType(BulletType.BASIC_SMALL);
                 bullet.gameObject.SetActive(true);
 
                 muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
@@ -139,5 +139,9 @@ public class BulletPatternManager : MonoBehaviour
         }
 
     }
-
+    
+    IEnumerator CircleLumpPattern(int _bulletCount, int patternCount)
+    {
+        return null;
+    }
 }

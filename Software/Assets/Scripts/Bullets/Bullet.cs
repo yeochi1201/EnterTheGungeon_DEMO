@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.TestTools;
 using static UnityEngine.GraphicsBuffer;
 
-
 public enum BulletType
 {
     BASIC_SMALL, //Basic Bullet
@@ -18,6 +17,7 @@ public enum BulletType
     //MISSILE_HOWITZER, //Howitzer Missile
     BOUNCE, //Bounce Bullet
     SPIRAL, //Spiral Bullet
+    LUMP, //for Pattern Lump Bullet
     //BLINK, //Blingking Bullet
     //TRAIL, //Trail Bullet       
     //LASER, //Laser
@@ -96,12 +96,7 @@ public class Bullet : MonoBehaviour
     GameObject targetObject;
     Vector2 guidedDirection;
     float startGuideTime = 0f;
-    
-    //MISSILE_HOWITZER Properties
 
-    //SPARIAL Properties
-
-    //ZIGZAG Properties
 
     private void Awake()
     {        
@@ -175,9 +170,10 @@ public class Bullet : MonoBehaviour
                 }
                 break;
             case BulletType.SPIRAL:
-                //TODO         
+                //TODO
                 break;
-            case BulletType.ZIGZAG:                
+            case BulletType.ZIGZAG:
+                //TODO
                 break;
             default:
                 Debug.Log("TYPE SET");

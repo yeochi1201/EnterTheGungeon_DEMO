@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+//for Bullet Test Scirpt
+public class BulletCameraController : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] float smoothSpeed = 0.125f;
