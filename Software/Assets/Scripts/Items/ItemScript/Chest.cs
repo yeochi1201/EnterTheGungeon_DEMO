@@ -13,11 +13,10 @@ public class Chest : MonoBehaviour
 
     public void SpawnChest(float x, float y)
     {
-        setInstance(floor);
-        Instantiate(chest, new Vector3(x, y, 0), Quaternion.identity);
+
     }
 
-    public void setInstance(int floor)
+    public void setInstance(int floor) //set chest rank
     {
         int keycode = Random.Range(1, 1000);
         if(floor == 1 || floor == 2)
@@ -46,7 +45,7 @@ public class Chest : MonoBehaviour
         }
     }
 
-    public void OpenChest()
+    public void OpenChest() //open the chest
     {
         
     }

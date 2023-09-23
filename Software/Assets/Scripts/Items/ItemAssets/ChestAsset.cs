@@ -6,7 +6,7 @@ using UnityEngine;
 public class ChestAsset : ScriptableObject
 {
     [SerializeField]
-    public enum Rank
+    public enum Rank //chest rank
     { 
         D,
         C,
@@ -14,9 +14,9 @@ public class ChestAsset : ScriptableObject
         A,
         S
     }
-    public enum ChestType 
+    public enum ChestType //drop item type
     {
-        Item,
+        Item, //potion, passive, bomb
         Weapon
     }
     public Rank rank;

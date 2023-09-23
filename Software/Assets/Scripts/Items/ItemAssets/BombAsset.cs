@@ -7,7 +7,7 @@ using UnityEngine;
 public class BombAsset : ItemAsset
 {
     [SerializeField]
-    public int damage;
-    public int reloadDamage;
-    public int maxOwn;
+    public int damage; //bomb damage
+    public int reloadDamage; //needed damage to reload bomb
+    public int maxOwn; //maximum carry bomb
 }
