@@ -3,17 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ItemObject/Chest")]
-public class ChestAsset : ScriptableObject
+public class ChestAsset : ItemAsset
 {
     [SerializeField]
-    public enum Rank //chest rank
-    { 
-        D,
-        C,
-        B,
-        A,
-        S
-    }
     public enum ChestType //drop item type
     {
         Item, //potion, passive, bomb

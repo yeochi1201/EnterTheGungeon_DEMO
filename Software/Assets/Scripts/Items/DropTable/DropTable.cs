@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class DropTable : MonoBehaviour
 {
-    [SerializeField]
-    DTAsset droptable;
     public GameObject prefab;
     public Transform parent;
+    [SerializeField]
+    DTAsset droptable;
+
     public void Drop()
     {
         //load prefab and create gameobejct

@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    public ChestAsset chest;
-    int floor = 1;
-    private void Start()
-    {
-        
-    }
-
-    public void SpawnChest(float x, float y)
-    {
-
-    }
+    public ChestAsset info;
+    public GameObject chest;
 
     public void setInstance(int floor) //set chest rank
     {
