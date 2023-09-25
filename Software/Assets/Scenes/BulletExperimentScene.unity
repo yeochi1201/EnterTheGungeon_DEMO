@@ -755,9 +755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c922fd74daf7e45a58e08bd85398f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
+  playerBulletPrefab: {fileID: 6955189011649077636, guid: 5e80b3cefad213847a00603947c243de, type: 3}
   playerBulletPoolCount: 1000
-  enemyBulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
+  enemyBulletPrefab: {fileID: 6955189011649077636, guid: 5e80b3cefad213847a00603947c243de, type: 3}
   enemyBulletPoolCount: 1000
 --- !u!4 &1822609152
 Transform:
@@ -1137,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077332375315691085, guid: 1319e9969d846f04d9056d7cb39be57e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1319e9969d846f04d9056d7cb39be57e, type: 3}
@@ -1198,7 +1198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654673307734687022, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
