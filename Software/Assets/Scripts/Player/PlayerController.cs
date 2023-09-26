@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     float slideCooldown = 0.5f;
     float slideTimer = 0f;
     bool isSlide = false;
-
+    
 
     private void Awake()
     {
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         float inputY = Input.GetAxis("Vertical");
 
         Vector2 playerVelocity = new Vector2(inputX, inputY);
-        playerVelocity.Normalize();
+        //playerVelocity.Normalize();
 
         playerRigidbody.velocity = playerVelocity * playerSpeed;
 
