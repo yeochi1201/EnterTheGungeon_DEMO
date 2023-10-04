@@ -25,7 +25,13 @@ public class PlayerController : MonoBehaviour
     float slideCooldown = 0.5f;
     float slideTimer = 0f;
     bool isSlide = false;
-    
+
+    [Header("Player Ability Property")]
+    [SerializeField] float playerHealth = 3;
+    [SerializeField] float damage = 1;
+
+    //[Header("Weapon Property")]
+
 
     private void Awake()
     {
