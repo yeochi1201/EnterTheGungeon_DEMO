@@ -74,11 +74,17 @@ public class BulletPlayer : MonoBehaviour
     void Shooting()
     {
         muzzleDirection = muzzle.transform.right;
+        /* sniper
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.SNIPER);
+        _projectile.GetComponent<Projectile>().SetProjectileProperty(ProjectileType.SNIPER, 40, 100, 1000, 25, 1, 0, muzzleDirection);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
+        */
 
-        GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
-        _bullet.transform.position = muzzle.transform.position;
-        _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
-        _bullet.SetActive(true);
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.SQUARE_ROUND_GT);
+        _projectile.GetComponent<Projectile>().SetProjectileProperty(ProjectileType.SQUARE_ROUND_GT, 6, 16, 50, 20, 0, 1, muzzleDirection);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
     }
 
     IEnumerator Slide()
