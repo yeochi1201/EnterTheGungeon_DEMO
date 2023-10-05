@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: D_Chest
   m_EditorClassIdentifier: 
   itemName: D_Chest
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   rank: 0
   type: 0
   key: 0
