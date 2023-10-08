@@ -16,8 +16,23 @@ public class Gun : MonoBehaviour
     public void Reload()
     {
         float time_start = Time.deltaTime;
-        weapon.ammo_count -= (weapon.ammo_size - weapon.current_ammo);
-        weapon.current_ammo = weapon.ammo_size;
+        if(weapon.ammo_count == 0)
+        {
+            weapon.current_ammo = weapon.ammo_size;
+        }
+        else
+        {
+            if (weapon.current_ammo_count < weapon.ammo_size - weapon.current_ammo)
+            {
+                weapon.current_ammo = weapon.current_ammo_count;
+                weapon.current_ammo_count = 0;
+            }
+            else
+            {
+                weapon.current_ammo_count -= (weapon.ammo_size - weapon.current_ammo);
+                weapon.current_ammo = weapon.ammo_size;
+            }
+        }
 
         while(true)
         {

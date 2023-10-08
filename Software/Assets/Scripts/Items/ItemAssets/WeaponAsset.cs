@@ -13,12 +13,13 @@ public class WeaponAsset : ItemAsset
     public float reload; //reload time
     public int ammo_speed;
     public int knock_back;
-    public int damage; //weapon damage
+    public float damage; //weapon damage
     public float delay; //delay at fire
     public int range;
     public int ammo_degree;
 
     public int current_ammo;
+    public int current_ammo_count;
 
     public enum weapontype 
     { 
