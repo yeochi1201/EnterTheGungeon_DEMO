@@ -11,7 +11,6 @@ public class PlayBtnClick : MonoBehaviour
     }
 
     public void OnClick() {
-        SceneManager.LoadScene("GamePlay");
-        Debug.Log("OnClick!");
+        SceneManager.LoadScene("BaseCamp");
     }
 }
