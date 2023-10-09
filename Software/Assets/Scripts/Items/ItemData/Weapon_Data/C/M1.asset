@@ -23,5 +23,5 @@ MonoBehaviour:
   range: 60
   ammo_degree: 2
   current_ammo: 6
-  current_ammo_count: 100
+  current_ammo_count: 94
   type: 0

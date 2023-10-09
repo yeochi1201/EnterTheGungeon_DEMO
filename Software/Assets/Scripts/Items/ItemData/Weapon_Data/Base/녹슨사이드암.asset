@@ -22,5 +22,6 @@ MonoBehaviour:
   delay: 0.2
   range: 16
   ammo_degree: 7
-  current_ammo: 5
+  current_ammo: 6
+  current_ammo_count: 0
   type: 0

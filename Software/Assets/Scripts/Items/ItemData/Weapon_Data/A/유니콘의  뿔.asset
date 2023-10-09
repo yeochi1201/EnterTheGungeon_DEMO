@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: "\uC720\uB2C8\uCF58\uC758  \uBFD4"
   m_EditorClassIdentifier: 
-  itemName: 
-  ammo_size: 0
-  ammo_count: 0
+  itemName: "\uC720\uB2C8\uCF58\uC758 \uBFD4"
+  ammo_size: 500
+  ammo_count: 500
   reload: 0
-  ammo_speed: 0
-  knock_back: 0
-  damage: 0
-  delay: 0
-  range: 0
+  ammo_speed: 30
+  knock_back: 45
+  damage: 30
+  delay: 0.1
+  range: 30
   ammo_degree: 0
-  current_ammo: 0
+  current_ammo: 500
   current_ammo_count: 0
-  type: 0
+  type: 3

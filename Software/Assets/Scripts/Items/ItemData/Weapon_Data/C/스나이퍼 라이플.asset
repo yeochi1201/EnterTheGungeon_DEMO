@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: "\uC2A4\uB098\uC774\uD37C \uB77C\uC774\uD50C"
   m_EditorClassIdentifier: 
   itemName: "\uC2A4\uB098\uC774\uD37C \uB77C\uC774\uD50C"
-  ammo_size: 0
-  ammo_count: 0
-  reload: 0
-  ammo_speed: 0
-  knock_back: 0
-  damage: 0
-  delay: 0
+  ammo_size: 10
+  ammo_count: 80
+  reload: 1.5
+  ammo_speed: 200
+  knock_back: 15
+  damage: 26
+  delay: 1
   range: 0
-  ammo_degree: 0
-  current_ammo: 0
-  current_ammo_count: 0
+  ammo_degree: 1
+  current_ammo: 10
+  current_ammo_count: 70
   type: 0

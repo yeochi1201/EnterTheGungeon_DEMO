@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: "\uC5D0\uC77C\uB9AC\uC5B8 \uC0AC\uC774\uB4DC\uC554"
   m_EditorClassIdentifier: 
-  itemName: 
-  ammo_size: 0
-  ammo_count: 0
-  reload: 0
-  ammo_speed: 0
-  knock_back: 0
-  damage: 0
-  delay: 0
-  range: 0
+  itemName: "\uC5D0\uC77C\uB9AC\uC5B8 \uC0AC\uC774\uB4DC\uC554"
+  ammo_size: 8
+  ammo_count: 120
+  reload: 1.8
+  ammo_speed: 23
+  knock_back: 60
+  damage: 4
+  delay: 0.6
+  range: 60
   ammo_degree: 0
-  current_ammo: 0
-  type: 0
+  current_ammo: 8
+  current_ammo_count: 112
+  type: 2
