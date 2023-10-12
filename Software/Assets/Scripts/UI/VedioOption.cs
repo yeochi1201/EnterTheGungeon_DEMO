@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class VedioOption : MonoBehaviour
 {
+    FullScreenMode screenMode;
     public Dropdown dropdown;
+    public Toggle fullScreenBtn;
     List<Resolution> resolutions = new List<Resolution>();
     public int resolutionNum;
     void Start() {
@@ -31,9 +33,18 @@ public class VedioOption : MonoBehaviour
             optionNum++;
         }
         dropdown.RefreshShownValue();
+
+        fullScreenBtn.isOn = Screen.fullScreenMode.Equals(FullScreenMode.FullScreenWindow) ? true : false;
     }
     public void DropboxOption(int x) {
         resolutionNum = x;
+    }
+    public void FullScreenBtn(bool isFull) {
+        screenMode = isFull ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
+    }
+    public void BtnClick() {
+        Screen.SetResolution(resolutions[resolutionNum].width, resolutions[resolutionNum].height,
+        screenMode);
     }
     void Update() {
         
