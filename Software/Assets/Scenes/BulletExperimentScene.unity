@@ -902,26 +902,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d478bd9402ff247a8dd955dd9a6fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicProjectilePrefab: {fileID: 1587824752204579219, guid: d9eabebaa47ab5c4ba5a7d0b36d9ad38, type: 3}
-  basicProjectilePoolCount: 0
+  velocityProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
+  velocityProjectilePoolCount: 100
+  forceProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
+  forceProjectilePoolCount: 100
+  homingProjectilePrefab: {fileID: 6357783160714478742, guid: c00ae42488ae123418ad397f943fa75a, type: 3}
+  homingProjectilePoolCount: 100
+  colorProjectilePrefab: {fileID: 1119192269915296378, guid: a30e0e9e9250f27468f4b690fd5d39ea, type: 3}
+  colorProjectilePoolCount: 100
+  trailProjectilePrefab: {fileID: 122556038963494842, guid: ae578643cd3b8de43a27f2b930099f20, type: 3}
+  trailProjectilePoolCount: 100
+  rayProjectilePrefab: {fileID: 5199027930908112914, guid: c23e67005f6812c45b4cbefb5200849b, type: 3}
+  rayProjectilePoolCount: 100
   splitProjectilePrefab: {fileID: 4825151030347432710, guid: c4f9acc3105f63d43bf61537d7501ee0, type: 3}
-  splitProjectilePoolCount: 0
-  capsuleProjectilePrefab: {fileID: 7317805282385129330, guid: f1ac93e45c79bfd47b0ccfe3fc5b2754, type: 3}
-  capsuleProjectilePoolCount: 0
-  grenadeProjectilePrefab: {fileID: 1587824752204579219, guid: d9eabebaa47ab5c4ba5a7d0b36d9ad38, type: 3}
-  grenadeProjectilePoolCount: 0
-  squareRoundProjectilePrefab: {fileID: 6716800626399055148, guid: 85f46e5cee976e942b19b361ac2499eb, type: 3}
-  squareRoundProjectilePoolCount: 0
-  squareRoundBsProjectilePrefab: {fileID: 6716800626399055148, guid: 705ab2c8754f7eb4fbadd110c0242e17, type: 3}
-  squareRoundBsProjectilePoolCount: 0
-  squareRoundGtProjectilePrefab: {fileID: 6716800626399055148, guid: a42bc061476df3a4d8d394c48c8027aa, type: 3}
-  squareRoundGtProjectilePoolCount: 50
-  sniperProjectilePrefab: {fileID: 337479478290493447, guid: bb7ffade0cef61848beafcbc4f699985, type: 3}
-  sniperProjectilePoolCount: 0
-  makeshiftCannonProjectilePrefab: {fileID: 1587824752204579219, guid: d9eabebaa47ab5c4ba5a7d0b36d9ad38, type: 3}
-  makeshiftCannonProjectilePoolCount: 0
-  strafeGunProjectilePrefab: {fileID: 1587824752204579219, guid: d9eabebaa47ab5c4ba5a7d0b36d9ad38, type: 3}
-  strafeGunProjectilePoolCount: 0
+  splitProjectilePoolCount: 100
 --- !u!1 &1937837253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,6 +1206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7654673307729812631, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7654673307734687020, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1271,6 +1269,14 @@ PrefabInstance:
     - target: {fileID: 7654673307734687023, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654673308417362619, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654673309008131362, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}

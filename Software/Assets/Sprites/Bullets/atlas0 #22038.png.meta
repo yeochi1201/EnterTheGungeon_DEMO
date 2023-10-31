@@ -858,7 +858,7 @@ TextureImporter:
         x: 57
         y: 84
         width: 17
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1880,6 +1880,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: atlas0 #22038_84
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 102
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93df1579ac8fa874d9817dd89add9c0f
+      internalID: 1684269135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1974,6 +1995,7 @@ TextureImporter:
       atlas0 #22038_81: 1517564135
       atlas0 #22038_82: 1805757921
       atlas0 #22038_83: 1191144123
+      atlas0 #22038_84: 1684269135
       atlas0 #22038_9: 1881748911
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 //Use for Player Projectile
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] protected ProjectileData projectileData;
     [SerializeField] protected ProjectileType projectileType;
     [SerializeField] protected float projectileDamage;
     [SerializeField] protected float projectileSpeed;
@@ -18,19 +20,27 @@ public class Projectile : MonoBehaviour
     protected Collider2D projectileCollider;
     protected Vector2 projectileDirection;        
 
+    protected BoxCollider2D boxCollider;
+    protected CapsuleCollider2D capsuleCollider;
+    protected CircleCollider2D circleCollider;
+
     protected virtual void Awake()
     {
         projectileRigidbody = transform.GetComponent<Rigidbody2D>();
         projectileCollider = transform.GetComponent<Collider2D>();
         projectileSpriteRenderer = transform.GetComponent<SpriteRenderer>();
+        boxCollider = transform.GetComponent<BoxCollider2D>();
+        capsuleCollider = transform.GetComponent<CapsuleCollider2D>();
+        circleCollider = transform.GetComponent<CircleCollider2D>();
     }
 
     protected virtual void Start() { }
 
     protected virtual void FixedUpdate() { }
     
-    public void SetProjectileProperty(ProjectileType _projectileType, float _damage, float _speed, float _range, float _force, int _pierce, int _bounce, Vector2 _direction)
+    public void SetProjectileProperty(ProjectileType _projectileType, int _dataIndex, float _damage, float _speed, float _range, float _force, int _pierce, int _bounce, Vector2 _direction)
     {
+        SetData(_dataIndex);
         projectileType = _projectileType;
         projectileDamage = _damage;
         projectileSpeed = _speed;
@@ -39,6 +49,35 @@ public class Projectile : MonoBehaviour
         projectilePierce = _pierce;
         projectileBounce = _bounce;
         projectileDirection = _direction;        
+    }
+
+    void SetData(int _index)
+    {
+        projectileSpriteRenderer.sprite = projectileData.projectileData[_index].projectileSprite;
+        switch (projectileData.projectileData[_index].colliderType)
+        {
+            case "BOX":
+                boxCollider.enabled = true;
+                capsuleCollider.enabled = false;
+                circleCollider.enabled = false;
+                boxCollider.size = new Vector3(projectileData.projectileData[_index].colliderSize, projectileData.projectileData[_index].ifcolliderSizey);
+                break;
+            case "CIRCLE":
+                boxCollider.enabled = false;
+                capsuleCollider.enabled = false;
+                circleCollider.enabled = true;
+                circleCollider.radius = projectileData.projectileData[_index].colliderSize;
+                break;
+            case "CAPSULE":
+                boxCollider.enabled = false;
+                capsuleCollider.enabled = true;
+                circleCollider.enabled = false;
+                capsuleCollider.size = new Vector3(projectileData.projectileData[_index].colliderSize, projectileData.projectileData[_index].ifcolliderSizey);
+                break;
+            default:
+                break;
+        }
+
     }
 
     protected virtual void ProjectileMove() { }

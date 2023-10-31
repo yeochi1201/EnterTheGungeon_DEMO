@@ -3,16 +3,13 @@ using UnityEngine;
 
 public enum ProjectileType
 {
-    BASIC, //M16, OldGoldie, GUNGINE
-    SPLIT, //BigShotgun(small)
-    CAPSULE, //HighKaliber
-    GRENADE, //M16Grenade
-    SQUARE_ROUND, //DECK4RD
-    SQUARE_ROUND_BS, //BigShotgun
-    SQUARE_ROUND_GT, //GUNTHER
-    SNIPER, //A.W.P.    
-    MAKESHIFT_CANNON, //6 Projectiles
-    STRAFE_GUN,    
+    VELOCITY,
+    FORCE,
+    HOMING,
+    COLOR,
+    TRAIL,
+    RAY,
+    SPLIT,
     MAX_SIZE
 }
 
@@ -20,35 +17,26 @@ public class ProjectilePooler : MonoBehaviour
 {
     public static ProjectilePooler Instance;
 
-    [SerializeField] GameObject basicProjectilePrefab;
-    [SerializeField] int basicProjectilePoolCount;
+    [SerializeField] GameObject velocityProjectilePrefab;
+    [SerializeField] int velocityProjectilePoolCount;
+
+    [SerializeField] GameObject forceProjectilePrefab;
+    [SerializeField] int forceProjectilePoolCount;
+
+    [SerializeField] GameObject homingProjectilePrefab;
+    [SerializeField] int homingProjectilePoolCount;
+
+    [SerializeField] GameObject colorProjectilePrefab;
+    [SerializeField] int colorProjectilePoolCount;
+
+    [SerializeField] GameObject trailProjectilePrefab;
+    [SerializeField] int trailProjectilePoolCount;
+
+    [SerializeField] GameObject rayProjectilePrefab;
+    [SerializeField] int rayProjectilePoolCount;
 
     [SerializeField] GameObject splitProjectilePrefab;
     [SerializeField] int splitProjectilePoolCount;
-
-    [SerializeField] GameObject capsuleProjectilePrefab;
-    [SerializeField] int capsuleProjectilePoolCount;
-
-    [SerializeField] GameObject grenadeProjectilePrefab;
-    [SerializeField] int grenadeProjectilePoolCount;
-
-    [SerializeField] GameObject squareRoundProjectilePrefab;
-    [SerializeField] int squareRoundProjectilePoolCount;
-
-    [SerializeField] GameObject squareRoundBsProjectilePrefab;
-    [SerializeField] int squareRoundBsProjectilePoolCount;
-
-    [SerializeField] GameObject squareRoundGtProjectilePrefab;
-    [SerializeField] int squareRoundGtProjectilePoolCount;
-
-    [SerializeField] GameObject sniperProjectilePrefab;
-    [SerializeField] int sniperProjectilePoolCount;
-
-    [SerializeField] GameObject makeshiftCannonProjectilePrefab;
-    [SerializeField] int makeshiftCannonProjectilePoolCount;
-
-    [SerializeField] GameObject strafeGunProjectilePrefab;
-    [SerializeField] int strafeGunProjectilePoolCount;
 
     List<GameObject>[] projectilePool = new List<GameObject>[(int)ProjectileType.MAX_SIZE];
 
@@ -57,24 +45,66 @@ public class ProjectilePooler : MonoBehaviour
     {
         Instance = this;
 
-        projectilePool[(int)ProjectileType.BASIC] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.SPLIT] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.CAPSULE] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.GRENADE] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.SQUARE_ROUND] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.SQUARE_ROUND_BS] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.SQUARE_ROUND_GT] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.SNIPER] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.MAKESHIFT_CANNON] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.STRAFE_GUN] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.VELOCITY] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.FORCE] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.HOMING] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.COLOR] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.TRAIL] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.RAY] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.SPLIT] = new List<GameObject>();        
 
-        for (int i = 0; i < basicProjectilePoolCount; i++)
+        for (int i = 0; i < velocityProjectilePoolCount; i++)
         {
-            GameObject _projectile = Instantiate(basicProjectilePrefab);
+            GameObject _projectile = Instantiate(velocityProjectilePrefab);
             _projectile.SetActive(false);
             _projectile.transform.SetParent(transform);
 
-            projectilePool[(int)ProjectileType.BASIC].Add(_projectile);
+            projectilePool[(int)ProjectileType.VELOCITY].Add(_projectile);
+        }
+
+        for (int i = 0; i < forceProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(forceProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.FORCE].Add(_projectile);
+        }
+
+        for (int i = 0; i < homingProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(homingProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.HOMING].Add(_projectile);
+        }
+
+        for (int i = 0; i < colorProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(colorProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.COLOR].Add(_projectile);
+        }
+
+        for (int i = 0; i < trailProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(trailProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.TRAIL].Add(_projectile);
+        }
+
+        for (int i = 0; i < rayProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(rayProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.RAY].Add(_projectile);
         }
 
         for (int i = 0; i < splitProjectilePoolCount; i++)
@@ -84,78 +114,6 @@ public class ProjectilePooler : MonoBehaviour
             _projectile.transform.SetParent(transform);
 
             projectilePool[(int)ProjectileType.SPLIT].Add(_projectile);
-        }
-
-        for (int i = 0; i < capsuleProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(capsuleProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.CAPSULE].Add(_projectile);
-        }
-
-        for (int i = 0; i < grenadeProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(grenadeProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.GRENADE].Add(_projectile);
-        }
-
-        for (int i = 0; i < squareRoundProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(squareRoundProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.SQUARE_ROUND].Add(_projectile);
-        }
-
-        for (int i = 0; i < squareRoundBsProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(squareRoundBsProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.SQUARE_ROUND_BS].Add(_projectile);
-        }
-
-        for (int i = 0; i < squareRoundGtProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(squareRoundGtProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.SQUARE_ROUND_GT].Add(_projectile);
-        }
-
-        for (int i = 0; i < sniperProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(sniperProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.SNIPER].Add(_projectile);
-        }
-
-        for (int i = 0; i < makeshiftCannonProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(makeshiftCannonProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.MAKESHIFT_CANNON].Add(_projectile);
-        }
-
-        for (int i = 0; i < strafeGunProjectilePoolCount; i++)
-        {
-            GameObject _projectile = Instantiate(strafeGunProjectilePrefab);
-            _projectile.SetActive(false);
-            _projectile.transform.SetParent(transform);
-
-            projectilePool[(int)ProjectileType.STRAFE_GUN].Add(_projectile);
         }
     }
 

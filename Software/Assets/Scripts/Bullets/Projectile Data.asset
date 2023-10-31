@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5782c5b79c55d234d8d5686fb074c259, type: 3}
+  m_Name: Projectile Data
+  m_EditorClassIdentifier: 
+  projectileData:
+  - projectileSprite: {fileID: -1023061708, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.21875
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.40625
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: -126189746, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.4
+    ifcolliderSizey: 1.8125
+  - projectileSprite: {fileID: -1283003548, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.5
+    ifcolliderSizey: 1.125
+  - projectileSprite: {fileID: 945087300, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: BOX
+    colliderSize: 0.375
+    ifcolliderSizey: 1.0625
+  - projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: BOX
+    colliderSize: 0.875
+    ifcolliderSizey: 1.25
+  - projectileSprite: {fileID: 500351104, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.4375
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.875
+    ifcolliderSizey: 1.25
+  - projectileSprite: {fileID: -1822488692, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.375
+    ifcolliderSizey: 0.875
+  - projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.375
+    ifcolliderSizey: 0.875
+  - projectileSprite: {fileID: 1023804504, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: BOX
+    colliderSize: 0.3125
+    ifcolliderSizey: 0.625
+  - projectileSprite: {fileID: 1260142521, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.8125
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 442701135, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.53125
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: -2059389279, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.53125
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 1302436474, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.53125
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: -1944961403, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.53125
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 812523713, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.625
+    ifcolliderSizey: 0.4375
+  - projectileSprite: {fileID: -462315075, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.375
+    ifcolliderSizey: 1.125
+  - projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.375
+    ifcolliderSizey: 0.875
+  - projectileSprite: {fileID: 1922662952, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.625
+    ifcolliderSizey: 0.875
+  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.40625
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 913809602, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CAPSULE
+    colliderSize: 0.5625
+    ifcolliderSizey: 0.5
+  - projectileSprite: {fileID: 695401479, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+    colliderType: CAPUSLE
+    colliderSize: 0.5625
+    ifcolliderSizey: 0.5
+  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.40625
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 1684269135, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.4375
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 1691237731, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: CIRCLE
+    colliderSize: 0.375
+    ifcolliderSizey: 0
+  - projectileSprite: {fileID: 1086386799, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+    colliderType: BOX
+    colliderSize: 0.25
+    ifcolliderSizey: 0.625
