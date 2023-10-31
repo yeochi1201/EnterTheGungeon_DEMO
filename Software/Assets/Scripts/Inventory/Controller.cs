@@ -50,6 +50,8 @@ public class Controller : MonoBehaviour
             if (other.tag == "ConsumeItem")
             {
                 Debug.Log("ConsumeItem Collision");
+                ConsumeItem activeComponent = other.GetComponent<ConsumeItem>();
+                inven.GetActive(activeComponent);
             }
         }
     }

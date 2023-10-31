@@ -7,8 +7,9 @@ public class Inven : MonoBehaviour
     List<Weapon> weapons = new List<Weapon>();
     List<ConsumeItem> actives = new List<ConsumeItem>();
     Weapon basicGun;
+    public GameObject script;
     // int blank = 2;
-    int idx = 1;
+    int weaponIndex = 1;
     int activeIndex = 0;
     int gold = 0;
 
@@ -35,18 +36,18 @@ public class Inven : MonoBehaviour
         Debug.Log($"{wheelMove}");
         if(wheelMove < 0)
         {
-            idx++;
-            if (idx == weapons.Count + 1)
-                idx = 1;
-            Debug.Log($"{idx}번 장착중");
+            weaponIndex++;
+            if (weaponIndex == weapons.Count + 1)
+                weaponIndex = 1;
+            Debug.Log($"{weaponIndex}번 장착중");
             Debug.Log($"weapon리스트 크기 : {weapons.Count}");
         }
         if(wheelMove > 0)
         {
-            idx--;
-            if (idx == 0)
-                idx = weapons.Count;
-            Debug.Log($"{idx}번 장착중");
+            weaponIndex--;
+            if (weaponIndex == 0)
+                weaponIndex = weapons.Count;
+            Debug.Log($"{weaponIndex}번 장착중");
             Debug.Log($"weapon리스트 크기 : {weapons.Count}");
         }
 
@@ -60,6 +61,8 @@ public class Inven : MonoBehaviour
             return;
         }
         weapons.Add(newWeapon);
+        // Managers.InvenUI.AddWeaponButton(newWeapon);
+        script.GetComponent<ItemButton>().CreateButton();
     }
 
     public void ThrowWeapon()
@@ -69,9 +72,9 @@ public class Inven : MonoBehaviour
             Debug.Log("Throw Failed");
             return;
         }
-        Debug.Log($"{idx}번 무기 Throw");
-        weapons.RemoveAt(idx - 1);
-        idx -= 1;
+        Debug.Log($"{weaponIndex}번 무기 Throw");
+        weapons.RemoveAt(weaponIndex - 1);
+        weaponIndex -= 1;
     }
 
     void SwapActive()
@@ -86,7 +89,7 @@ public class Inven : MonoBehaviour
         // return actives[activeIndex];
     }
 
-    void GetActive(ConsumeItem newActive)
+    public void GetActive(ConsumeItem newActive)
     {
         if (actives.Count == 5)
         {
@@ -94,6 +97,8 @@ public class Inven : MonoBehaviour
             return;
         }
         actives.Add(newActive);
+        // Managers.InvenUI.AddActiveButton(newActive);
+        Managers.InvenUI.AddActiveButton(newActive);
     }
 
     void ThrowActive()
