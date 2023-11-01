@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
-public enum BulletPatternType
+public enum ProjectilePatternType
 {
     CIRCLE,
     CIRCLE_ROTATE,
@@ -16,9 +16,9 @@ public enum BulletPatternType
 }
 
 //for Boss
-public class BulletPattern : MonoBehaviour
+public class ProjectilePattern : MonoBehaviour
 {
-    [SerializeField] BulletPatternType bulletPatternType;
+    [SerializeField] ProjectilePatternType projectilePatternType;
     [SerializeField] GameObject muzzle;
 
     //CIRCLE Properties
@@ -40,15 +40,15 @@ public class BulletPattern : MonoBehaviour
 
     void PatternStart() //*
     {
-        switch (bulletPatternType)
+        switch (projectilePatternType)
         {
-            case BulletPatternType.CIRCLE:
+            case ProjectilePatternType.CIRCLE:
                 StartCoroutine(CirclePattern(30, 6));
                 break;
-            case BulletPatternType.CIRCLE_ROTATE:
+            case ProjectilePatternType.CIRCLE_ROTATE:
                 StartCoroutine(CircleRotatePattern(30, 3));
                 break;
-            case BulletPatternType.CIRCLE_LUMP:
+            case ProjectilePatternType.CIRCLE_LUMP:
                 bulletCount = 30;
                 angleInterval = 360 / bulletCount;
                 for (int i = 1; i <= bulletCount; i++)
