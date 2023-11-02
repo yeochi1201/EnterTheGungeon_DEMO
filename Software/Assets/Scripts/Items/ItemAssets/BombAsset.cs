@@ -8,6 +8,7 @@ public class BombAsset : ItemAsset
 {
     [SerializeField]
     public int damage; //bomb damage
-    public int reloadDamage; //needed damage to reload bomb
-    public int maxOwn; //maximum carry bomb
+    public int rechargeDamage; //needed damage to reload bomb
+    public int splashRange; //maximum carry bomb
+    public int range;
 }
