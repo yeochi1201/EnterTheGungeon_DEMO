@@ -17,9 +17,9 @@ MonoBehaviour:
     colliderType: CIRCLE
     colliderSize: 0.21875
     ifcolliderSizey: 0
-  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+  - projectileSprite: {fileID: -349201340, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
     colliderType: CIRCLE
-    colliderSize: 0.40625
+    colliderSize: 0.21875
     ifcolliderSizey: 0
   - projectileSprite: {fileID: -126189746, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
     colliderType: CAPSULE
@@ -93,9 +93,9 @@ MonoBehaviour:
     colliderType: CAPSULE
     colliderSize: 0.625
     ifcolliderSizey: 0.875
-  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+  - projectileSprite: {fileID: -349201340, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
     colliderType: CIRCLE
-    colliderSize: 0.40625
+    colliderSize: 0.21875
     ifcolliderSizey: 0
   - projectileSprite: {fileID: 913809602, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
     colliderType: CAPSULE

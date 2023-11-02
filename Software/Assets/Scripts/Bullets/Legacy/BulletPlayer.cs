@@ -82,7 +82,7 @@ public class BulletPlayer : MonoBehaviour
         */
 
         GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.VELOCITY);
-        _projectile.GetComponent<Projectile>().SetProjectileProperty(ProjectileType.VELOCITY, 3,6, 16, 50, 20, 0, 1, muzzleDirection);
+        _projectile.GetComponent<Projectile>().SetProjectileProperty(ProjectileType.COLOR, 1,6, 23, 50, 20, 0, 1, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
     }

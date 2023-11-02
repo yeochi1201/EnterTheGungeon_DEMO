@@ -81,6 +81,12 @@ public class Projectile : MonoBehaviour
     }
 
     protected virtual void ProjectileMove() { }
+    protected virtual void BulletImpact()
+    {
+        GameObject _effect = EffectPooler.Instance.GetEffect(EffectType.BULLET_IMPACT);
+        _effect.transform.position = transform.position;
+        _effect.SetActive(true);
+    }
 
     protected virtual void ProjectileRotate()
     {
@@ -89,6 +95,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void ProjectileInit()
     {
+        BulletImpact();
         transform.SetParent(transform.parent);        
         projectileDamage = 0;
         projectileSpeed = 0;
