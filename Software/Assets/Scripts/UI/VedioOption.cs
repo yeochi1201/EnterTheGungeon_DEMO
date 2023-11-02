@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class VedioOption : MonoBehaviour
 {
+    public GameObject[] startMenu;
     FullScreenMode screenMode;
     public Dropdown dropdown;
     public Toggle fullScreenBtn;
@@ -42,9 +43,13 @@ public class VedioOption : MonoBehaviour
     public void FullScreenBtn(bool isFull) {
         screenMode = isFull ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
     }
-    public void BtnClick() {
+    public void OKBtnClick() {
         Screen.SetResolution(resolutions[resolutionNum].width, resolutions[resolutionNum].height,
         screenMode);
+        gameObject.SetActive(false);
+        for(int i = 0; i < startMenu.Length; i++) {
+            startMenu[i].SetActive(true);
+        }
     }
     void Update() {
         

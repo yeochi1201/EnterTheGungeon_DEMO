@@ -15,7 +15,7 @@ public class Option2Detail : MonoBehaviour
     }
     public void ControlBtnClick() {
         gameObject.SetActive(false);
-        controlOption.SetActive(true);
+        controlOption.SetActive(false);
     }
     public void VedioBtnClick() {
         gameObject.SetActive(false);
@@ -23,6 +23,6 @@ public class Option2Detail : MonoBehaviour
     }
     public void AudioBtnClick() {
         gameObject.SetActive(false);
-        audioOption.SetActive(true);
+        audioOption.SetActive(false);
     }
 }
