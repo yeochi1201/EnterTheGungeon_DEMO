@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810a2c861210afc429499698438108d1, type: 3}
   m_Name: D_Chest
   m_EditorClassIdentifier: 
-  itemName: D_Chest
+  itemName: D_Item_Chest
   rank: 0
   type: 0
   key: 0

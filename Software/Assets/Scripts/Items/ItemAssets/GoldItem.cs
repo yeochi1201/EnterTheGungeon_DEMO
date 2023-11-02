@@ -4,5 +4,11 @@ using UnityEngine;
 
 public class GoldItem : MonoBehaviour
 {
-    
+    public int amount;
+
+
+    public void count_gold()
+    {
+
+    }
 }
