@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
+  m_Name: PulseCannon
+  m_EditorClassIdentifier: 
+  itemName: PulseCannon
+  ammo_size: 8
+  ammo_count: 120
+  reload: 1.8
+  ammo_speed: 23
+  knock_back: 60
+  damage: 4
+  delay: 0.6
+  range: 60
+  ammo_degree: 0
+  current_ammo: 8
+  current_ammo_count: 112
+  type: 0

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
+  m_Name: YariLauncher
+  m_EditorClassIdentifier: 
+  itemName: YariLauncher
+  ammo_size: 20
+  ammo_count: 140
+  reload: 1.5
+  ammo_speed: 10
+  knock_back: 30
+  damage: 10
+  delay: 0.04
+  range: 90
+  ammo_degree: 45
+  current_ammo: 20
+  current_ammo_count: 120
+  type: 1
