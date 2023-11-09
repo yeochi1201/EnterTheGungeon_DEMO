@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D playerRigidbody;
 
     [Header("Gun Property")]
+    //[SerializeField] GameObject gunPrefab;
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject gunPivot;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector2 target;
     Vector2 mouse;
     float angle;
+
 
     [Header("Slide Property")]
     Vector2 slideDirection;
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Ability Property")]
     [SerializeField] float playerHealth = 3;
     [SerializeField] float damage = 1;
+    Animator playerAnim;
 
     //[Header("Weapon Property")]
 
@@ -65,7 +68,9 @@ public class PlayerController : MonoBehaviour
             {
                 slideDirection = playerVelocity.normalized;
 
+                playerAnim.SetBool("isRolling",true);
                 StartCoroutine(Slide());
+                playerAnim.SetBool("isRolling",false);
             }
         }
     }
