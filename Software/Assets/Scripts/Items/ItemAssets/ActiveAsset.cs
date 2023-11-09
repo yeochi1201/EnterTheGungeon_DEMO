@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[CreateAssetMenu(menuName = "ItemObject/PotionItem")]
-public class PotionAsset : ItemAsset
+[CreateAssetMenu(menuName = "ItemObject/ActiveItem")]
+public class ActiveAsset : ItemAsset
 {
     [SerializeField]
     public int heal; //heal value
@@ -14,7 +14,4 @@ public class PotionAsset : ItemAsset
     public int increaseHP; //buf for max hp
     public float cooltime; //item's cooltime
     public int limitUSE; //maximum using
-
-    public bool passive;
-    public bool consume;
 }

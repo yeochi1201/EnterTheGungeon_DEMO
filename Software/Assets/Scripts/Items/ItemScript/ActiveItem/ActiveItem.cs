@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PotionItem : MonoBehaviour
+public class ActiveItem : MonoBehaviour
 {
     virtual public void OnEquip()
     {
