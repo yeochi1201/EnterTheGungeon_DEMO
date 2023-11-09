@@ -38,41 +38,41 @@ public class Projectile : MonoBehaviour
 
     protected virtual void FixedUpdate() { }
     
-    public void SetProjectileProperty(ProjectileType _projectileType, int _dataIndex, float _damage, float _speed, float _range, float _force, int _pierce, int _bounce, Vector2 _direction)
+    public void SetProjectileProperty(string _weaponName, float _projectileDamage, int _projectileSpeed, int _projectileRange, int _projectileForce, int _pierce, int _bounce, Vector2 _direction)
     {
-        SetData(_dataIndex);
-        projectileType = _projectileType;
-        projectileDamage = _damage;
-        projectileSpeed = _speed;
-        projectileRange = _range;
-        projectileForce = _force;
+        ProjectileElement projectileElement = projectileData.projectileElement[_weaponName];        
+        projectileDamage = _projectileDamage;
+        projectileSpeed = _projectileSpeed;
+        projectileRange = _projectileRange;
+        projectileForce = _projectileForce;
         projectilePierce = _pierce;
         projectileBounce = _bounce;
-        projectileDirection = _direction;        
+        projectileDirection = _direction;
+        SetData(projectileElement);
     }
 
-    void SetData(int _index)
+    protected void SetData(ProjectileElement _projectileElement)
     {
-        projectileSpriteRenderer.sprite = projectileData.projectileData[_index].projectileSprite;
-        switch (projectileData.projectileData[_index].colliderType)
+        projectileSpriteRenderer.sprite = _projectileElement.projectileSprite;
+        switch (_projectileElement.colliderType)
         {
             case "BOX":
                 boxCollider.enabled = true;
                 capsuleCollider.enabled = false;
                 circleCollider.enabled = false;
-                boxCollider.size = new Vector3(projectileData.projectileData[_index].colliderSize, projectileData.projectileData[_index].ifcolliderSizey);
+                boxCollider.size = new Vector3(_projectileElement.colliderSizeX, _projectileElement.colliderSizeY);
                 break;
             case "CIRCLE":
                 boxCollider.enabled = false;
                 capsuleCollider.enabled = false;
                 circleCollider.enabled = true;
-                circleCollider.radius = projectileData.projectileData[_index].colliderSize;
+                circleCollider.radius = _projectileElement.colliderSizeX;
                 break;
             case "CAPSULE":
                 boxCollider.enabled = false;
                 capsuleCollider.enabled = true;
                 circleCollider.enabled = false;
-                capsuleCollider.size = new Vector3(projectileData.projectileData[_index].colliderSize, projectileData.projectileData[_index].ifcolliderSizey);
+                capsuleCollider.size = new Vector3(_projectileElement.colliderSizeX, _projectileElement.colliderSizeY);
                 break;
             default:
                 break;

@@ -12,112 +12,411 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5782c5b79c55d234d8d5686fb074c259, type: 3}
   m_Name: Projectile Data
   m_EditorClassIdentifier: 
-  projectileData:
-  - projectileSprite: {fileID: -1023061708, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.21875
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: -349201340, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.21875
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: -126189746, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.4
-    ifcolliderSizey: 1.8125
-  - projectileSprite: {fileID: -1283003548, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.5
-    ifcolliderSizey: 1.125
-  - projectileSprite: {fileID: 945087300, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: BOX
-    colliderSize: 0.375
-    ifcolliderSizey: 1.0625
-  - projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: BOX
-    colliderSize: 0.875
-    ifcolliderSizey: 1.25
-  - projectileSprite: {fileID: 500351104, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.4375
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.875
-    ifcolliderSizey: 1.25
-  - projectileSprite: {fileID: -1822488692, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.375
-    ifcolliderSizey: 0.875
-  - projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.375
-    ifcolliderSizey: 0.875
-  - projectileSprite: {fileID: 1023804504, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: BOX
-    colliderSize: 0.3125
-    ifcolliderSizey: 0.625
-  - projectileSprite: {fileID: 1260142521, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.8125
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 442701135, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.53125
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: -2059389279, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.53125
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 1302436474, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.53125
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: -1944961403, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.53125
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 812523713, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.625
-    ifcolliderSizey: 0.4375
-  - projectileSprite: {fileID: -462315075, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.375
-    ifcolliderSizey: 1.125
-  - projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.375
-    ifcolliderSizey: 0.875
-  - projectileSprite: {fileID: 1922662952, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.625
-    ifcolliderSizey: 0.875
-  - projectileSprite: {fileID: -349201340, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.21875
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 913809602, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CAPSULE
-    colliderSize: 0.5625
-    ifcolliderSizey: 0.5
-  - projectileSprite: {fileID: 695401479, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
-    colliderType: CAPUSLE
-    colliderSize: 0.5625
-    ifcolliderSizey: 0.5
-  - projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.40625
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 1684269135, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.4375
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 1691237731, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: CIRCLE
-    colliderSize: 0.375
-    ifcolliderSizey: 0
-  - projectileSprite: {fileID: 1086386799, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
-    colliderType: BOX
-    colliderSize: 0.25
-    ifcolliderSizey: 0.625
+  projectileElement:
+    _serializedList:
+    - Key: A.W.P
+      Value:
+        projectileName: A.W.P
+        projectileSprite: {fileID: 197993771, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: BigShotgun
+      Value:
+        projectileName: BigShotgun
+        projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.875
+        colliderSizeY: 1.25
+    - Key: Deck4rd
+      Value:
+        projectileName: Deck4rd
+        projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.875
+        colliderSizeY: 1.25
+    - Key: Dragunfire
+      Value:
+        projectileName: Dragunfire
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: HighKaliber
+      Value:
+        projectileName: HighKaliber
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: M16
+      Value:
+        projectileName: M16
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: oldGoldie
+      Value:
+        projectileName: oldGoldie
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: StaffofFirepower
+      Value:
+        projectileName: StaffofFirepower
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: UnicornHorn
+      Value:
+        projectileName: UnicornHorn
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Blasphemy
+      Value:
+        projectileName: Blasphemy
+        projectileSprite: {fileID: -126189746, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.4
+        colliderSizeY: 1.8125
+    - Key: FaceMelter
+      Value:
+        projectileName: FaceMelter
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Heroine
+      Value:
+        projectileName: Heroine
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: HexaGun
+      Value:
+        projectileName: HexaGun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: HyperLightBlaster
+      Value:
+        projectileName: HyperLightBlaster
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Megahand
+      Value:
+        projectileName: Megahand
+        projectileSprite: {fileID: 812523713, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.625
+        colliderSizeY: 0.4375
+    - Key: Polaris
+      Value:
+        projectileName: Polaris
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: RadGun
+      Value:
+        projectileName: RadGun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Smiley'sRevolver
+      Value:
+        projectileName: Smiley'sRevolver
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: BudgetRevolver
+      Value:
+        projectileName: BudgetRevolver
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: DartGun
+      Value:
+        projectileName: DartGun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: MarineSidearm
+      Value:
+        projectileName: MarineSidearm
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: Robot'sRightHand
+      Value:
+        projectileName: Robot'sRightHand
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: RogueSpecial
+      Value:
+        projectileName: RogueSpecial
+        projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.375
+        colliderSizeY: 0.875
+    - Key: RustySidearm
+      Value:
+        projectileName: RustySidearm
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: Bow
+      Value:
+        projectileName: Bow
+        projectileSprite: {fileID: 945087300, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.375
+        colliderSizeY: 1.0625
+    - Key: Corsair
+      Value:
+        projectileName: Corsair
+        projectileSprite: {fileID: -1283003548, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.5
+        colliderSizeY: 1.125
+    - Key: Helix1
+      Value:
+        projectileName: Helix1
+        projectileSprite: {fileID: -61432802, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.375
+        colliderSizeY: 0.875
+    - Key: Helix2
+      Value:
+        projectileName: Helix2
+        projectileSprite: {fileID: -1822488692, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.375
+        colliderSizeY: 0.875
+    - Key: M1
+      Value:
+        projectileName: M1
+        projectileSprite: {fileID: 197993771, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: M9
+      Value:
+        projectileName: M9
+        projectileSprite: {fileID: 197993771, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: PulseCannon
+      Value:
+        projectileName: PulseCannon
+        projectileSprite: {fileID: 1736451687, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.4375
+        colliderSizeY: 1.0625
+    - Key: Shades'sRevolver
+      Value:
+        projectileName: Shades'sRevolver
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: Shotgrub
+      Value:
+        projectileName: Shotgrub
+        projectileSprite: {fileID: 913809602, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.5625
+        colliderSizeY: 0.5
+    - Key: SniperRifle
+      Value:
+        projectileName: SniperRifle
+        projectileSprite: {fileID: 197993771, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: TheScrambler
+      Value:
+        projectileName: TheScrambler
+        projectileSprite: {fileID: 1922662952, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.625
+        colliderSizeY: 0.875
+    - Key: AlienSidearm
+      Value:
+        projectileName: AlienSidearm
+        projectileSprite: {fileID: -1023061708, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: Casey
+      Value:
+        projectileName: Casey
+        projectileSprite: {fileID: -1023061708, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: Crossbow
+      Value:
+        projectileName: Crossbow
+        projectileSprite: {fileID: 945087300, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.375
+        colliderSizeY: 1.0625
+    - Key: FlareGun
+      Value:
+        projectileName: FlareGun
+        projectileSprite: {fileID: -1153556712, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.25
+        colliderSizeY: 0
+    - Key: FossilizedGun
+      Value:
+        projectileName: FossilizedGun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Lil'Bomber
+      Value:
+        projectileName: Lil'Bomber
+        projectileSprite: {fileID: 710979408, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.5625
+        colliderSizeY: 0
+    - Key: Mailbox
+      Value:
+        projectileName: Mailbox
+        projectileSprite: {fileID: 1023804504, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.3125
+        colliderSizeY: 0.625
+    - Key: RegularShotgun
+      Value:
+        projectileName: RegularShotgun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: Sling
+      Value:
+        projectileName: Sling
+        projectileSprite: {fileID: 695401479, guid: d8f6df765487726409aaf32eae8ec820, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.5625
+        colliderSizeY: 0.5
+    - Key: SnowBaller
+      Value:
+        projectileName: SnowBaller
+        projectileSprite: {fileID: 1684269135, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.4375
+        colliderSizeY: 0
+    - Key: T-ShirtCannon
+      Value:
+        projectileName: T-ShirtCannon
+        projectileSprite: {fileID: 1691237731, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.375
+        colliderSizeY: 0
+    - Key: UnfinishedGun
+      Value:
+        projectileName: UnfinishedGun
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: WinchesterRifle
+      Value:
+        projectileName: WinchesterRifle
+        projectileSprite: {fileID: 197993771, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.21875
+        colliderSizeY: 0
+    - Key: WindUpGun
+      Value:
+        projectileName: WindUpGun
+        projectileSprite: {fileID: -1822488692, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.375
+        colliderSizeY: 0.875
+    - Key: Gungine
+      Value:
+        projectileName: Gungine
+        projectileSprite: {fileID: 1881748911, guid: 4d43bb6f301e0e14f85f683c2fd291c6, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.40625
+        colliderSizeY: 0
+    - Key: Gunther
+      Value:
+        projectileName: Gunther
+        projectileSprite: {fileID: -1196200069, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CAPSULE
+        colliderSizeX: 0.875
+        colliderSizeY: 1.25
+    - Key: StrafeGun
+      Value:
+        projectileName: StrafeGun
+        projectileSprite: {fileID: 0}
+        colliderType: 
+        colliderSizeX: 0
+        colliderSizeY: 0
+    - Key: YariLauncher
+      Value:
+        projectileName: YariLauncher
+        projectileSprite: {fileID: 1086386799, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.25
+        colliderSizeY: 0.625
+    - Key: MakeshiftCannon1
+      Value:
+        projectileName: MakeshiftCannon1
+        projectileSprite: {fileID: 442701135, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.53125
+        colliderSizeY: 0
+    - Key: MakeshiftCannon2
+      Value:
+        projectileName: MakeshiftCannon2
+        projectileSprite: {fileID: -2059389279, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.53125
+        colliderSizeY: 0
+    - Key: MakeshiftCannon3
+      Value:
+        projectileName: MakeshiftCannon3
+        projectileSprite: {fileID: 1302436474, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.53125
+        colliderSizeY: 0
+    - Key: MakeshiftCannon4
+      Value:
+        projectileName: MakeshiftCannon4
+        projectileSprite: {fileID: -1944961403, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.53125
+        colliderSizeY: 0
+    - Key: MakeshiftCannon5
+      Value:
+        projectileName: MakeshiftCannon5
+        projectileSprite: {fileID: 1260142521, guid: 4067104e5ab59b1499c2c8148832e852, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.8125
+        colliderSizeY: 0

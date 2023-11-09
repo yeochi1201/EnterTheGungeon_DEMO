@@ -4,7 +4,7 @@ using UnityEngine;
 public enum ProjectileType
 {
     VELOCITY,
-    FORCE,
+    HELIX,
     HOMING,
     COLOR,
     TRAIL,
@@ -20,8 +20,8 @@ public class ProjectilePooler : MonoBehaviour
     [SerializeField] GameObject velocityProjectilePrefab;
     [SerializeField] int velocityProjectilePoolCount;
 
-    [SerializeField] GameObject forceProjectilePrefab;
-    [SerializeField] int forceProjectilePoolCount;
+    [SerializeField] GameObject helixProjectilePrefab;
+    [SerializeField] int helixProjectilePoolCount;
 
     [SerializeField] GameObject homingProjectilePrefab;
     [SerializeField] int homingProjectilePoolCount;
@@ -46,7 +46,7 @@ public class ProjectilePooler : MonoBehaviour
         Instance = this;
 
         projectilePool[(int)ProjectileType.VELOCITY] = new List<GameObject>();
-        projectilePool[(int)ProjectileType.FORCE] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.HELIX] = new List<GameObject>();
         projectilePool[(int)ProjectileType.HOMING] = new List<GameObject>();
         projectilePool[(int)ProjectileType.COLOR] = new List<GameObject>();
         projectilePool[(int)ProjectileType.TRAIL] = new List<GameObject>();
@@ -62,13 +62,13 @@ public class ProjectilePooler : MonoBehaviour
             projectilePool[(int)ProjectileType.VELOCITY].Add(_projectile);
         }
 
-        for (int i = 0; i < forceProjectilePoolCount; i++)
+        for (int i = 0; i < helixProjectilePoolCount; i++)
         {
-            GameObject _projectile = Instantiate(forceProjectilePrefab);
+            GameObject _projectile = Instantiate(helixProjectilePrefab);
             _projectile.SetActive(false);
             _projectile.transform.SetParent(transform);
 
-            projectilePool[(int)ProjectileType.FORCE].Add(_projectile);
+            projectilePool[(int)ProjectileType.HELIX].Add(_projectile);
         }
 
         for (int i = 0; i < homingProjectilePoolCount; i++)

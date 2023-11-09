@@ -1,3 +1,4 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,15 @@ using UnityEngine;
 [System.Serializable]
 public struct ProjectileElement
 {
-    [SerializeField] public Sprite projectileSprite;
-    [SerializeField] public string colliderType;
-    [SerializeField] public float colliderSize;
-    [SerializeField] public float ifcolliderSizey;
+    public string projectileName;    
+    public Sprite projectileSprite;    
+    public string colliderType;
+    public float colliderSizeX;
+    public float colliderSizeY;
 }
 
 [CreateAssetMenu(fileName = "Projectile Data", menuName = "Scriptable Object/Projectile Data", order = int.MaxValue)]
 public class ProjectileData : ScriptableObject
-{
-    [SerializeField] public ProjectileElement[] projectileData;
+{    
+    public SerializedDictionary<string, ProjectileElement> projectileElement;
 }

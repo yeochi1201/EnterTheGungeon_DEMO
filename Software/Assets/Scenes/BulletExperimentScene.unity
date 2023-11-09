@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1602736376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -645,7 +645,7 @@ Transform:
   - {fileID: 203814576}
   - {fileID: 1901678307}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1602736378
 Rigidbody2D:
@@ -700,7 +700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1634596039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1912003414
 MonoBehaviour:
@@ -950,8 +950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
   velocityProjectilePoolCount: 100
-  forceProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
-  forceProjectilePoolCount: 100
+  helixProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
+  helixProjectilePoolCount: 100
   homingProjectilePrefab: {fileID: 6357783160714478742, guid: c00ae42488ae123418ad397f943fa75a, type: 3}
   homingProjectilePoolCount: 100
   colorProjectilePrefab: {fileID: 1119192269915296378, guid: a30e0e9e9250f27468f4b690fd5d39ea, type: 3}
@@ -1193,7 +1193,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4077332375315691057, guid: 1319e9969d846f04d9056d7cb39be57e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4077332375315691057, guid: 1319e9969d846f04d9056d7cb39be57e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1258,7 +1258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654673307734687020, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7654673307734687020, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
       propertyPath: m_LocalPosition.x
