@@ -15,11 +15,11 @@ public class ItemManager : MonoBehaviour
                 {
                     collision.GetComponentInParent<PassiveItem>().OnEquip();
                 }
-                else if (collision.GetComponentInParent<PotionAsset>() != null)
+                else if (collision.GetComponentInParent<ActiveAsset>() != null)
                 {
-                    if(collision.GetComponentInParent<PotionAsset>().passive != false)
+                    if(collision.GetComponentInParent<ActiveAsset>().passive != false)
                     {
-                        collision.GetComponentInParent<PotionItem>().OnEquip();
+                        collision.GetComponentInParent<ActiveItem>().OnEquip();
                     }
                 }
             }
