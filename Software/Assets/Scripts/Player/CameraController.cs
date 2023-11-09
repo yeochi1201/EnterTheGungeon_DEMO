@@ -6,16 +6,18 @@ using static UnityEngine.GraphicsBuffer;
 public class CameraController : MonoBehaviour
 {
     [Header("Camera Property")]
-    [SerializeField] float cameraSpeed = 2;
+    [SerializeField] float cameraSpeed = 5.0f;
     float maxDistance = 3f;
-    public Transform playerTransform;
+    Transform playerTrans;
     Vector3 cameraPosition;
     Vector3 mouse;
     Vector3 offset;
 
     void Awake()
     {
-        offset = transform.position - playerTransform.position;
+        playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
+
+        offset = transform.position - playerTrans.position;
     }
 
     void LateUpdate()
@@ -26,16 +28,16 @@ public class CameraController : MonoBehaviour
     void CameraControl()
     {
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouse.z = playerTransform.position.z;
+        mouse.z = playerTrans.position.z;
 
-        cameraPosition = ((mouse + playerTransform.position)/2);
+        cameraPosition = ((mouse + playerTrans.position)/2);
 
-        float distance = Vector3.Distance(mouse, playerTransform.position);
+        float distance = Vector3.Distance(mouse, playerTrans.position);
 
         if (distance > maxDistance)
         {
-            Vector3 direction = (mouse - playerTransform.position).normalized;
-            cameraPosition = playerTransform.position + direction * maxDistance;
+            Vector3 direction = (mouse - playerTrans.position).normalized;
+            cameraPosition = playerTrans.position + direction * maxDistance;
         }
         cameraPosition.z = -10;
 

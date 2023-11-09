@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Move Property")]
     [SerializeField] float playerSpeed = 5;
     Rigidbody2D playerRigidbody;
+    SpriteRenderer spritecompo;
 
     [Header("Gun Property")]
     //[SerializeField] GameObject gunPrefab;
@@ -15,14 +16,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject gunPivot;
     [SerializeField] Vector2 muzzleDirection;
-    Vector2 target;
     Vector2 mouse;
-    float angle;
 
 
     [Header("Slide Property")]
     Vector2 slideDirection;
-    float slideSpeed = 5f;
+    [SerializeField]float slideSpeed = 5f;
     float slideDuration = 0.5f;
     float slideCooldown = 0.5f;
     float slideTimer = 0f;
@@ -39,10 +38,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
+        spritecompo = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
+        if(playerHealth<=0) Die();
         FollowMouse();
         PlayerMove();
 
@@ -57,9 +59,13 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
+        if (inputX < 0) spritecompo.flipX = true;
+        else spritecompo.flipX = false;
+
         Vector2 playerVelocity = new Vector2(inputX, inputY);
         //playerVelocity.Normalize();
 
+        // 플레이어가 움직이는 코드
         playerRigidbody.velocity = playerVelocity * playerSpeed;
 
         if (Input.GetKeyDown(KeyCode.Space) && !isSlide)
@@ -68,9 +74,7 @@ public class PlayerController : MonoBehaviour
             {
                 slideDirection = playerVelocity.normalized;
 
-                playerAnim.SetBool("isRolling",true);
                 StartCoroutine(Slide());
-                playerAnim.SetBool("isRolling",false);
             }
         }
     }
@@ -78,7 +82,7 @@ public class PlayerController : MonoBehaviour
     void FollowMouse() //CrossHair
     {
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        angle = Mathf.Atan2(mouse.y - target.y, mouse.x - target.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg;
         gunPivot.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
@@ -86,15 +90,18 @@ public class PlayerController : MonoBehaviour
     {
         muzzleDirection = muzzle.transform.right;
 
+        /*
         GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
         _bullet.transform.position = muzzle.transform.position;
         _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
         _bullet.SetActive(true);
+        */
     }
 
     IEnumerator Slide()
     {
         isSlide = true;
+        playerAnim.SetBool("isRolling", true);
         slideTimer = 0f;
 
         while (slideTimer < slideDuration)
@@ -107,7 +114,15 @@ public class PlayerController : MonoBehaviour
 
         playerRigidbody.velocity = Vector2.zero;
         isSlide = false;
+        playerAnim.SetBool("isRolling", false);
 
         yield return new WaitForSeconds(slideCooldown);
+    }
+
+    void Die()
+    {
+        playerAnim.SetTrigger("Die");
+
+        // Scene Gameover로 이동
     }
 }

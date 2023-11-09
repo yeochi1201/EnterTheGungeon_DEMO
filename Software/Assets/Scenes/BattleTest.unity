@@ -250,6 +250,8 @@ GameObject:
   - component: {fileID: 1627620551}
   - component: {fileID: 1627620550}
   - component: {fileID: 1627620552}
+  - component: {fileID: 1627620554}
+  - component: {fileID: 1627620555}
   - component: {fileID: 1627620553}
   m_Layer: 0
   m_Name: Enemy
@@ -299,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1313349526, guid: ea930d868d6745e4682e282f25604fb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -334,19 +336,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627620549}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1627620553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +361,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b02f86926f8c9d4ea14e9057244c8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  health: 3
+  distance: 0
+  moveRange: 7
+  attackRange: 2
+  attackCooldown: 2
+  muzzle: {fileID: 1936882459}
+  bulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
+  gunPivot: {fileID: 1664400145}
+  muzzleDirection: {x: 0, y: 0}
+--- !u!70 &1627620554
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627620549}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.000000059604645}
+  m_Size: {x: 1, y: 1.4114236}
+  m_Direction: 0
+--- !u!95 &1627620555
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627620549}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e77912ef28a5384988f652e76a469d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1664400145
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664400146}
   m_Layer: 0
-  m_Name: Gun_Pivot
+  m_Name: Enemy_Gun_Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,8 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120ca302d00f35f419dc60ef8d798602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 2
-  playerTransform: {fileID: 7654673307096151215}
+  cameraSpeed: 5
 --- !u!1 &1936882459
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936882460}
   m_Layer: 0
-  m_Name: Muzzle
+  m_Name: Enemy_Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -584,11 +631,12 @@ GameObject:
   - component: {fileID: 7654673307096151215}
   - component: {fileID: 7654673307096151212}
   - component: {fileID: 7654673307096151218}
-  - component: {fileID: 7654673307096151217}
+  - component: {fileID: 7654673307096151220}
+  - component: {fileID: 7654673307096151221}
   - component: {fileID: 7654673307096151219}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -609,27 +657,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &7654673307096151217
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654673307096151213}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7654673307096151218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,11 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcade03319d122a419bde1d27775acf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 7
   muzzle: {fileID: 7654673308346634827}
   bulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
   gunPivot: {fileID: 7654673308586099512}
   muzzleDirection: {x: 0, y: 0}
+  slideSpeed: 7
   playerHealth: 3
   damage: 1
 --- !u!95 &7654673307096151219
@@ -669,6 +697,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!50 &7654673307096151220
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654673307096151213}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &7654673307096151221
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654673307096151213}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.875, y: 1.3125}
+  m_Direction: 0
 --- !u!4 &7654673307549534558
 Transform:
   m_ObjectHideFlags: 0
