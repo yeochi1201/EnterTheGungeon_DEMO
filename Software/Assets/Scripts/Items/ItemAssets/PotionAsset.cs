@@ -14,4 +14,7 @@ public class PotionAsset : ItemAsset
     public int increaseHP; //buf for max hp
     public float cooltime; //item's cooltime
     public int limitUSE; //maximum using
+
+    public bool passive;
+    public bool consume;
 }

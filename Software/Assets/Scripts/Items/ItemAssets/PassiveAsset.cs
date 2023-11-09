@@ -4,6 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "ItemObject/PassiveItem")]
 public class PassiveAsset : ItemAsset
-{ 
+{
     
 }

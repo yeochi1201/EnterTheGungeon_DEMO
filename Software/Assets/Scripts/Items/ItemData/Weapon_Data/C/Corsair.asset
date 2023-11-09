@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
+  m_Name: Corsair
+  m_EditorClassIdentifier: 
+  itemName: Corsair
+  ammo_size: 1
+  ammo_count: 200
+  reload: 0.5
+  ammo_speed: 26
+  knock_back: 25
+  damage: 10
+  delay: 0
+  range: 0
+  ammo_degree: 6
+  current_ammo: 1
+  current_ammo_count: 199
+  type: 2
