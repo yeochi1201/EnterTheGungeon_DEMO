@@ -30,6 +30,8 @@ public class DungeonGenerator : MonoBehaviour
     [Header("Assets")]
     [SerializeField] GameObject _roomPrefab;
     [SerializeField] GameObject _backfillPrefab;
+    [SerializeField] GameObject _playerPrefab;
+    [SerializeField] GameObject _bossPrefab;
 
     private float _minDivideRatio;
     private float _maxDivideRatio;
@@ -186,6 +188,10 @@ public class DungeonGenerator : MonoBehaviour
     {
         foreach (RoomNode roomNode in _leafNodes)
         {
+            if (roomNode.RoomName == "0 Node")
+                Instantiate(_playerPrefab, roomNode.SpaceCenter, Quaternion.identity);
+            if (roomNode.RoomName == (_leafNodes.Count-1)+" Node")
+                Instantiate(_bossPrefab, roomNode.SpaceCenter, Quaternion.identity);
             GameObject instance = Instantiate(_roomPrefab);
             instance.transform.localScale = Vector3.one;
 

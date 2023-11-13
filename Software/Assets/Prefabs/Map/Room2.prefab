@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3977724315036687867}
   - component: {fileID: 6313965211868810092}
   m_Layer: 0
-  m_Name: Room
+  m_Name: Room2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilePrefab: {fileID: 332688480704435620, guid: 922b13dbfce063b44983f68ab464180c, type: 3}
   _wallPrefab: {fileID: 6202639376374674148, guid: 9a80c950a6c791c4496b9756682f48e2, type: 3}
-  _doorwayXPrefab: {fileID: 2868120203724731892, guid: c28d8d10ef9016e4d9429120a0265b25, type: 3}
-  _doorwayYPrefab: {fileID: 362009592450038628, guid: 599e9d7a19ec1c74ab0f5b3cb767a5a8, type: 3}
-  _corridorXPrefab: {fileID: 4530057042707832520, guid: 6ef0853d1a0538442822ed812ef07d2e, type: 3}
-  _corridorYPrefab: {fileID: 5492247754576834106, guid: 379c477d76b24ff4c913add6c4c3cc75, type: 3}
-  doorPadding: 1
+  _doorwayXPrefab: {fileID: 2136594684495968852, guid: 96851b5466661804ea49aa38f0bb72d2, type: 3}
+  _doorwayYPrefab: {fileID: 7398100604347546448, guid: 0943bedb7d4f97d479c3e6422ba658f5, type: 3}
+  _corridorXPrefab: {fileID: 4530057042707832520, guid: 3c9b095b802d9c34f8ef0e6b94d13d44, type: 3}
+  _corridorYPrefab: {fileID: 5492247754576834106, guid: 656aab427a767114cb21e0166baf5bc7, type: 3}
+  doorPadding: 2

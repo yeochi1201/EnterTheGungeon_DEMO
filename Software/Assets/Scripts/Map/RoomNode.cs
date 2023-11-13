@@ -7,6 +7,7 @@ public class DoorInfo
     public string _name;
     public int _corridorLength;
     public bool _hasCorridor;       //from -> to 에서 from 문에만 복도를 그린다.
+    public bool isX;
     public eRelativeRectDirection _doorDirection;
 }
 
@@ -132,6 +133,16 @@ public class RoomNode
         fromDoor._corridorLength = (int)Vector3.Distance(fromDoor._doorPosition, toDoor._doorPosition) - 1;
         fromDoor._hasCorridor = true;
         fromDoor._doorDirection = relativeDirection;
+        if (relativeDirection==eRelativeRectDirection.LEFT|| relativeDirection== eRelativeRectDirection.RIGHT)
+        {
+            fromDoor.isX = true;
+            toDoor.isX = true;
+        }
+        else
+        {
+            fromDoor.isX = false;
+            toDoor.isX = false;
+        }
 
         toDoor._name = string.Format("{0}->{1}", toNode.RoomName, RoomName);
         _doorInfos.Add(fromDoor);

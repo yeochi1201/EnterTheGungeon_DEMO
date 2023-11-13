@@ -252,11 +252,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapSize: 100
-  _maxIterations: 4
-  _divideRatio: 0.45
+  _maxIterations: 3
+  _divideRatio: 0.438
   _minRoomPadding: 2
   _maxRoomPadding: 3
-  _revisitNodeRatio: 0.25
+  _revisitNodeRatio: 0.255
   _revisitPercentage: 0.3
-  _roomPrefab: {fileID: 2236212975765291023, guid: d60e2a8ef67337746a5446d2137c96da, type: 3}
+  _roomPrefab: {fileID: 2236212975765291023, guid: 4b78638aad593a74d808ffb0c2afa42a, type: 3}
   _backfillPrefab: {fileID: 704150295995670782, guid: b2e146b364bc91a479bcc171ea815cc0, type: 3}
+  _playerPrefab: {fileID: 165153026269180849, guid: 3659f0351b5cd2548ba16ac7fa275fc0, type: 3}
+  _bossPrefab: {fileID: 805518576813471823, guid: ad1022d55dfd30944a604e837c25f4e1, type: 3}

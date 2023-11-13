@@ -4,7 +4,8 @@ public class Room : MonoBehaviour
 {
     [SerializeField] GameObject _tilePrefab;
     [SerializeField] GameObject _wallPrefab;
-    [SerializeField] GameObject _doorwayPrefab;
+    [SerializeField] GameObject _doorwayXPrefab;
+    [SerializeField] GameObject _doorwayYPrefab;
     [SerializeField] GameObject _corridorXPrefab;
     [SerializeField] GameObject _corridorYPrefab;
     [SerializeField] int doorPadding;
@@ -102,11 +103,22 @@ public class Room : MonoBehaviour
         for (int i = 0; i < _roomNode.DoorInfos.Count; i++)
         {
             Vector3 doorPos = _roomNode.DoorInfos[i]._doorPosition;
-
-            int doorXMin = Mathf.CeilToInt(doorPos.x - doorPadding);
-            int doorXMax = Mathf.FloorToInt(doorPos.x + doorPadding);
-            int doorYMin = Mathf.CeilToInt(doorPos.y - doorPadding);
-            int doorYMax = Mathf.FloorToInt(doorPos.y + doorPadding);
+            int doorXMin, doorXMax, doorYMin, doorYMax;
+            if (doorPadding%2==0)   //doorpadding이 짝수면 각 좌표 양수값 방향을 한칸 줄임
+            {
+                doorXMin = Mathf.CeilToInt(doorPos.x - doorPadding);
+                doorXMax = Mathf.FloorToInt(doorPos.x + doorPadding-1);
+                doorYMin = Mathf.CeilToInt(doorPos.y - doorPadding);
+                doorYMax = Mathf.FloorToInt(doorPos.y + doorPadding-1);
+            }
+            else
+            {
+                doorXMin = Mathf.CeilToInt(doorPos.x - doorPadding);
+                doorXMax = Mathf.FloorToInt(doorPos.x + doorPadding);
+                doorYMin = Mathf.CeilToInt(doorPos.y - doorPadding);
+                doorYMax = Mathf.FloorToInt(doorPos.y + doorPadding);
+            }
+            
 
             if (isHorizontal)
             {
@@ -138,13 +150,21 @@ public class Room : MonoBehaviour
     {
         bool isX = true;
         GameObject corridorInstance;
+        GameObject doorInstance;
         foreach (DoorInfo doorInfo in _roomNode.DoorInfos)
         {
+            if (doorInfo.isX)
+            {
+                doorInstance = Instantiate(_doorwayXPrefab, transform);
+            }
+            else
+            {
+                doorInstance = Instantiate(_doorwayYPrefab, transform);
+            }
             //복도 문 생성
-            GameObject instance = Instantiate(_doorwayPrefab, transform);
-            instance.gameObject.name = doorInfo._name;
-            instance.transform.position = doorInfo._doorPosition;
-            instance.transform.localScale = Vector3.one;
+            doorInstance.gameObject.name = doorInfo._name;
+            doorInstance.transform.position = doorInfo._doorPosition;
+            doorInstance.transform.localScale = Vector3.one;
 
             if (doorInfo._hasCorridor)
             {
