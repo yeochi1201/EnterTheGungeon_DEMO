@@ -15,7 +15,7 @@ public class BombImpactEffect : Effect
     {
         if (collision.CompareTag("Enemy"))
         {
-            //collision.GetComponent<Enemy>().GetDamaged(damage);
+            //collision.GetComponent<Enemy>().GetDamkaged(damage);
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 public enum EffectType
 {
     BULLET_IMPACT,
+    EXPLOSION_IMPACT,
     MAX_SIZE,
 }
 
@@ -13,7 +14,8 @@ public class EffectPooler : MonoBehaviour
 
     [SerializeField] GameObject bulletImpactPrefab;
     [SerializeField] int bulletImpactPoolCount;
-
+    [SerializeField] GameObject explosionImpactPrefab;
+    [SerializeField] int explosionImpactPoolCount;
     List<GameObject>[] effectPool = new List<GameObject>[(int)EffectType.MAX_SIZE];
 
 
@@ -22,6 +24,7 @@ public class EffectPooler : MonoBehaviour
         Instance = this;
 
         effectPool[(int)EffectType.BULLET_IMPACT] = new List<GameObject>();
+        effectPool[(int)EffectType.EXPLOSION_IMPACT] = new List<GameObject>();
 
         for (int i = 0; i < bulletImpactPoolCount; i++)
         {
@@ -31,6 +34,16 @@ public class EffectPooler : MonoBehaviour
 
             effectPool[(int)EffectType.BULLET_IMPACT].Add(_bullet);
         }
+
+        for (int i = 0; i < explosionImpactPoolCount; i++)
+        {
+            GameObject _bullet = Instantiate(explosionImpactPrefab);
+            _bullet.SetActive(false);
+            _bullet.transform.SetParent(transform);
+
+            effectPool[(int)EffectType.EXPLOSION_IMPACT].Add(_bullet);
+        }
+
     }
 
     public GameObject GetEffect(EffectType _effectType) //Get Bullet

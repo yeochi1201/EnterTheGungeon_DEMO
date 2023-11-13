@@ -81,7 +81,11 @@ public class BulletPlayer : MonoBehaviour
         _projectile.gameObject.SetActive(true);
         */
 
-        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HELIX);
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.SPLIT);
+        _projectile.GetComponent<SplitProjectile>().SetProjectileProperty("Lil'Bomber", 0, 10, 10, 0, 0, 1, muzzleDirection);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
+        /*
         _projectile.GetComponent<Helix>().SetProjectileProperty("Helix1", true, 0, 0, 0, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
@@ -90,6 +94,7 @@ public class BulletPlayer : MonoBehaviour
         _projectile1.GetComponent<Helix>().SetProjectileProperty("Helix2", false, 0, 0, 0, 0, 0, 0, muzzleDirection);
         _projectile1.transform.position = muzzle.transform.position;
         _projectile1.gameObject.SetActive(true);
+        */
     }
 
     IEnumerator Slide()

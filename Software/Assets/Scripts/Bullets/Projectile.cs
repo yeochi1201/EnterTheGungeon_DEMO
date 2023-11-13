@@ -8,13 +8,13 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] protected ProjectileData projectileData;
     [SerializeField] protected ProjectileType projectileType;
+    [SerializeField] protected string projectileName;
     [SerializeField] protected float projectileDamage;
     [SerializeField] protected float projectileSpeed;
     [SerializeField] protected float projectileRange; //expired range
     [SerializeField] protected float projectileForce; //knockback
     [SerializeField] protected int projectilePierce; //through count
-    [SerializeField] protected int projectileBounce; //bounce count (ex: wall)
-    
+    [SerializeField] protected int projectileBounce; //bounce count (ex: wall)    
     protected SpriteRenderer projectileSpriteRenderer;
     protected Rigidbody2D projectileRigidbody;
     protected Collider2D projectileCollider;
@@ -23,6 +23,8 @@ public class Projectile : MonoBehaviour
     protected BoxCollider2D boxCollider;
     protected CapsuleCollider2D capsuleCollider;
     protected CircleCollider2D circleCollider;
+
+    protected float expiredTimer = 0;
 
     protected virtual void Awake()
     {
@@ -38,9 +40,21 @@ public class Projectile : MonoBehaviour
 
     protected virtual void FixedUpdate() { }
     
+    protected virtual void Update()
+    {
+        expiredTimer += Time.deltaTime * 2;
+        if(expiredTimer > projectileRange)
+        {
+            ProjectileInit();
+            expiredTimer = 0;
+            gameObject.SetActive(false);
+        }
+    }
+
     public void SetProjectileProperty(string _weaponName, float _projectileDamage, int _projectileSpeed, int _projectileRange, int _projectileForce, int _pierce, int _bounce, Vector2 _direction)
     {
-        ProjectileElement projectileElement = projectileData.projectileElement[_weaponName];        
+        ProjectileElement projectileElement = projectileData.projectileElement[_weaponName];
+        projectileName = _weaponName;
         projectileDamage = _projectileDamage;
         projectileSpeed = _projectileSpeed;
         projectileRange = _projectileRange;
@@ -48,7 +62,7 @@ public class Projectile : MonoBehaviour
         projectilePierce = _pierce;
         projectileBounce = _bounce;
         projectileDirection = _direction;
-        SetData(projectileElement);
+        SetData(projectileElement);        
     }
 
     protected void SetData(ProjectileElement _projectileElement)
