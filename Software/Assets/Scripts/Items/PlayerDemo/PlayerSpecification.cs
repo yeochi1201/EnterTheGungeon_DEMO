@@ -14,5 +14,9 @@ public class PlayerSpecification : MonoBehaviour
     public int key;
     public int gold;
 
-    private int superarmor;
+    public bool superArmor = false;
+    public bool trapArmor = false;
+    public bool contactArmor = false;
+    public bool pitArmor = false;
+    public bool ignoreKnockback = false;
 }
