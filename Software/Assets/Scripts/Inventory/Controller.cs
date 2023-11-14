@@ -36,6 +36,10 @@ public class Controller : MonoBehaviour
         {
             inven.ThrowWeapon();
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            inven.ThrowActive();
+        }
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -44,14 +48,14 @@ public class Controller : MonoBehaviour
             if (other.tag == "Weapon")
             {
                 Debug.Log("Weapon Collision");
-                Weapon weaponComponent = other.GetComponent<Weapon>();
-                inven.GetWeapon(weaponComponent);
+                GameObject newWeapon = other.gameObject;
+                inven.GetWeapon(newWeapon);
             }
             if (other.tag == "ConsumeItem")
             {
                 Debug.Log("ConsumeItem Collision");
-                ConsumeItem activeComponent = other.GetComponent<ConsumeItem>();
-                inven.GetActive(activeComponent);
+                GameObject newActive = other.gameObject;
+                inven.GetActive(newActive);
             }
         }
     }
