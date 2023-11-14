@@ -5,6 +5,7 @@ public enum EffectType
 {
     BULLET_IMPACT,
     EXPLOSION_IMPACT,
+    SPLIT_IMPACT,
     MAX_SIZE,
 }
 
@@ -16,6 +17,9 @@ public class EffectPooler : MonoBehaviour
     [SerializeField] int bulletImpactPoolCount;
     [SerializeField] GameObject explosionImpactPrefab;
     [SerializeField] int explosionImpactPoolCount;
+    [SerializeField] GameObject splitImpactPrefab;
+    [SerializeField] int splitImpactPoolCount;
+
     List<GameObject>[] effectPool = new List<GameObject>[(int)EffectType.MAX_SIZE];
 
 
@@ -25,6 +29,7 @@ public class EffectPooler : MonoBehaviour
 
         effectPool[(int)EffectType.BULLET_IMPACT] = new List<GameObject>();
         effectPool[(int)EffectType.EXPLOSION_IMPACT] = new List<GameObject>();
+        effectPool[(int)EffectType.SPLIT_IMPACT] = new List<GameObject>();
 
         for (int i = 0; i < bulletImpactPoolCount; i++)
         {
@@ -44,6 +49,14 @@ public class EffectPooler : MonoBehaviour
             effectPool[(int)EffectType.EXPLOSION_IMPACT].Add(_bullet);
         }
 
+        for (int i = 0; i < splitImpactPoolCount; i++)
+        {
+            GameObject _bullet = Instantiate(splitImpactPrefab);
+            _bullet.SetActive(false);
+            _bullet.transform.SetParent(transform);
+
+            effectPool[(int)EffectType.SPLIT_IMPACT].Add(_bullet);
+        }
     }
 
     public GameObject GetEffect(EffectType _effectType) //Get Bullet

@@ -51,6 +51,11 @@ public class SplitProjectile : Projectile
                 _effect.transform.position = transform.position;
                 _effect.SetActive(true);
                 break;
+            case "BigShotgun":
+                _effect = EffectPooler.Instance.GetEffect(EffectType.SPLIT_IMPACT);
+                _effect.transform.position = transform.position;
+                _effect.SetActive(true);
+                break;
             default:
                 break;
         }

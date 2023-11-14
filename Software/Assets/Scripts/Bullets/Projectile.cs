@@ -94,7 +94,10 @@ public class Projectile : MonoBehaviour
 
     }
 
-    protected virtual void ProjectileMove() { }
+    protected virtual void ProjectileMove() 
+    {
+        projectileRigidbody.velocity = projectileDirection * projectileSpeed * 50 * Time.deltaTime;
+    }
     protected virtual void BulletImpact()
     {
         GameObject _effect = EffectPooler.Instance.GetEffect(EffectType.BULLET_IMPACT);
@@ -110,7 +113,9 @@ public class Projectile : MonoBehaviour
     protected virtual void ProjectileInit()
     {
         BulletImpact();
-        transform.SetParent(transform.parent);        
+        transform.SetParent(transform.parent);
+        transform.position = new Vector3(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         projectileDamage = 0;
         projectileSpeed = 0;
         projectileRange = 0;

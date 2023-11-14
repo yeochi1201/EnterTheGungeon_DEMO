@@ -82,7 +82,7 @@ public class BulletPlayer : MonoBehaviour
         */
 
         GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.SPLIT);
-        _projectile.GetComponent<SplitProjectile>().SetProjectileProperty("Lil'Bomber", 0, 10, 10, 0, 0, 1, muzzleDirection);
+        _projectile.GetComponent<SplitProjectile>().SetProjectileProperty("BigShotgun", 0, 10,40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
         /*
