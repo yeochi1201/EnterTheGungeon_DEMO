@@ -18,8 +18,9 @@ public class WeaponAsset : ItemAsset
     public int range;
     public int ammo_degree;
 
-    public int current_ammo;
+    public int current_ammo_size;
     public int current_ammo_count;
+    public int current_degree;
 
     public enum weapontype 
     { 

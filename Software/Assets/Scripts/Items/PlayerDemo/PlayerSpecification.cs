@@ -19,4 +19,9 @@ public class PlayerSpecification : MonoBehaviour
     public bool contactArmor = false;
     public bool pitArmor = false;
     public bool ignoreKnockback = false;
+    public bool invisible = false;
+
+    public float ammo_degree_buf = 1.0f;
+    public float ammo_size_buf = 1.0f;
+    public float weapon_dmg_buf = 1.0f;
 }

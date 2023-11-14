@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    private PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision != null)
@@ -21,6 +22,13 @@ public class ItemManager : MonoBehaviour
                     {
                         collision.GetComponentInParent<ActiveItem>().OnEquip();
                     }
+                }
+                else if (collision.GetComponentInParent<WeaponAsset>() != null)
+                {
+                    GunBase gun = collision.GetComponentInParent <GunBase>();
+                    gun.WeaponUpdateAmmoSize(ps.ammo_size_buf);
+                    gun.WeaponUpdateDegree(ps.ammo_degree_buf);
+                    gun.WeaponUpdateDamage(ps.weapon_dmg_buf);
                 }
             }
         }

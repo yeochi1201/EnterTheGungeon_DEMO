@@ -6,11 +6,21 @@ public class MuscleRelaxant : PassiveItem
 {
     public override void OnEquip()
     {
-        //armor degree -= 60%
+        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        ps.ammo_degree_buf /= 1.60f;
+        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        /*foreach (GameObject weapon in inven.weapons){
+            weapon.GetComponent<GunBase>().WeaponRollbackDegree(1.60f);
+        }*/
     }
 
     public override void UnEquip()
     {
-        //armor degree += 60%
+        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        ps.ammo_degree_buf *= 1.60f;
+        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        /*foreach (GameObject weapon in inven.weapons){
+            weapon.GetComponent<GunBase>().WeaponUpdateDegree(1.60f);
+        }*/
     }
 }
