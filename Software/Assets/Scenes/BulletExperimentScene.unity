@@ -544,6 +544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletImpactPrefab: {fileID: 3423789950978537781, guid: dec7988eac80c364faa7aeff6d0ee2cb, type: 3}
   bulletImpactPoolCount: 100
+  explosionImpactPrefab: {fileID: 6252822237219207736, guid: 6a24d5a042bb8f241b81317ee79a1a89, type: 3}
+  explosionImpactPoolCount: 50
 --- !u!4 &974638800
 Transform:
   m_ObjectHideFlags: 0
@@ -700,7 +702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1634596039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -960,7 +962,7 @@ MonoBehaviour:
   trailProjectilePoolCount: 100
   rayProjectilePrefab: {fileID: 5199027930908112914, guid: c23e67005f6812c45b4cbefb5200849b, type: 3}
   rayProjectilePoolCount: 100
-  splitProjectilePrefab: {fileID: 4825151030347432710, guid: c4f9acc3105f63d43bf61537d7501ee0, type: 3}
+  splitProjectilePrefab: {fileID: 2054312101317733949, guid: 1f61d8fb4a3a1234dac7d35e287fa2be, type: 3}
   splitProjectilePoolCount: 100
 --- !u!1 &1937837253
 GameObject:

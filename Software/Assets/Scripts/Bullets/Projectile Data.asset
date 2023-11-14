@@ -87,10 +87,10 @@ MonoBehaviour:
     - Key: FaceMelter
       Value:
         projectileName: FaceMelter
-        projectileSprite: {fileID: 0}
-        colliderType: 
-        colliderSizeX: 0
-        colliderSizeY: 0
+        projectileSprite: {fileID: 21300000, guid: ec88da078c3149547aa06f72806060d0, type: 3}
+        colliderType: BOX
+        colliderSizeX: 0.7
+        colliderSizeY: 0.6
     - Key: Heroine
       Value:
         projectileName: Heroine
