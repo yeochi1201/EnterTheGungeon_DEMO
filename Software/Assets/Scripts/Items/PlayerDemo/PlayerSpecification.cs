@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class PlayerSpecification : MonoBehaviour
 {
-    public float maxHP;
-    public float currentHP;
-    public float speed;
-    public float dmg;
-    public int armor;
-    public int coolness;
-    public int key;
-    public int gold;
+    public float maxHP = 5.0f;
+    public float currentHP = 5.0f;
+    public float speed = 5.0f;
+    public float dmg = 0;
+    public int armor = 0;
+    public int coolness = 0;
+    public int key = 0;
+    public int gold = 0;
+    public int cursed = 0;
 
     public bool superArmor = false;
     public bool trapArmor = false;
@@ -24,4 +25,7 @@ public class PlayerSpecification : MonoBehaviour
     public float ammo_degree_buf = 1.0f;
     public float ammo_size_buf = 1.0f;
     public float weapon_dmg_buf = 1.0f;
+    public float weapon_reload_buf = 1.0f;
+    public float weapon_delay_buf = 1.0f;
+    public float ammo_count_buf = 1.0f;
 }

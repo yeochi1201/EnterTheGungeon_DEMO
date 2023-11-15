@@ -80,6 +80,11 @@ public class GunBase : MonoBehaviour
         weapon.current_ammo_size = (int)(weapon.current_ammo_size * ammo_size_buf);
     }
 
+    public void WeaponUpdateReload(float weapon_reload_buf)
+    {
+        weapon.reload = (weapon.reload * weapon_reload_buf);
+    }
+
     public void WeaponRollbackDegree(float ammo_degree_buf)
     {
         weapon.current_degree = (int)(weapon.current_degree / ammo_degree_buf);
@@ -93,5 +98,30 @@ public class GunBase : MonoBehaviour
     public void WeaponRollbackAmmoSize(float ammo_size_buf)
     {
         weapon.current_ammo_size = (int)(weapon.current_ammo_size / ammo_size_buf);
+    }
+
+    public void WeaponRollbackReload(float weapon_reload_buf)
+    {
+        weapon.reload = (weapon.reload / weapon_reload_buf);
+    }
+
+    public void WeaponUpdateDelay(float weapon_delay_buf)
+    {
+        weapon.delay = (weapon.delay * weapon_delay_buf);
+    }
+
+    public void WeaponRollbackDelay(float weapon_delay_buf)
+    {
+        weapon.delay = weapon.delay / weapon_delay_buf;
+    }
+
+    public void WeaponUpdateAmmoCount(float ammo_count_buf)
+    {
+        weapon.ammo_count = (int)(weapon.ammo_count * ammo_count_buf);
+    }
+
+    public void WeaponRollbackAmmoCount(float ammo_count_buf)
+    {
+        weapon.ammo_count = (int)(weapon.ammo_count / ammo_count_buf);
     }
 }

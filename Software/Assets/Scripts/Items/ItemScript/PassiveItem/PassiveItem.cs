@@ -6,7 +6,7 @@ public class PassiveItem : MonoBehaviour
 {
     virtual public void OnEquip()
     {
-
+        
     }
     virtual public void UnEquip()
     {

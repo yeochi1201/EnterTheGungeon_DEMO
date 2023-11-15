@@ -8,13 +8,14 @@ using UnityEngine;
 public class DropTable : MonoBehaviour
 {
     public GameObject prefab;
-    public Transform parent;
+    public GameObject chest;
     [SerializeField]
     DTAsset droptable;
 
     public void Drop()
     {
-        //load prefab and create gameobejct
+        string item = ChoiceItem();
+        Instantiate<GameObject>(prefab, null, chest.transform);
     }
 
     public string ChoiceItem() //choice item randomly in droptable

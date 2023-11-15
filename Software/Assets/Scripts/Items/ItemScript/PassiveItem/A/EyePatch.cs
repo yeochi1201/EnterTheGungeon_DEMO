@@ -10,10 +10,10 @@ public class EyePatch : PassiveItem
         ps.ammo_degree_buf *= 1.35f;
         ps.weapon_dmg_buf *= 2.00f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
-        /*foreach (GameObject weapon in inven.weapons){
+        foreach (GameObject weapon in inven.weapons){
             weapon.GetComponent<GunBase>().WeaponUpdateDamage(1.35f);
             weapon.GetComponent<GunBase>().WeaponUpdateDegree(2.00f);
-        }*/
+        }
     }
 
     public override void UnEquip()
@@ -22,9 +22,9 @@ public class EyePatch : PassiveItem
         ps.ammo_degree_buf /= 0.35f;
         ps.weapon_dmg_buf /= 2.00f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
-        /*foreach (GameObject weapon in inven.weapons){
+        foreach (GameObject weapon in inven.weapons){
             weapon.GetComponent<GunBase>().WeaponRollbackDamage(1.35f);
             weapon.GetComponent<GunBase>().WeaponRollbackDegree(2.00f);
-        }*/
+        }
     }
 }

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Freeze : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject go;
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            if(go.GetComponent<PlayerSpecification>() != null)
+            {
+                go.GetComponent<PlayerSpecification>().speed -= 0.2f;
+            }
+            else if (go.GetComponent<Enemy>()!=null)
+            {
+                go.GetComponent<Enemy>().speed -= 0.2f;
+            }
+        }
     }
 }

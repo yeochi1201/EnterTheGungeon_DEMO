@@ -29,6 +29,9 @@ public class ItemManager : MonoBehaviour
                     gun.WeaponUpdateAmmoSize(ps.ammo_size_buf);
                     gun.WeaponUpdateDegree(ps.ammo_degree_buf);
                     gun.WeaponUpdateDamage(ps.weapon_dmg_buf);
+                    gun.WeaponUpdateReload(ps.weapon_reload_buf);
+                    gun.WeaponUpdateDelay(ps.weapon_delay_buf);
+                    gun.WeaponUpdateAmmoCount(ps.ammo_count_buf);
                 }
             }
         }

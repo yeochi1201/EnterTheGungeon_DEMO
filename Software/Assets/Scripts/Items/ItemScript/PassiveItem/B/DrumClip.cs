@@ -2,25 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MuscleRelaxant : PassiveItem
+public class DrumClip : PassiveItem
 {
     public override void OnEquip()
     {
         PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        ps.ammo_degree_buf /= 1.60f;
+        ps.ammo_count_buf *= 1.5f;
+        
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
-        foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponRollbackDegree(1.60f);
+        foreach (GameObject weapon in inven.weapons)
+        {
+            weapon.GetComponent<GunBase>().WeaponUpdateAmmoCount(1.5f);
         }
     }
 
     public override void UnEquip()
     {
         PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        ps.ammo_degree_buf *= 1.60f;
+        ps.ammo_count_buf /= 1.5f;
+
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
-        foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponUpdateDegree(1.60f);
+        foreach (GameObject weapon in inven.weapons)
+        {
+            weapon.GetComponent<GunBase>().WeaponRollbackAmmoCount(1.5f);
         }
     }
 }
