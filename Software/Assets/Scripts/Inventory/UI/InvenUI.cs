@@ -7,12 +7,15 @@ public class InvenUI : MonoBehaviour
 {
     List<GameObject> weaponList = new List<GameObject>();
     List<GameObject> activeList = new List<GameObject>();
+    List<GameObject> passiveList = new List<GameObject>();
     public GameObject inventory;
     bool activeInventory = false;
+    bool isPaused;
 
     void Start()
     {
         inventory.SetActive(activeInventory);
+        isPaused = false;
     }
 
     void Update()
@@ -20,7 +23,19 @@ public class InvenUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             activeInventory = !activeInventory;
+            if (activeInventory == true)
+            {
+                Time.timeScale = 0;
+                isPaused = true;
+            }
+
+            if (activeInventory == false)
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+            }
             inventory.SetActive(activeInventory);
+
         }
     }
 
@@ -29,10 +44,9 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform weaponFrame = Util.FindChild<Transform>(invenUI, "WeaponFrame", true);
-        // Transform itemSort = Util.FindChild<Transform>(weaponFrame, "ItemSort", true);
-        GameObject go = Managers.Resource.Instantiate("itemButton", weaponFrame);
-        weaponList.Add(go);
-        Image image = go.GetComponent<Image>();
+        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", weaponFrame);
+        weaponList.Add(itemButton);
+        Image image = itemButton.GetComponent<Image>();
 
         Sprite weaponSprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
         image.sprite = weaponSprite;
@@ -48,10 +62,9 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform acitveFrame = Util.FindChild<Transform>(invenUI, "ActiveFrame", true);
-        // Transform itemSort = Util.FindChild<Transform>(acitveFrame, "ItemSort", true);
-        GameObject go = Managers.Resource.Instantiate("itemButton", acitveFrame);
-        activeList.Add(go);
-        Image image = go.GetComponent<Image>();
+        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", acitveFrame);
+        activeList.Add(itemButton);
+        Image image = itemButton.GetComponent<Image>();
 
         Sprite activeSprite = newActive.GetComponent<SpriteRenderer>().sprite;
         image.sprite = activeSprite;
@@ -61,5 +74,17 @@ public class InvenUI : MonoBehaviour
     {
         Managers.Resource.Destroy(activeList[index]);
         activeList.RemoveAt(index);
+    }
+
+    public void AddPassiveButton(GameObject newPassive)
+    {
+        GameObject invenUI = GameObject.Find("InvenUI");
+        Transform passiveFrame = Util.FindChild<Transform>(invenUI, "PassiveFrame", true);
+        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", passiveFrame);
+        passiveList.Add(itemButton);
+        Image image = itemButton.GetComponent<Image>();
+
+        Sprite passiveSprite = newPassive.GetComponent<SpriteRenderer>().sprite;
+        image.sprite = passiveSprite;
     }
 }

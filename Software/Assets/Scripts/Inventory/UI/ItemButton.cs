@@ -6,36 +6,25 @@ using UnityEngine.UI;
 
 public class ItemButton : UIPopup
 {
-    enum Buttons
+    public Button itemButton;
+
+    private void Start()
     {
-        ImageButton
-    }
-    enum Images
-    {
-        ItemIcon
+        itemButton.onClick.AddListener(OnButtonClicked);
     }
     public override void Init()
     {
         base.Init();
 
-        // Bind<Button>(typeof(Buttons));
-        // Bind<Image>(typeof(Images));
-
-        // GetButton((int)Buttons.PointButton).gameObject.BindEvent(OnButtonClicked);
     }
 
-    public void CreateButton()
+    public void OnButtonClicked()
     {
-        Transform itemBtn = Managers.Resource.Instantiate("itemButton").transform;
+        Debug.Log("Button Click!!!");
         GameObject invenUI = GameObject.Find("InvenUI");
-        GameObject weaponFrame = Util.FindChild(invenUI, "WeaponFrame", true);
-        Transform itemSort = Util.FindChild<Transform>(weaponFrame, "ItemSort", true);
-        itemBtn.SetParent(itemSort);
-    }
+        Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
 
-
-    public void OnButtonClicked(PointerEventData data)
-    {
+        itemImage.sprite = itemButton.image.sprite;
 
     }
 }

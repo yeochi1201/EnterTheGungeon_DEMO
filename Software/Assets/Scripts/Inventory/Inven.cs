@@ -6,6 +6,7 @@ public class Inven : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
     public List<GameObject> actives = new List<GameObject>();
+    public List<GameObject> passives = new List<GameObject>();
     GameObject basicGun;
     // int blank = 2;
     int weaponIndex = 0;
@@ -19,7 +20,7 @@ public class Inven : MonoBehaviour
 
     void Update()
     {
-        float wheelMove = Input.GetAxis("Mouse ScrollWheel");
+        /*float wheelMove = Input.GetAxis("Mouse ScrollWheel");
         if (wheelMove != 0)
         {
             SwapWeapon(wheelMove);
@@ -27,10 +28,10 @@ public class Inven : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             SwapActive();
-        }
+        }*/
     }
 
-    void SwapWeapon(float wheelMove)
+    public void SwapWeapon(float wheelMove)
     {
         Debug.Log($"{wheelMove}");
         if (wheelMove < 0)
@@ -81,7 +82,7 @@ public class Inven : MonoBehaviour
         }
     }
 
-    void SwapActive()
+    public void SwapActive()
     {
         activeIndex++;
         if (activeIndex == actives.Count)
@@ -118,6 +119,12 @@ public class Inven : MonoBehaviour
         {
             activeIndex = 0;
         }
+    }
+
+    public void GetPassive(GameObject newPassive)
+    {
+        passives.Add(newPassive);
+        Managers.InvenUI.AddPassiveButton(newPassive);
     }
 
     void IncreaseGold()
