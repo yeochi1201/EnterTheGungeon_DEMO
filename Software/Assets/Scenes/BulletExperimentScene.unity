@@ -581,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1602736376
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -953,11 +953,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
-  velocityProjectilePoolCount: 100
+  velocityProjectilePoolCount: 0
   helixProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
   helixProjectilePoolCount: 0
   homingProjectilePrefab: {fileID: 6357783160714478742, guid: c00ae42488ae123418ad397f943fa75a, type: 3}
-  homingProjectilePoolCount: 0
+  homingProjectilePoolCount: 100
   colorProjectilePrefab: {fileID: 1119192269915296378, guid: a30e0e9e9250f27468f4b690fd5d39ea, type: 3}
   colorProjectilePoolCount: 0
   trailProjectilePrefab: {fileID: 122556038963494842, guid: ae578643cd3b8de43a27f2b930099f20, type: 3}
@@ -965,7 +965,7 @@ MonoBehaviour:
   rayProjectilePrefab: {fileID: 5199027930908112914, guid: c23e67005f6812c45b4cbefb5200849b, type: 3}
   rayProjectilePoolCount: 0
   splitProjectilePrefab: {fileID: 2054312101317733949, guid: 1f61d8fb4a3a1234dac7d35e287fa2be, type: 3}
-  splitProjectilePoolCount: 100
+  splitProjectilePoolCount: 0
 --- !u!1 &1937837253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,3 +1330,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a782d8817b5c9004e94ba9d12abde6d2, type: 3}
+--- !u!1001 &9036257365291807188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2850564498996471087, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_Name
+      value: SmokeParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7019220528695100412, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7f88831b932b7b4fb318a8c8c90b048, type: 3}

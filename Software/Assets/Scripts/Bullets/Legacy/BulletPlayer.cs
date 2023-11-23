@@ -81,8 +81,8 @@ public class BulletPlayer : MonoBehaviour
         _projectile.gameObject.SetActive(true);
         */
 
-        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.SPLIT);
-        _projectile.GetComponent<SplitProjectile>().SetProjectileProperty("BigShotgun", 0, 10,40, 0, 0, 0, muzzleDirection);
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
+        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10,40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
         /*
