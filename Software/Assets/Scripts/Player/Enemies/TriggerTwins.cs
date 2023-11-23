@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletKin : Enemy
+public class TriggerTwins : Enemy
 {
     [Header("Enemy Property")]
     Rigidbody2D rb;
@@ -122,6 +122,44 @@ public class BulletKin : Enemy
         enemyAnim.SetBool("isShooting", true);
         enemyAnim.SetBool("isWalking", false);
 
+        attackTimer = 0f;
+
+        StartCoroutine(Pattern1());
+
+        yield return null;
+    }
+
+    IEnumerator Pattern1(){
+        coll.enabled = false;
+
+        while (rb.transform.position == playertrans.position)
+        {
+            Vector2 playerDir = playertrans.position - rb.transform.position;
+            Vector2 nextVec = playerDir.normalized * speed * 3f;
+            rb.MovePosition(rb.position + nextVec);
+        }
+        rb.velocity = Vector2.zero;
+
+        yield return new WaitForSeconds(1);
+
+        coll.enabled = true;
+
+        attackTimer = 0f;
+        isCoroutine = false;
+        enemyAnim.SetBool("isShooting", false);
+
+        yield return null;
+    }
+
+    IEnumerator Pattern2(){
+        Debug.Log("Attacking");
+        isCoroutine = true;
+
+        rb.velocity = Vector2.zero;
+
+        enemyAnim.SetBool("isShooting", true);
+        enemyAnim.SetBool("isWalking", false);
+
         Shooting();
         attackTimer = 0f;
 
@@ -135,6 +173,10 @@ public class BulletKin : Enemy
         isCoroutine = false;
         enemyAnim.SetBool("isShooting", false);
 
+        yield return null;
+    }
+
+    IEnumerator Pattern3(){
         yield return null;
     }
 

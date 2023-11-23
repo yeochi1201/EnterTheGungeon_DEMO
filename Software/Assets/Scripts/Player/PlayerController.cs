@@ -3,20 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : PlayerSpecification
 {
-    [Header("Player Move Property")]
-    [SerializeField] float playerSpeed = 5;
     Rigidbody2D playerRigidbody;
     SpriteRenderer spritecompo;
-
-    [Header("Gun Property")]
     //[SerializeField] GameObject gunPrefab;
-    [SerializeField] GameObject muzzle;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject gunPivot;
-    [SerializeField] Vector2 muzzleDirection;
-    Vector2 mouse;
+    Vector3 mouse;
+    Animator playerAnim;
+    Collider2D coll;
 
 
     [Header("Slide Property")]
@@ -27,24 +21,19 @@ public class PlayerController : MonoBehaviour
     float slideTimer = 0f;
     bool isSlide = false;
 
-    [Header("Player Ability Property")]
-    [SerializeField] float playerHealth = 3;
-    [SerializeField] float damage = 1;
-    Animator playerAnim;
-
-    //[Header("Weapon Property")]
-
 
     private void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
+        coll = GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
     {
-        if(playerHealth<=0) Die();
+        if(currentHP<=0) Die();
+        
         FollowMouse();
         PlayerMove();
 
@@ -65,8 +54,8 @@ public class PlayerController : MonoBehaviour
         Vector2 playerVelocity = new Vector2(inputX, inputY);
         //playerVelocity.Normalize();
 
-        // ÇÃ·¹ÀÌ¾î°¡ ¿òÁ÷ÀÌ´Â ÄÚµå
-        playerRigidbody.velocity = playerVelocity * playerSpeed;
+        // Player Move
+        playerRigidbody.velocity = playerVelocity * speed;
 
         if (Input.GetKeyDown(KeyCode.Space) && !isSlide)
         {
@@ -82,7 +71,9 @@ public class PlayerController : MonoBehaviour
     void FollowMouse() //CrossHair
     {
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        float angle = Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg;
+        Vector3 calc = mouse - this.transform.position;
+
+        float angle = Mathf.Atan2(calc.y, calc.x) * Mathf.Rad2Deg;
         gunPivot.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
@@ -103,6 +94,7 @@ public class PlayerController : MonoBehaviour
         isSlide = true;
         playerAnim.SetBool("isRolling", true);
         slideTimer = 0f;
+        coll.enabled = false;
 
         while (slideTimer < slideDuration)
         {
@@ -115,6 +107,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = Vector2.zero;
         isSlide = false;
         playerAnim.SetBool("isRolling", false);
+        coll.enabled = true;
 
         yield return new WaitForSeconds(slideCooldown);
     }
@@ -123,6 +116,6 @@ public class PlayerController : MonoBehaviour
     {
         playerAnim.SetTrigger("Die");
 
-        // Scene Gameover·Î ÀÌµ¿
+        // Scene Gameoverï¿½ï¿½ ï¿½Ìµï¿½
     }
 }
