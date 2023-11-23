@@ -7,7 +7,7 @@ public class YellowChamber : PassiveItem
     public override void OnEquip()
     {
         PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        ps.maxHP += 2.0f;
+        ps.maxHP += 2;
         ps.weapon_delay_buf *= 1.15f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)

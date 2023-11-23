@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class PlayerSpecification : MonoBehaviour
 {
-    public float maxHP = 5.0f;
-    public float currentHP = 5.0f;
+    public float maxHP = 6.0f;
+    public float currentHP = 6.0f;
     public float speed = 5.0f;
     public float dmg = 0;
     public int armor = 0;
     public int coolness = 0;
     public int key = 0;
     public int gold = 0;
+    public int currentBlank = 2;
     public int cursed = 0;
 
     public bool superArmor = false;
