@@ -6,6 +6,7 @@ using UnityEngine;
 public class ItemAsset : ScriptableObject
 {
     [SerializeField]
+    public Sprite sprite;
     public string itemName; //item's name
     public bool passive;
     public bool consume;

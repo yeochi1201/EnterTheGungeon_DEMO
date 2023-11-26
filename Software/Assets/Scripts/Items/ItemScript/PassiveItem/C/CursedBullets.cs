@@ -20,6 +20,8 @@ public class CursedBullets : PassiveItem
                 weapon.GetComponent<GunBase>().WeaponUpdateDamage(1.1f);
             }
         }
+        ItemManager.itemManager.Cursed_Changed(1);
+        ItemManager.itemManager.SetExist(0, true);
     }
 
     public override void UnEquip()
@@ -38,5 +40,7 @@ public class CursedBullets : PassiveItem
                 weapon.GetComponent<GunBase>().WeaponRollbackDamage(1.1f);
             }
         }
+        ItemManager.itemManager.Cursed_Changed(-1);
+        ItemManager.itemManager.SetExist(0, false);
     }
 }

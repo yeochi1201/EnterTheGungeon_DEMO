@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: AlienSidearm
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: AlienSidearm
+  passive: 0
+  consume: 0
   ammo_size: 8
   ammo_count: 120
   reload: 1.8
@@ -22,6 +25,7 @@ MonoBehaviour:
   delay: 0.6
   range: 60
   ammo_degree: 0
-  current_ammo: 8
+  current_ammo_size: 8
   current_ammo_count: 112
+  current_degree: 0
   type: 2

@@ -1,39 +1,76 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public static ItemManager itemManager;
+    private Inven inven = GameObject.Find("Player").GetComponent<Inven>();
     private PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-    private void OnTriggerStay2D(Collider2D collision)
+    private bool[] CursedItems = new bool[3];
+    private void Awake()
     {
-        if (collision != null)
+        itemManager = this;
+    }
+
+    public void Cursed_Changed(int cursed)
+    {
+        if (cursed > 0)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (CursedItems[0])
             {
-                //inventory¿¡ ÀåÂø
-                if (collision.GetComponentInParent<PassiveAsset>() != null)
+                ps.coolness += cursed * 2;
+            }
+            if (CursedItems[1])
+            {
+                for (int i = 0; i < cursed; i++)
                 {
-                    collision.GetComponentInParent<PassiveItem>().OnEquip();
-                }
-                else if (collision.GetComponentInParent<ActiveAsset>() != null)
-                {
-                    if(collision.GetComponentInParent<ActiveAsset>().passive != false)
+                    ps.weapon_dmg_buf *= 1.1f;
+                    foreach (GameObject weapon in inven.weapons)
                     {
-                        collision.GetComponentInParent<ActiveItem>().OnEquip();
+                        for (int j = 0; j < ps.cursed; j++)
+                        {
+                            weapon.GetComponent<GunBase>().WeaponUpdateDamage(1.1f);
+                        }
                     }
                 }
-                else if (collision.GetComponentInParent<WeaponAsset>() != null)
-                {
-                    GunBase gun = collision.GetComponentInParent <GunBase>();
-                    gun.WeaponUpdateAmmoSize(ps.ammo_size_buf);
-                    gun.WeaponUpdateDegree(ps.ammo_degree_buf);
-                    gun.WeaponUpdateDamage(ps.weapon_dmg_buf);
-                    gun.WeaponUpdateReload(ps.weapon_reload_buf);
-                    gun.WeaponUpdateDelay(ps.weapon_delay_buf);
-                    gun.WeaponUpdateAmmoCount(ps.ammo_count_buf);
-                }
+            }
+            if (CursedItems[2])
+            {
+                //
             }
         }
+        else
+        {
+            if (CursedItems[0])
+            {
+                ps.coolness -= cursed * 2;
+            }
+            if (CursedItems[1])
+            {
+                for (int i = 0; i < cursed; i++)
+                {
+                    ps.weapon_dmg_buf /= 1.1f;
+                    foreach (GameObject weapon in inven.weapons)
+                    {
+                        for (int j = 0; j < ps.cursed; j++)
+                        {
+                            weapon.GetComponent<GunBase>().WeaponRollbackDamage(1.1f);
+                        }
+                    }
+                }
+            }
+            if (CursedItems[2])
+            {
+                //
+            }
+        }
+        
+    }
+
+    public void SetExist(int i, bool is_exist)
+    {
+        CursedItems[i] = is_exist;
     }
 }
