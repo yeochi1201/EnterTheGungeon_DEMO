@@ -27,6 +27,8 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField, Range(0.0f, 1.0f)]
     private float _revisitPercentage = 0.3f;    //재방문 확률
 
+    [SerializeField] int rewardRoomCount = 1; //상자 스폰 방 숫자
+
     [Header("Assets")]
     [SerializeField] GameObject _roomPrefab;
     [SerializeField] GameObject _backfillPrefab;
@@ -42,6 +44,7 @@ public class DungeonGenerator : MonoBehaviour
     private void Start()
     {
         GenerateDungeon();
+        RoomSetting();
     }
 
     private void GenerateDungeon()
@@ -186,12 +189,14 @@ public class DungeonGenerator : MonoBehaviour
 
     private void GenerateRooms()
     {
+
         foreach (RoomNode roomNode in _leafNodes)
         {
             if (roomNode.RoomName == "0 Node")
                 Instantiate(_playerPrefab, roomNode.SpaceCenter, Quaternion.identity);
-            if (roomNode.RoomName == (_leafNodes.Count-1)+" Node")
+            else if (roomNode.RoomName == (_leafNodes.Count-1)+" Node")
                 Instantiate(_bossPrefab, roomNode.SpaceCenter, Quaternion.identity);
+
             GameObject instance = Instantiate(_roomPrefab);
             instance.transform.localScale = Vector3.one;
 
@@ -213,5 +218,20 @@ public class DungeonGenerator : MonoBehaviour
         }
 
         TraverseNode(node.Right);
+    }
+
+    private void RoomSetting()
+    {
+        //List<int> randomIndex= new List<int>();
+        //int randint;
+        //for (int i = 0; i < rewardRoomCount + 1; i++) 
+        //{
+        //    do
+        //    {
+        //        randint = UnityEngine.Random.Range(1, _leafNodes.Count);
+        //    } while (!randomIndex.Contains(randint));
+        //    randomIndex.Add(randint);
+        //    Debug.Log(randint);
+        //}
     }
 }
