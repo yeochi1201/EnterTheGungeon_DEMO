@@ -44,3 +44,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 608860821
+    locked: 0
+  - name: Wall
+    uniqueID: 2681414713
+    locked: 0
+  - name: MiddleBackground
+    uniqueID: 1425727959
+    locked: 0
+  - name: HighBackground
+    uniqueID: 3583078633
+    locked: 0
+  - name: Border
+    uniqueID: 746730517
+    locked: 0
+  - name: Floor
+    uniqueID: 669444071
+    locked: 0
+  - name: Forefround
+    uniqueID: 834964565
+    locked: 0
+  - name: Player
+    uniqueID: 2453823761
+    locked: 0
