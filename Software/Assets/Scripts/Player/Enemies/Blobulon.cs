@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TestTools;
 
-public class BulletKin : Enemy
+public class Blobulon : Enemy
 {
     [Header("Enemy Property")]
     Rigidbody2D rb;
@@ -10,20 +12,13 @@ public class BulletKin : Enemy
     Animator enemyAnim;
     SpriteRenderer spritecompo;
 
-    float attackTimer = 0f;
-    bool isCoroutine = false;
     bool isAlive = true;
+    public Transform spawn1;
+    public Transform spawn2;
+    public GameObject spawner;
+    public bool canDivide;
 
     Transform playertrans;
-
-    [Header("Gun Property")]
-    //[SerializeField] GameObject gunPrefab;
-    [SerializeField] GameObject muzzle;
-    [SerializeField] GameObject bulletPrefab;
-    [SerializeField] GameObject gunPivot;
-    [SerializeField] Vector2 muzzleDirection;
-    Vector2 target;
-    float angle;
 
     private void Awake()
     {
@@ -34,12 +29,11 @@ public class BulletKin : Enemy
 
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-    // ì •ì˜í•  ìƒíƒœ ì—´ê±°í˜•(Enum)
+    // Á¤ÀÇÇÒ »óÅÂ ¿­°ÅÇü(Enum)
     public enum EnemyState
     {
         Idle,
         Chasing,
-        Attacking,
         Dead
     }
 
@@ -47,10 +41,8 @@ public class BulletKin : Enemy
 
     private void Update()
     {
-        if (!isCoroutine && isAlive)
+        if (isAlive)
         {
-            attackTimer += Time.deltaTime;
-
             if (health <= 0)
                 Die();
             distance = Vector3.Distance(playertrans.position, this.transform.position);
@@ -58,13 +50,6 @@ public class BulletKin : Enemy
             if (rb.transform.position.x < playertrans.position.x)
                 spritecompo.flipX = true;
             else spritecompo.flipX = false;
-
-            FollowPlayer();
-            if (currentState != EnemyState.Attacking && distance <= moveRange) StartChasing();
-            else ChangeState(EnemyState.Idle);
-
-            if (currentState == EnemyState.Chasing && attackTimer >= attackCooldown)
-                StartAttacking();
 
             switch (currentState)
             {
@@ -76,17 +61,30 @@ public class BulletKin : Enemy
                     UpdateChasingState();
                     break;
 
-                case EnemyState.Attacking:
-                    StartCoroutine(UpdateAttackingState());
-                    break;
-
                 case EnemyState.Dead:
                     enemyAnim.SetTrigger("Die");
+
                     coll.enabled = false;
                     isAlive = false;
+                    if (canDivide)
+                    { 
+                        SpawnDef(); 
+                    }
+
                     break;
             }
         }
+    }
+
+    void SpawnDef()
+    {
+        GameObject spawner1 = Instantiate(spawner);
+        GameObject spawner2 = Instantiate(spawner);
+
+        spawner1.transform.position = spawn1.position;
+        spawner2.transform.position = spawn2.position;
+
+        Destroy(this, 2f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,50 +98,22 @@ public class BulletKin : Enemy
 
     private void UpdateIdleState()
     {
-        Debug.Log("Idle");
-
         enemyAnim.SetBool("isWalking", false);
 
-        //idle ìƒíƒœì—ì„œëŠ” ì •ì§€
+        //idle »óÅÂ¿¡¼­´Â Á¤Áö
         rb.velocity = Vector2.zero;
+
+        if (distance <= moveRange) StartChasing();
     }
 
     private void UpdateChasingState()
     {
-        Debug.Log("Walking");
-
         enemyAnim.SetBool("isWalking", true);
 
         Vector2 playerDir = playertrans.position - rb.transform.position;
         Vector2 nextVec = playerDir.normalized * speed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + nextVec);
         rb.velocity = Vector2.zero;
-    }
-
-    IEnumerator UpdateAttackingState()
-    {
-        Debug.Log("Attacking");
-        isCoroutine = true;
-
-        rb.velocity = Vector2.zero;
-
-        enemyAnim.SetBool("isShooting", true);
-        enemyAnim.SetBool("isWalking", false);
-
-        Shooting();
-        attackTimer = 0f;
-
-        while (attackTimer < attackCooldown)
-        {
-            attackTimer += Time.deltaTime;
-            yield return null;
-        }
-
-        attackTimer = 0f;
-        isCoroutine = false;
-        enemyAnim.SetBool("isShooting", false);
-
-        yield return null;
     }
 
     public void ChangeState(EnemyState newState)
@@ -156,34 +126,8 @@ public class BulletKin : Enemy
         ChangeState(EnemyState.Chasing);
     }
 
-    public void StartAttacking()
-    {
-        ChangeState(EnemyState.Attacking);
-    }
-
     public void Die()
     {
         ChangeState(EnemyState.Dead);
-    }
-
-    void FollowPlayer() //ì¡°ì¤€
-    {
-        // ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜ì—ì„œ í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜ë¥¼ í–¥í•˜ëŠ” ë²¡í„°ë¥¼ ê³„ì‚°
-        Vector3 directionToPlayer = playertrans.position - gunPivot.transform.position;
-
-        float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
-        gunPivot.transform.rotation = Quaternion.AngleAxis(angleToPlayer, Vector3.forward);
-    }
-
-    void Shooting()
-    {
-        muzzleDirection = muzzle.transform.right;
-
-        /*
-        GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
-        _bullet.transform.position = muzzle.transform.position;
-        _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
-        _bullet.SetActive(true);
-        */
     }
 }

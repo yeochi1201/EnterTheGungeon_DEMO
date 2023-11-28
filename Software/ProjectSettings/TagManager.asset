@@ -10,7 +10,11 @@ TagManager:
   - Weapon
   - Passive
   - Active
+<<<<<<< Updated upstream
   - Floor
+=======
+  - PlayerBullet
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
