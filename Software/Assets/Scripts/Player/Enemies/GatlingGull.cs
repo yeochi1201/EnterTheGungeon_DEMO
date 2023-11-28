@@ -13,7 +13,7 @@ public class GatlingGull : Enemy
     float attackTimer = 0f;
     bool isCoroutine = false;
     bool isAlive = true;
-
+    
     Transform playertrans;
 
     [Header("Gun Property")]
@@ -124,56 +124,86 @@ public class GatlingGull : Enemy
 
         attackTimer = 0f;
 
-        StartCoroutine(Pattern1());
+        int randAction = Random.Range(0, 3);
+
+        switch (randAction)
+        {
+            case 0:
+                StartCoroutine(Pattern1());
+                break;
+            case 1:
+                StartCoroutine(Pattern2());
+                break;
+            case 2:
+                StartCoroutine(Pattern2());
+                //StartCoroutine(Pattern3());
+                break;
+        }
 
         yield return null;
     }
 
     IEnumerator Pattern1(){
-        coll.enabled = false;
-        enemyAnim.SetBool("isWalking", false);
 
-        while (rb.transform.position == playertrans.position)
+        Debug.Log("Pattern1");
+        coll.enabled = false;
+        enemyAnim.SetBool("isShooting", false);
+        enemyAnim.SetBool("pattern1", true);
+
+        attackTimer = 0f;
+        yield return new WaitForSeconds(1f);
+
+        while (attackTimer < attackCooldown)
         {
             Vector2 playerDir = playertrans.position - rb.transform.position;
-            Vector2 nextVec = playerDir.normalized * speed * 3f;
+            Vector2 nextVec = playerDir * speed * Time.deltaTime * 3f;
             rb.MovePosition(rb.position + nextVec);
+
+            attackTimer += Time.deltaTime;
+
+            Debug.Log(attackTimer);
+
+            yield return new WaitForSeconds(0.01f);
         }
         rb.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         coll.enabled = true;
 
         attackTimer = 0f;
         isCoroutine = false;
-        enemyAnim.SetBool("isShooting", false);
+        enemyAnim.SetBool("pattern1", false);
 
         yield return null;
     }
 
     IEnumerator Pattern2(){
-        Debug.Log("Attacking");
+
+        Debug.Log("Pattern2");
         isCoroutine = true;
 
         rb.velocity = Vector2.zero;
 
         enemyAnim.SetBool("isShooting", true);
 
-        Shooting();
         attackTimer = 0f;
+        yield return new WaitForSeconds(1f);
 
         while (attackTimer < attackCooldown)
         {
-            attackTimer += Time.deltaTime;
-
             Vector2 playerDir = playertrans.position - rb.transform.position;
-            Vector2 nextVec = playerDir.normalized * speed;
+            Vector2 nextVec = playerDir * speed * Time.deltaTime * 0.3f;
             rb.MovePosition(rb.position + nextVec);
 
-            yield return null;
-        }
+            attackTimer += Time.deltaTime;
+            Shooting();
 
+            yield return new WaitForSeconds(0.01f);
+        }
+        rb.velocity = Vector2.zero;
+
+        yield return new WaitForSeconds(0.5f);
         attackTimer = 0f;
         isCoroutine = false;
         enemyAnim.SetBool("isShooting", false);

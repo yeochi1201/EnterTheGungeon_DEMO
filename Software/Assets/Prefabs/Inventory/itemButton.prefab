@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3307875904444598177}
   - component: {fileID: 5774529751240031883}
   m_Layer: 5
-  m_Name: itemButton
+  m_Name: ItemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33739f7a4a30b349a34b74096935e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemButton: {fileID: 3307875904444598177}
