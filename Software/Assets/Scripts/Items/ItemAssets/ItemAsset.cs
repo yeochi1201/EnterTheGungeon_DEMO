@@ -8,6 +8,7 @@ public class ItemAsset : ScriptableObject
     [SerializeField]
     public Sprite sprite;
     public string itemName; //item's name
+    public string description;
     public enum Rank //item rank
     {
         D,

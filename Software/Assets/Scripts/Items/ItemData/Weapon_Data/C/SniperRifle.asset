@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: SniperRifle
+  description: 
   rank: 1
   ammo_size: 10
   ammo_count: 80
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 70
   current_degree: 1
   type: 0
+  proejectile: 4

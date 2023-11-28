@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: MakeshiftCannon
+  description: 
   rank: 4
   ammo_size: 1
   ammo_count: 1
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 0
   current_degree: 6
   type: 2
+  proejectile: 6

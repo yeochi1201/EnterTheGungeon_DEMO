@@ -16,10 +16,12 @@ public class PassiveItem : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         Inven inven = collision.GetComponentInParent<Inven>();
-        if(Input.GetKeyDown("E") && collision.CompareTag("Player"))
+        if(Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
         {
             collision.GetComponentInParent<PassiveItem>().OnEquip();
             inven.GetPassive(this.gameObject);
         }
+        this.gameObject.SetActive(false);
+        this.gameObject.transform.SetParent(collision.gameObject.transform);
     }
 }
