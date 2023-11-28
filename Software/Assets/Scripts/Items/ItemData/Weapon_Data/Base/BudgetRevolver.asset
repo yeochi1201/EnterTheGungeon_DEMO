@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: BudgetRevolver
-  passive: 0
-  consume: 0
+  description: 
+  rank: 0
   ammo_size: 5
   ammo_count: -1
   reload: 0.9
@@ -26,6 +26,7 @@ MonoBehaviour:
   range: 18
   ammo_degree: 10
   current_ammo_size: 5
-  current_ammo_count: -1
+  current_ammo_count: -6
   current_degree: 10
   type: 0
+  proejectile: 0

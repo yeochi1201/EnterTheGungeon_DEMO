@@ -32,6 +32,19 @@ public class WeaponAsset : ItemAsset
     }
     public weapontype type;
 
+    public enum projectiletype
+    {
+        VELOCITY,
+        HELIX,
+        HOMING,
+        COLOR,
+        TRAIL,
+        RAY,
+        SPLIT,
+        MAX_SIZE
+    }
+    public projectiletype proejectile;
+
     private void Awake()
     {
         current_ammo_size = ammo_size;

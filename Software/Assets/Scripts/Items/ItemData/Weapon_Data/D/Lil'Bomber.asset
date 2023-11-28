@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Lil'Bomber
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Lil'Bomber
+  description: 
+  rank: 0
   ammo_size: 3
   ammo_count: 60
   reload: 2
@@ -22,6 +25,8 @@ MonoBehaviour:
   delay: 1
   range: 0
   ammo_degree: 6
-  current_ammo: 3
+  current_ammo_size: 3
   current_ammo_count: 57
+  current_degree: 6
   type: 2
+  proejectile: 6

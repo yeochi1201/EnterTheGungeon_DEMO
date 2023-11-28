@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: HighKaliber
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 4ed77ae9aba52404babb3d0fcea0ebe9, type: 3}
   itemName: HighKaliber
+  description: 
   rank: 3
   ammo_size: 66
   ammo_count: 666
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 600
   current_degree: 0
   type: 0
+  proejectile: 0

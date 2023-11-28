@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: BigShotgun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ea8f8311e37622d4b8b9d7e18770c3f4, type: 3}
   itemName: BigShotgun
+  description: 
   rank: 3
   ammo_size: 4
   ammo_count: 70
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 66
   current_degree: 0
   type: 0
+  proejectile: 0

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: PulseCannon
+  description: 
   rank: 1
   ammo_size: 8
   ammo_count: 120
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 112
   current_degree: 0
   type: 0
+  proejectile: 5

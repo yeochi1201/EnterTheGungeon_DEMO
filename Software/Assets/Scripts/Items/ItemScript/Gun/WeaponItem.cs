@@ -7,13 +7,13 @@ public class WeaponItem : MonoBehaviour
     [SerializeField]
 
     public WeaponAsset weapon;
-    
+    private bool is_reload;
+    private bool is_delay;
     public Bullet ammo;
-    //총알 발사
     
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if(Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             Inven inven = collision.GetComponentInParent<Inven>();
             if (inven.weapons.Count < 6 )
@@ -26,6 +26,9 @@ public class WeaponItem : MonoBehaviour
                 WeaponUpdateDelay(ps.weapon_delay_buf);
                 WeaponUpdateReload(ps.weapon_reload_buf);
                 inven.GetWeapon(this.gameObject);
+
+                this.gameObject.SetActive(false);
+                this.gameObject.transform.SetParent(collision.gameObject.transform);
             }
             
         }
@@ -34,7 +37,17 @@ public class WeaponItem : MonoBehaviour
     {
         //bullet에 정보 넘겨서 bullet pooler에서 발사
     }
-    //재장전
+    public void OnEquip()
+    {
+
+    }
+    public void fire()
+    {
+        if (!is_delay && !is_reload) 
+        {
+
+        }
+    }
     private void Reload()
     {
         if(weapon.current_ammo_count == 0)
@@ -42,6 +55,7 @@ public class WeaponItem : MonoBehaviour
             return;
         }
         float time_start = Time.deltaTime;
+        is_reload = true;
         if(weapon.ammo_count == -1)
         {
             weapon.current_ammo_size = weapon.ammo_size;
@@ -64,29 +78,25 @@ public class WeaponItem : MonoBehaviour
         {
             if(Time.deltaTime - time_start >= weapon.reload)
             {
+                is_reload = false;
                 break;
             }
         }
         return;
     }
-    //총알 발사 딜레이
     private void Delay()
     {
         float time_start = Time.deltaTime;
-        
+        is_delay = true;
         while (true)
         {
             if (Time.deltaTime - time_start >= weapon.delay)
             {
+                is_delay = false;
                 break;
             }
         }
         return;
-    }
-    //Item 획득 시
-    public void Acquire()
-    {
-        //bullet pooler 생성 (크기 : weapon.ammo_size
     }
 
     public void WeaponUpdateDegree(float ammo_degree_buf)

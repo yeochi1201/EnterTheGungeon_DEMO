@@ -15,7 +15,7 @@ public class Chest : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 OnDestroy();
             }

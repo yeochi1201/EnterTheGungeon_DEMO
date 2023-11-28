@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: YariLauncher
+  description: 
   rank: 4
   ammo_size: 20
   ammo_count: 140
@@ -28,3 +29,4 @@ MonoBehaviour:
   current_ammo_count: 120
   current_degree: 45
   type: 1
+  proejectile: 2

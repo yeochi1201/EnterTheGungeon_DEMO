@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: FlareGun
-  passive: 0
-  consume: 0
+  description: 
+  rank: 0
   ammo_size: 1
   ammo_count: 150
   reload: 0.8
@@ -27,5 +27,6 @@ MonoBehaviour:
   ammo_degree: 6
   current_ammo_size: 1
   current_ammo_count: 149
-  current_degree: 0
+  current_degree: 6
   type: 0
+  proejectile: 5
