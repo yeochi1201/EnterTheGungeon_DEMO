@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -10,7 +11,6 @@ public class PlayerController : PlayerSpecification
     //[SerializeField] GameObject gunPrefab;
     Vector3 mouse;
     Animator playerAnim;
-    Collider2D coll;
 
 
     [Header("Slide Property")]
@@ -27,20 +27,22 @@ public class PlayerController : PlayerSpecification
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
-        coll = GetComponent<CapsuleCollider2D>();
     }
 
     private void Update()
     {
         if(currentHP<=0) Die();
         
-        FollowMouse();
-        PlayerMove();
-
-        if (Input.GetMouseButtonDown(0))
+        if (currentHP > 0)
         {
-            Shooting();
-        }
+            FollowMouse();
+            PlayerMove();
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shooting();
+            }
+        }  
     }
 
     public void PlayerMove()
@@ -89,12 +91,27 @@ public class PlayerController : PlayerSpecification
         */
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!isSlide)
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
+                currentHP -= getDamage;
+            }
+            else if (collision.gameObject.tag == "EnemyBullet")
+            {
+
+            }
+        }
+    }
+
     IEnumerator Slide()
     {
         isSlide = true;
         playerAnim.SetBool("isRolling", true);
         slideTimer = 0f;
-        coll.enabled = false;
 
         while (slideTimer < slideDuration)
         {
@@ -107,7 +124,6 @@ public class PlayerController : PlayerSpecification
         playerRigidbody.velocity = Vector2.zero;
         isSlide = false;
         playerAnim.SetBool("isRolling", false);
-        coll.enabled = true;
 
         yield return new WaitForSeconds(slideCooldown);
     }

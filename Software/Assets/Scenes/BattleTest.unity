@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 2038748671}
   m_Layer: 0
   m_Name: GatlingGull
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   damage: 2
   distance: 0
   moveRange: 10
-  attackRange: 8
+  attackRange: 15
   attackCooldown: 3
   muzzle: {fileID: 529477923}
   bulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
@@ -680,6 +680,14 @@ PrefabInstance:
     - target: {fileID: 5785628508681024138, guid: 77de30b629422ee4cbbba39543e1a5e4, type: 3}
       propertyPath: m_Name
       value: BulletKin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785628508681024138, guid: 77de30b629422ee4cbbba39543e1a5e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785628508681024138, guid: 77de30b629422ee4cbbba39543e1a5e4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77de30b629422ee4cbbba39543e1a5e4, type: 3}
