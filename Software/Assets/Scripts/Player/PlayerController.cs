@@ -30,7 +30,13 @@ public class PlayerController : PlayerSpecification
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
     }
-
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (obj.CompareTag("Floor"))
+        {
+            obj.transform.GetChild(0).gameObject.GetComponent<Spawner>().SpawmEnemies();
+        }
+    }
     private void Update()
     {
         if (currentHP <= 0)
@@ -95,11 +101,12 @@ public class PlayerController : PlayerSpecification
         _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
         _bullet.SetActive(true);
         */
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isSlide && !damagedCheck)
+        if (!isSlide && !damagedCheck && currentHP > 0)
         {
             if (collision.gameObject.tag == "Enemy")
             {
