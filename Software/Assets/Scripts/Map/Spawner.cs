@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    
+    [SerializeField]
+    GameObject[] enemies;
+    [SerializeField]
+
+    public void SpawmEnemies()
+    {
+       
+    }
 }
