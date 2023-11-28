@@ -6,12 +6,14 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : PlayerSpecification
 {
+    [Header("Player Contorol Property")]
     Rigidbody2D playerRigidbody;
     SpriteRenderer spritecompo;
-    //[SerializeField] GameObject gunPrefab;
-    Vector3 mouse;
     Animator playerAnim;
-
+    float damagedCool = 2f;
+    float damagedTimer = 0f;
+    bool damagedCheck = false;
+    Vector3 mouse;
 
     [Header("Slide Property")]
     Vector2 slideDirection;
@@ -31,7 +33,11 @@ public class PlayerController : PlayerSpecification
 
     private void Update()
     {
-        if(currentHP<=0) Die();
+        if (currentHP <= 0)
+        {
+            playerRigidbody.velocity = Vector2.zero;
+            Die();
+        }
         
         if (currentHP > 0)
         {
@@ -93,18 +99,40 @@ public class PlayerController : PlayerSpecification
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isSlide)
+        if (!isSlide && !damagedCheck)
         {
             if (collision.gameObject.tag == "Enemy")
             {
                 float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
                 currentHP -= getDamage;
+
+                damagedCheck = true;
+                StartCoroutine(DamageEffect());
             }
             else if (collision.gameObject.tag == "EnemyBullet")
             {
 
             }
         }
+    }
+
+    IEnumerator DamageEffect()
+    {
+        damagedTimer = 0f;
+        while (damagedTimer < damagedCool)
+        {
+            damagedTimer += Time.deltaTime;
+
+            spritecompo.color = new Color(1, 1, 1, 0.5f);
+            yield return null;
+            spritecompo.color = new Color(1, 1, 1, 1);
+            yield return null;
+        }
+
+        damagedCheck = false;
+        spritecompo.color = new Color(1, 1, 1, 1);
+
+        yield return null;
     }
 
     IEnumerator Slide()

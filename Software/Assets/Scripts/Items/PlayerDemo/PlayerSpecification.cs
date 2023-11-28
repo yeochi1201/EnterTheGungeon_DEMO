@@ -33,6 +33,7 @@ public class PlayerSpecification : MonoBehaviour
     public float weapon_delay_buf = 1.0f;
     public float ammo_count_buf = 1.0f;
 
+    //public GameObject gunPrefab;
     public GameObject muzzle;
     public GameObject bulletPrefab;
     public GameObject gunPivot;
