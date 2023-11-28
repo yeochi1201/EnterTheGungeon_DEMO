@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3655761740315518481}
   m_Layer: 0
   m_Name: Unicorn_Horn
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

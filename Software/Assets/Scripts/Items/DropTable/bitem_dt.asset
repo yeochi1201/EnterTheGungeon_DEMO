@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583000c919947a74ca03e89b06bfc15c, type: 3}
+  m_Name: bitem_dt
+  m_EditorClassIdentifier: 
+  droplist:
+  - {fileID: 7709218157565015432, guid: 0f413a9c2e3a7cd498e52db409179c74, type: 3}
+  - {fileID: 4488410033831590271, guid: 79950058260e07043a190717d7c5b932, type: 3}
+  - {fileID: 3920214869556167808, guid: 83c902328ebd01a49a4e86d59cb8e4fd, type: 3}
+  - {fileID: 5532933754476452966, guid: 7a7ad4e93631fd54a930a7e1ea44a0da, type: 3}
+  - {fileID: 6384756664339891182, guid: d23a8b318af931846bdb2373410c1518, type: 3}
+  - {fileID: 1628168739523244451, guid: 94d423ded9912e148a8d41d520dd2e99, type: 3}
+  - {fileID: 1168994694866578434, guid: 634e3564f5b1eaa41b6739e2d6692d97, type: 3}
+  - {fileID: 8042112686778712126, guid: f2890d5a4ccaad745a30243290ec450f, type: 3}

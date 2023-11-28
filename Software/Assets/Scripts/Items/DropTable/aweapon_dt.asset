@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583000c919947a74ca03e89b06bfc15c, type: 3}
+  m_Name: aweapon_dt
+  m_EditorClassIdentifier: 
+  droplist:
+  - {fileID: 1604115570746039400, guid: 7acde1e7a52a6234e9289f9cbb61f5df, type: 3}
+  - {fileID: 6570070732822325173, guid: 3cd38189faed1f94d91bbd7be4c2421a, type: 3}
+  - {fileID: 7988988386272410107, guid: 5d4756ad0a41a2f41b651767a1baa175, type: 3}
+  - {fileID: 3858826958852583243, guid: 3171ac16e1d552c40ae410951c10d1b6, type: 3}
+  - {fileID: 4313858242433059464, guid: 6fb8f6a9139ed8c478d2e8ee2a064b33, type: 3}
+  - {fileID: 2812828762904232832, guid: 2c9c863be46496247b3a1eaf0f6464ef, type: 3}
+  - {fileID: 4334820222981782473, guid: 2cfac7ec64fba0f469e01f3cc93b0844, type: 3}
+  - {fileID: 3125706727293218990, guid: c87054a9b8becbb42877398d1000c980, type: 3}
+  - {fileID: 827135841581214590, guid: 54798e97f0dfc1d469d45ef4dc5c4749, type: 3}

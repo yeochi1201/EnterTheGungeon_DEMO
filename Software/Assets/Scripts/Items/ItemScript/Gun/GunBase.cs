@@ -18,7 +18,7 @@ public class GunBase : MonoBehaviour
     public void Reload()
     {
         float time_start = Time.deltaTime;
-        if(weapon.ammo_count == 0)
+        if(weapon.ammo_count == -1)
         {
             weapon.current_ammo_size = weapon.ammo_size;
         }

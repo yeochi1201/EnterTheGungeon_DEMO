@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7128310633587141338}
   m_Layer: 0
   m_Name: Big_Shotgun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

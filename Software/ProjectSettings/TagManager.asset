@@ -7,6 +7,9 @@ TagManager:
   - Bullet
   - Wall
   - Enemy
+  - Weapon
+  - Passive
+  - Active
   layers:
   - Default
   - TransparentFX

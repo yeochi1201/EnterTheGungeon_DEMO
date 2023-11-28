@@ -31,4 +31,11 @@ public class WeaponAsset : ItemAsset
         spread
     }
     public weapontype type;
+
+    private void Awake()
+    {
+        current_ammo_size = ammo_size;
+        current_ammo_count = ammo_count-ammo_size;
+        current_degree = ammo_degree;
+    }
 }

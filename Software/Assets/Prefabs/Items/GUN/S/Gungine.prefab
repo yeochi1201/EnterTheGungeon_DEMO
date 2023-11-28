@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5614611880512378047}
   m_Layer: 0
   m_Name: Gungine
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

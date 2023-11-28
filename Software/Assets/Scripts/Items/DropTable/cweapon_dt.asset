@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583000c919947a74ca03e89b06bfc15c, type: 3}
+  m_Name: cweapon_dt
+  m_EditorClassIdentifier: 
+  droplist:
+  - {fileID: 5196269578046718959, guid: de982c5781761534694fe6c7253004e0, type: 3}
+  - {fileID: 8281966149633947887, guid: 5ca53af007f990448ac5613ec11a7f7e, type: 3}
+  - {fileID: 3569916695314200417, guid: ad9ce5b3c68b4c34c8bf76a2d2bcb375, type: 3}
+  - {fileID: 3451184590165202746, guid: f317e37cf00b12440910c639a28fdbcd, type: 3}
+  - {fileID: 33382768608652021, guid: 36887ca977c151442ab2eff5879a3cb6, type: 3}
+  - {fileID: 8993675075188983434, guid: 08c0148f8ee0b324693fa03313700901, type: 3}
+  - {fileID: 5696352845429163262, guid: 959eaf7a13edf7d4cb4590d422c71b1c, type: 3}
+  - {fileID: 4468226087943163167, guid: 4800c0d6b824a4049aeee5c4b3ed1544, type: 3}
+  - {fileID: 6305883038609130497, guid: 19ad2ddc17a4cb9448516c66ec85c24b, type: 3}
+  - {fileID: 8137748505758452123, guid: 62e4faf74d64a85458f70550d5ab7e1d, type: 3}
+  - {fileID: 5878191886440107168, guid: 944a173d9e839a2488af5c4717ab6f4e, type: 3}

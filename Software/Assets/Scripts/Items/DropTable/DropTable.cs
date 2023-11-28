@@ -12,16 +12,16 @@ public class DropTable : MonoBehaviour
 
     public void Drop()
     {
-        string item = ChoiceItem();
+        GameObject item = ChoiceItem();
         Instantiate<GameObject>(prefab, null, chest.transform);
     }
 
-    public string ChoiceItem() //choice item randomly in droptable
+    public GameObject ChoiceItem() //choice item randomly in droptable
     {
-        string result;
-        int key = Random.Range(1, droptable.ItemList.Length);
+        GameObject result;
+        int key = Random.Range(1, droptable.droplist.Count);
 
-        result = droptable.ItemList[key].itemName;
+        result = droptable.droplist[key];
         return result;
     }
 

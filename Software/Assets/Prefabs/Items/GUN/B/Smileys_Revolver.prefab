@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2403368853007477716}
   m_Layer: 0
   m_Name: Smileys_Revolver
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

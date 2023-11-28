@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Medkit : ActiveItem
+public class MedKit : ActiveItem
 {
     public override void OnEquip()
     {

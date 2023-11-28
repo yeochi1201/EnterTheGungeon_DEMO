@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "DropTable/DT")]
+[CreateAssetMenu(menuName = "DropTable/Droptable")]
 public class DTAsset : ScriptableObject
 {
     [SerializeField]
-    public ItemAsset[] ItemList; //droptable's item
+    public List<GameObject> droplist = new List<GameObject> ();
 }
