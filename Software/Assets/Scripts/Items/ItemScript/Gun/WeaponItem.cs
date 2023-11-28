@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBase : MonoBehaviour
+public class WeaponItem : MonoBehaviour
 {
     [SerializeField]
 
@@ -10,13 +10,37 @@ public class GunBase : MonoBehaviour
     
     public Bullet ammo;
     //총알 발사
+    
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if(Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
+        {
+            Inven inven = collision.GetComponentInParent<Inven>();
+            if (inven.weapons.Count < 6 )
+            {
+                PlayerSpecification ps = collision.GetComponentInParent<PlayerSpecification>();
+                WeaponUpdateDegree(ps.ammo_degree_buf);
+                WeaponUpdateAmmoCount(ps.ammo_count_buf);
+                WeaponUpdateAmmoSize(ps.ammo_size_buf);
+                WeaponUpdateDamage(ps.weapon_dmg_buf);
+                WeaponUpdateDelay(ps.weapon_delay_buf);
+                WeaponUpdateReload(ps.weapon_reload_buf);
+                inven.GetWeapon(this.gameObject);
+            }
+            
+        }
+    }
     virtual public void SpecialEffect()
     {
         //bullet에 정보 넘겨서 bullet pooler에서 발사
     }
     //재장전
-    public void Reload()
+    private void Reload()
     {
+        if(weapon.current_ammo_count == 0)
+        {
+            return;
+        }
         float time_start = Time.deltaTime;
         if(weapon.ammo_count == -1)
         {
@@ -46,7 +70,7 @@ public class GunBase : MonoBehaviour
         return;
     }
     //총알 발사 딜레이
-    public void Delay()
+    private void Delay()
     {
         float time_start = Time.deltaTime;
         

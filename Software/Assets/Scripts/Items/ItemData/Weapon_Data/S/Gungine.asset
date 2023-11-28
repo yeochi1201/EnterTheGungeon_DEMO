@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Gungine
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Gungine
+  rank: 4
   ammo_size: 100
   ammo_count: 800
   reload: 1.14
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.05
   range: 0
   ammo_degree: 6
-  current_ammo: 100
+  current_ammo_size: 100
   current_ammo_count: 700
+  current_degree: 6
   type: 1

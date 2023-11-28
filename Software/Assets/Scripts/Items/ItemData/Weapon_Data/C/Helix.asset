@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Helix
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Helix
+  rank: 1
   ammo_size: 12
   ammo_count: 250
   reload: 2
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.25
   range: 35
   ammo_degree: 7
-  current_ammo: 12
+  current_ammo_size: 12
   current_ammo_count: 238
+  current_degree: 7
   type: 0

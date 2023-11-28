@@ -12,7 +12,7 @@ public class OiledCylinder : MonoBehaviour
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponUpdateReload(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateReload(1.20f);
         }
     }
 
@@ -24,7 +24,7 @@ public class OiledCylinder : MonoBehaviour
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponRollbackReload(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackReload(1.20f);
         }
     }
 }

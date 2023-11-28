@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Smiley'sRevolver
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Smiley'sRevolver
+  rank: 2
   ammo_size: 6
   ammo_count: 250
   reload: 0.7
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.1
   range: 60
   ammo_degree: 6
-  current_ammo: 6
+  current_ammo_size: 6
   current_ammo_count: 244
+  current_degree: 6
   type: 0

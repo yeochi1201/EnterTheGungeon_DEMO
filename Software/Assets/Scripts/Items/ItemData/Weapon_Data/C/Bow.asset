@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Bow
+  rank: 1
   ammo_size: 1
   ammo_count: 100
   reload: 0.12
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 1
   range: 0
   ammo_degree: 0
-  current_ammo: 1
+  current_ammo_size: 1
   current_ammo_count: 99
+  current_degree: 0
   type: 2

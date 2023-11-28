@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: StaffofFirepower
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: "\uD654\uC5FC\uB825 \uC9C0\uD321\uC774"
+  rank: 3
   ammo_size: 6
   ammo_count: 200
   reload: 1
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.15
   range: 0
   ammo_degree: 7
-  current_ammo: 6
+  current_ammo_size: 6
   current_ammo_count: 194
+  current_degree: 7
   type: 0

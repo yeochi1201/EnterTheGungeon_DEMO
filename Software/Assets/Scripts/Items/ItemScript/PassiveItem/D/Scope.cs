@@ -10,7 +10,7 @@ public class Scope : PassiveItem
         ps.ammo_degree_buf /= 1.60f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponRollbackDegree(1.60f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackDegree(1.60f);
         }
     }
 
@@ -20,7 +20,7 @@ public class Scope : PassiveItem
         ps.ammo_degree_buf *= 1.60f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponUpdateDegree(1.60f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDegree(1.60f);
         }
     }
 }

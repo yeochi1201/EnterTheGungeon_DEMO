@@ -12,7 +12,7 @@ public class YellowChamber : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponUpdateDelay(1.15f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDelay(1.15f);
         }
     }
 
@@ -24,7 +24,7 @@ public class YellowChamber : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponRollbackDelay(1.15f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackDelay(1.15f);
         }
     }
 }

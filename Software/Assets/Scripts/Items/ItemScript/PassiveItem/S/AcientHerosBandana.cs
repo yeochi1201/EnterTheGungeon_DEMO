@@ -11,7 +11,7 @@ public class AcientHerosBandana : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponUpdateAmmoSize(5.00f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoSize(5.00f);
         }
     }
 
@@ -22,7 +22,7 @@ public class AcientHerosBandana : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponRollbackAmmoSize(5.00f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackAmmoSize(5.00f);
         }
     }
 }

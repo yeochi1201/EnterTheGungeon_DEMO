@@ -13,7 +13,19 @@ public class ItemManager : MonoBehaviour
     {
         itemManager = this;
     }
+    public float Calc_Cooltime(float itemCool)
+    {
+        float result;
+        result = Time.deltaTime + (itemCool * (100 - ps.coolness) / 100);
+        return result;
+    }
 
+    public int Calc_ReuseDmg(int reuseDmg)
+    {
+        int result;
+        result = reuseDmg - (reuseDmg * ps.coolness / 100);
+        return result;
+    }
     public void Cursed_Changed(int cursed)
     {
         if (cursed > 0)
@@ -31,7 +43,7 @@ public class ItemManager : MonoBehaviour
                     {
                         for (int j = 0; j < ps.cursed; j++)
                         {
-                            weapon.GetComponent<GunBase>().WeaponUpdateDamage(1.1f);
+                            weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(1.1f);
                         }
                     }
                 }
@@ -56,7 +68,7 @@ public class ItemManager : MonoBehaviour
                     {
                         for (int j = 0; j < ps.cursed; j++)
                         {
-                            weapon.GetComponent<GunBase>().WeaponRollbackDamage(1.1f);
+                            weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(1.1f);
                         }
                     }
                 }

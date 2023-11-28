@@ -8,8 +8,6 @@ public class ItemAsset : ScriptableObject
     [SerializeField]
     public Sprite sprite;
     public string itemName; //item's name
-    public bool passive;
-    public bool consume;
     public enum Rank //item rank
     {
         D,
@@ -18,5 +16,6 @@ public class ItemAsset : ScriptableObject
         A,
         S
     }
+    public Rank rank;
 
 }

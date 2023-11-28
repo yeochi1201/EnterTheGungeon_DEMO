@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: A.W.P
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: A.W.P
+  rank: 3
   ammo_size: 8
   ammo_count: 60
   reload: 2.1
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 12
   range: 0
   ammo_degree: 5
-  current_ammo: 8
+  current_ammo_size: 8
   current_ammo_count: 52
+  current_degree: 5
   type: 0

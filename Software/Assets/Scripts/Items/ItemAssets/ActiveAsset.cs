@@ -8,10 +8,9 @@ using UnityEngine.UIElements;
 public class ActiveAsset : ItemAsset
 {
     [SerializeField]
-    public int heal; //heal value
-    public int addDmg; //buf for damage
-    public int addCoolness; //buf for coolness
-    public int increaseHP; //buf for max hp
     public float cooltime; //item's cooltime
     public int limitUSE; //maximum using
+    public int reuseDmg;
+    public float nextUseTime;
+    public int nextUseDmg;
 }

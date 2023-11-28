@@ -5,24 +5,30 @@ using UnityEngine;
 
 public class DropTable : MonoBehaviour
 {
-    public GameObject prefab;
-    public GameObject chest;
-    [SerializeField]
+   [SerializeField]
     DTAsset droptable;
 
     public void Drop()
     {
         GameObject item = ChoiceItem();
-        Instantiate<GameObject>(prefab, null, chest.transform);
+        Instantiate<GameObject>(item, GetComponentInParent<Transform>().transform);
     }
 
     public GameObject ChoiceItem() //choice item randomly in droptable
     {
         GameObject result;
-        int key = Random.Range(1, droptable.droplist.Count);
+        int key = Random.Range(0, droptable.droplist.Count);
 
         result = droptable.droplist[key];
         return result;
     }
 
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown("E")&&collision.CompareTag("Player"))
+        {
+            Drop();
+            Destroy(this.gameObject);
+        }
+    }
 }

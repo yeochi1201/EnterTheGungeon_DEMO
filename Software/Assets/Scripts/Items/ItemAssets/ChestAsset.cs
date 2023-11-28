@@ -11,7 +11,6 @@ public class ChestAsset : ItemAsset
         Item, //potion, passive, bomb
         Weapon
     }
-    public Rank rank;
     public ChestType type;
     public bool key = false;
 }

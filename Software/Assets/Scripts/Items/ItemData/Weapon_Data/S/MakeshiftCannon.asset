@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: MakeshiftCannon
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: MakeshiftCannon
+  rank: 4
   ammo_size: 1
   ammo_count: 1
   reload: 2.1
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.5
   range: 1000
   ammo_degree: 6
-  current_ammo: 1
+  current_ammo_size: 1
   current_ammo_count: 0
+  current_degree: 6
   type: 2

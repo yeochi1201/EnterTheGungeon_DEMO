@@ -10,7 +10,7 @@ public class AmmoBelt : PassiveItem
         ps.ammo_size_buf *= 1.20f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponUpdateAmmoSize(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoSize(1.20f);
         }
     }
 
@@ -20,7 +20,7 @@ public class AmmoBelt : PassiveItem
         ps.ammo_size_buf /= 1.20f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<GunBase>().WeaponRollbackAmmoSize(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackAmmoSize(1.20f);
         }
     }
 

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Dragunfire
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Dragunfire
+  rank: 3
   ammo_size: 30
   ammo_count: 600
   reload: 1.6
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.05
   range: 0
   ammo_degree: 7
-  current_ammo: 30
+  current_ammo_size: 30
   current_ammo_count: 570
+  current_degree: 7
   type: 1

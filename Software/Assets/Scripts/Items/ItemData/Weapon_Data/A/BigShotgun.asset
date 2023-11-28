@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: BigShotgun
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: BigShotgun
+  rank: 3
   ammo_size: 4
   ammo_count: 70
   reload: 0
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.6
   range: 0
   ammo_degree: 0
-  current_ammo: 4
+  current_ammo_size: 4
   current_ammo_count: 66
+  current_degree: 0
   type: 0

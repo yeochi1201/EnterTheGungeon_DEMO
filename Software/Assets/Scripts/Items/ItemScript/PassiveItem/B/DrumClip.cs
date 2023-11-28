@@ -12,7 +12,7 @@ public class DrumClip : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponUpdateAmmoCount(1.5f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoCount(1.5f);
         }
     }
 
@@ -24,7 +24,7 @@ public class DrumClip : PassiveItem
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<GunBase>().WeaponRollbackAmmoCount(1.5f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackAmmoCount(1.5f);
         }
     }
 }

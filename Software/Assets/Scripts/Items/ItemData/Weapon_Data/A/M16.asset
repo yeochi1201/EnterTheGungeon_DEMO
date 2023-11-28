@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: M16
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: M16
+  rank: 3
   ammo_size: 30
   ammo_count: 500
   reload: 1.2
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.1
   range: 0
   ammo_degree: 7
-  current_ammo: 30
+  current_ammo_size: 30
   current_ammo_count: 470
+  current_degree: 7
   type: 4

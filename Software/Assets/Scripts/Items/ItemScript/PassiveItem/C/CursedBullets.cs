@@ -17,7 +17,7 @@ public class CursedBullets : PassiveItem
         {
             for (int i = 0; i < ps.cursed; i++)
             {
-                weapon.GetComponent<GunBase>().WeaponUpdateDamage(1.1f);
+                weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(1.1f);
             }
         }
         ItemManager.itemManager.Cursed_Changed(1);
@@ -37,7 +37,7 @@ public class CursedBullets : PassiveItem
         {
             for (int i = 0; i < ps.cursed; i++)
             {
-                weapon.GetComponent<GunBase>().WeaponRollbackDamage(1.1f);
+                weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(1.1f);
             }
         }
         ItemManager.itemManager.Cursed_Changed(-1);

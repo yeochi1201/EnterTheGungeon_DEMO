@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Deck4rd
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Deck4rd
+  rank: 3
   ammo_size: 2
   ammo_count: 60
   reload: 1.5
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.2
   range: 0
   ammo_degree: 10
-  current_ammo: 2
+  current_ammo_size: 2
   current_ammo_count: 58
+  current_degree: 10
   type: 0

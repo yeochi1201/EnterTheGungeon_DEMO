@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Gunther
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Gunther
+  rank: 4
   ammo_size: 15
   ammo_count: 0
   reload: 1.2
@@ -22,6 +24,7 @@ MonoBehaviour:
   delay: 0.1
   range: 50
   ammo_degree: 10
-  current_ammo: 15
-  current_ammo_count: 0
+  current_ammo_size: 15
+  current_ammo_count: -15
+  current_degree: 10
   type: 0
