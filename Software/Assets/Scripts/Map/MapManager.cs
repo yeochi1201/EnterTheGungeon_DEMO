@@ -8,13 +8,15 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     GameObject spwanPoint;
     [SerializeField]
-    GameObject[] rooms;
+    GameObject chestSpawner;
     [SerializeField]
+    GameObject palyer;
 
 
     void Start()
     {
-        //spwanpoint에 플레이어 생성
+        Instantiate(palyer, spwanPoint.transform.position, Quaternion.identity);
+        chestSpawner.GetComponent<ChestSpawner>().SpawnChest();
 
     }
 

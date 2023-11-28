@@ -30,7 +30,13 @@ public class PlayerController : PlayerSpecification
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
     }
-
+    void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (obj.CompareTag("Floor"))
+        {
+            obj.transform.GetChild(0).gameObject.GetComponent<Spawner>().SpawmEnemies();
+        }
+    }
     private void Update()
     {
         if (currentHP <= 0)
