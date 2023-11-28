@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: BudgetRevolver
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 224ce5fcb2ad8d6419e86ea58fae72ed, type: 3}
   itemName: BudgetRevolver
-  description: 
+  description: This Budget Revolver was brought to the Gungeon by an infamous fugitive.
+    Provided by the Hegemony Regional Magistrate. The Convict won their plea to face
+    the Gungeon in lieu of life imprisonment; undo their crimes, or face an eternity
+    in the Gungeon. With no cost to the state, it was an acceptable arrangement. 
+    Cheaply made and prone to jams, the Budget Revolver is used by only the most
+    desperate Gungeoneers.
+  title: Affordable Arms
   rank: 0
   ammo_size: 5
   ammo_count: -1

@@ -10,7 +10,7 @@ public class ActiveAsset : ItemAsset
     [SerializeField]
     public float cooltime; //item's cooltime
     public int limitUSE; //maximum using
-    public int reuseDmg;
+    public int[] reuseDmg = new int[5];
     public float nextUseTime;
     public int nextUseDmg;
 }

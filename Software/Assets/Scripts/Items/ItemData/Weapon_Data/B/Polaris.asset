@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Polaris
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 41516212282dd5b42aeec9c3dd51d03e, type: 3}
   itemName: Polaris
+  description: A mysterious gun that grows in strength on each kill. Substantial
+    power is lost any time its wielder is damaged. Stories are told of a rebellious
+    android that once used this gun in a conflict deep underground. The handle is
+    marked with two small tick marks.
+  title: Storied
   rank: 2
   ammo_size: 12
   ammo_count: 450
@@ -28,3 +33,4 @@ MonoBehaviour:
   current_ammo_count: 438
   current_degree: 5
   type: 1
+  proejectile: 0

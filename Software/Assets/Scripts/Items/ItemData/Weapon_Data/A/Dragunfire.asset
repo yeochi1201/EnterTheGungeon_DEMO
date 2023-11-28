@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 552b77c84df010a49ab8324a1d34cd05, type: 3}
   itemName: Dragunfire
-  description: 
+  description: Finely balanced, rapid fire. Can ignite foes. An Edwin original. The
+    Dragunfire was forged deep in the heart of the Gungeon, crafted to emulate the
+    wrath of the beast from which it takes its name.
+  title: Roar
   rank: 3
   ammo_size: 30
   ammo_count: 600

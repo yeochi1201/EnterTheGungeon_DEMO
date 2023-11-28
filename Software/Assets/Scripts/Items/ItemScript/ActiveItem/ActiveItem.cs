@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ActiveItem : MonoBehaviour
 {
+    [SerializeField]
+    public ActiveAsset active;
     virtual public void OnEquip()
     {
 

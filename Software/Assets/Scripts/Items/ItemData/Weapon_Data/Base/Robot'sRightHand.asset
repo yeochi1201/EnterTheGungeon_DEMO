@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Robot'sRightHand
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3d6781be8350e104b910b8c4cf447b52, type: 3}
   itemName: Robot'sRightHand
-  passive: 0
-  consume: 0
+  description: The right hand of an assault robot that fled to the Gungeon. When
+    wielded by the Robot, combines with Junk to increase all damage output. It is
+    a simple projectile delivery system. Reliable, but its short barrel is lacking
+    in intricacy. Under the control of a targeting AI it becomes fearsome indeed.
+  title: Built To Kill
+  rank: 0
   ammo_size: 20
   ammo_count: -1
   reload: 1.2
@@ -26,6 +30,7 @@ MonoBehaviour:
   range: 20
   ammo_degree: 7
   current_ammo_size: 20
-  current_ammo_count: -1
+  current_ammo_count: -21
   current_degree: 7
   type: 0
+  proejectile: 0

@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: MarineSidearm
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 9b7d3ca9bd907564db624dbba586d499, type: 3}
   itemName: MarineSidearm
-  passive: 0
-  consume: 0
+  description: The Marine Sidearm was brought to the Gungeon by a low-ranking Primerdyne
+    soldier. Though this gun appears sturdy, it has been known to fail when it is
+    most needed.
+  title: Always With You
+  rank: 0
   ammo_size: 10
   ammo_count: -1
   reload: 1.2
@@ -26,6 +29,7 @@ MonoBehaviour:
   range: 16
   ammo_degree: 7
   current_ammo_size: 10
-  current_ammo_count: -1
+  current_ammo_count: -11
   current_degree: 7
   type: 0
+  proejectile: 0

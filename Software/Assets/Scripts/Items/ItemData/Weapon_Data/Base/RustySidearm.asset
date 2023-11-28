@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: RustySidearm
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 665e0885313b48848ac42d9d2458841a, type: 3}
   itemName: RustySidearm
-  passive: 0
-  consume: 0
+  description: The Rusty Sidearm was brought to the Gungeon by the Hunter. Despite
+    its extremely dated design and some signs of rust, this gun appears relatively
+    new. Very strange...
+  title: Still works, mostly.
+  rank: 0
   ammo_size: 6
   ammo_count: -1
   reload: 1.2
@@ -26,6 +29,7 @@ MonoBehaviour:
   range: 16
   ammo_degree: 7
   current_ammo_size: 6
-  current_ammo_count: -1
+  current_ammo_count: -7
   current_degree: 7
   type: 0
+  proejectile: 0

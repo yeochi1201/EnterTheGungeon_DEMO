@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: OldGoldie
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6f668a5f79c0e3d4ea7137b0e436b240, type: 3}
   itemName: oldGoldie
+  description: A masterwork shotgun. The right answer isn't always a gun that shoots
+    bees, a water gun, or a flaming hand. Sometimes, all you need is a simple concept
+    executed immaculately. This gold trimmed, double-barreled shotgun represents
+    the best of traditional guncraft.
+  title: For The Discerning
   rank: 3
   ammo_size: 4
   ammo_count: 150
@@ -28,3 +33,4 @@ MonoBehaviour:
   current_ammo_count: 146
   current_degree: 5
   type: 0
+  proejectile: 0

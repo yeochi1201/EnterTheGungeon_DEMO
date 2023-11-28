@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: HyperLightBlaster
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 86a46a6a2178b96469473c27d120f726, type: 3}
   itemName: HyperLightBlaster
+  description: Shots that impact foes are refunded. A weapon once carried by a brave
+    wanderer, whose exploits are lost to the drifts of time. Designed to work in
+    tandem with a blade, this one has been modified to recharge itself.
+  title: Skill Honed Sharp
   rank: 2
   ammo_size: 12
   ammo_count: 12
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 0
   current_degree: 0
   type: 0
+  proejectile: 0

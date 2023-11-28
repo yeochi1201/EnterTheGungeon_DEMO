@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: M16
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 401484c6c0470f343944586d63a5d956, type: 3}
   itemName: M16
+  description: Alternates with grenades. The M16 is a classic military-issue machine
+    gun that upon reload, switches projectiles to grenade launcher.
+  title: Underslung
   rank: 3
   ammo_size: 30
   ammo_count: 500
@@ -28,3 +31,4 @@ MonoBehaviour:
   current_ammo_count: 470
   current_degree: 7
   type: 4
+  proejectile: 0

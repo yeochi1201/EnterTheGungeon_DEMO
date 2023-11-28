@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PassiveItem : MonoBehaviour
 {
+    [SerializeField]
+    public PassiveAsset passive;
     virtual public void OnEquip()
     {
         

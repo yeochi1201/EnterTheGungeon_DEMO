@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: UnicornHorn
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: fa7ae10b3211a034e81426b20b22d04b, type: 3}
   itemName: UnicornHorn
-  description: 
+  description: This magic horn is proof that at least one unicorn existed, and now
+    is either dead or hornless.
+  title: Fires Friendship
   rank: 3
   ammo_size: 500
   ammo_count: 500

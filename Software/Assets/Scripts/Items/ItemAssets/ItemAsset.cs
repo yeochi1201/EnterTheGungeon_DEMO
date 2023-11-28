@@ -9,6 +9,7 @@ public class ItemAsset : ScriptableObject
     public Sprite sprite;
     public string itemName; //item's name
     public string description;
+    public string title;
     public enum Rank //item rank
     {
         D,

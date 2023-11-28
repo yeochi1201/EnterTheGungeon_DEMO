@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4377a35245c5ce44b8fcfd2c16b28d7e, type: 3}
+  m_Name: Armor_of_Thorns
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: b77dbc0e4900f8f4fa9f1f8ee7702c29, type: 3}
+  itemName: Armor_of_Thorns
+  description: Greatly increases dodge roll damage. The barbs on this suit of armor
+    are sure to ruin anyone's day, as long as that "anyone" is within a few inches
+    of you.
+  title: Your Body Is A Weapon
+  rank: 1

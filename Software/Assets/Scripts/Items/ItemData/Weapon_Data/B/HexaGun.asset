@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: HexaGun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f08bbfcade03820429ef90dd5d33cf6d, type: 3}
   itemName: HexaGun
+  description: The Hexagun was created by a vengeful Gunjurer after his apprentices
+    were slain by a Gungeoneer wielding the humble Bundle of Wands. The stock is
+    formed from what was once his staff, and each piece of metal was enchanted thrice
+    before assembly. His revenge came swiftly, and from a great distance.
+  title: Light Fantastic
   rank: 2
   ammo_size: 1
   ammo_count: 75
@@ -28,3 +33,4 @@ MonoBehaviour:
   current_ammo_count: 74
   current_degree: 0
   type: 0
+  proejectile: 0

@@ -17,4 +17,5 @@ MonoBehaviour:
   description: This rare artifact indicates mastery of the first chamber. Apocryphal
     texts recovered from cultists of the Order indicate that the Gun and the Bullet
     are linked somehow.
+  title: First Chamber
   rank: 0

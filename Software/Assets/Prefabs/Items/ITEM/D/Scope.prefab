@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8008763144655845211}
   - component: {fileID: 7290511395698192670}
   - component: {fileID: 1898070657197209674}
+  - component: {fileID: -5860010066835886310}
   m_Layer: 0
   m_Name: Scope
   m_TagString: Passive
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.17}
   m_EdgeRadius: 0
+--- !u!114 &-5860010066835886310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831123654840143983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3aebd87ebd70d47a8fcd5ece991aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 11400000, guid: 32495f63533c8e649aa94d249cd01054, type: 2}

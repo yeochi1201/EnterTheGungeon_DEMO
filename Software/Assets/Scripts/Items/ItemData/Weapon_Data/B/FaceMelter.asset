@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: FaceMelter
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a0568d8c2ac327841b38822daa65854a, type: 3}
   itemName: FaceMelter
+  description: A normal electric guitar. Drops an amplifier on reload for double
+    the power! Unfortunately, musical talent and Gungeoneering skill do not often
+    overlap. Any damage caused by this "gun" has little to do with the Gungeon.
+  title: Squiddley-Squiddley-wheeyooo!
   rank: 2
   ammo_size: 600
   ammo_count: 600
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 0
   current_degree: 6
   type: 1
+  proejectile: 0

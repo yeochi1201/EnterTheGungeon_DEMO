@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: Helix
-  description: 
+  description: Fires two wave projectiles. Inspired by real science, the Helix is
+    extremely useful for hitting two things at once, as long as they are a certain
+    distance apart.
+  title: Splice n' Dice
   rank: 1
   ammo_size: 12
   ammo_count: 250

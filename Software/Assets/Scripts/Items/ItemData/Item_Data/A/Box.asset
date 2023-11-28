@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9cdc0f44a31c24ca8854abe79786d8, type: 3}
+  m_Name: Box
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: dd04d282c67b1b14bb132af21c991d93, type: 3}
+  itemName: Box
+  description: The ultimate in stealth technology. Surprise attacks deal additional
+    damage. No one is perceptive enough to see through such an elaborate ruse.
+  title: Just A Box
+  rank: 3
+  cooltime: 0
+  limitUSE: 0
+  reuseDmg: 6400000082000000a0000000b9000000d2000000
+  nextUseTime: 0
+  nextUseDmg: 0

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: ea8f8311e37622d4b8b9d7e18770c3f4, type: 3}
   itemName: BigShotgun
-  description: 
+  description: A big shotgun. In comparison with the Regular Shotgun, this one is
+    bigger.
+  title: A Shotgun That's Big
   rank: 3
   ammo_size: 4
   ammo_count: 70

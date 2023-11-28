@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: BoxingGlobe
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: feadf81168cd0564ca5f659958ba94b1, type: 3}
   itemName: BoxingGlobe
+  description: Shoots a boxing glove, sort of. Crafted by the Resourceful Rat as
+    a way to cheat at fisticuffs, this boxing glove has been modified to spring out
+    in a humorous manner.
+  title: Pistol Hondo
   rank: 1
   ammo_size: 350
   ammo_count: 350
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 0
   current_degree: 0
   type: 2
+  proejectile: 0

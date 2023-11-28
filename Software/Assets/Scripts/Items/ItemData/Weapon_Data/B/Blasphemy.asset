@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Blasphemy
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 80f94c31eb219e6418fc03a756e38ed2, type: 3}
   itemName: Blasphemy
+  description: Betrayer!
+  title: To The Point
   rank: 2
   ammo_size: 0
   ammo_count: 0
@@ -28,3 +30,4 @@ MonoBehaviour:
   current_ammo_count: 0
   current_degree: 10
   type: 0
+  proejectile: 0

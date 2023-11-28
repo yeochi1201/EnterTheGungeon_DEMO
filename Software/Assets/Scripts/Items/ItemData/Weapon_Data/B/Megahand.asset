@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Megahand
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 216b089cf27106b4f967c6fae3d940a6, type: 3}
   itemName: Megahand
+  description: The Megahand is a relic of the Ten Days' War against the robots. The
+    most powerful robot masters would modify it for their own styles of combat. This
+    one is basic, but it still works well.
+  title: -P-
   rank: 2
   ammo_size: 18
   ammo_count: 200
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 182
   current_degree: 0
   type: 2
+  proejectile: 0

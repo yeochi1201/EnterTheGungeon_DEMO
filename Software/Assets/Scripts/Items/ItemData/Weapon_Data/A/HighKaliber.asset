@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 4ed77ae9aba52404babb3d0fcea0ebe9, type: 3}
   itemName: HighKaliber
-  description: 
+  description: Can sever enemies' souls. This pocked and swollen gun splits and rends
+    the spirit from the body.
+  title: Soul Reaver
   rank: 3
   ammo_size: 66
   ammo_count: 666

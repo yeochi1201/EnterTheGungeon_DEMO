@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 89d7e98f317ad9543b56cadf7df6ff3a, type: 3}
   itemName: Deck4rd
-  description: 
+  description: Fires massive explosive rounds. Following the tragic Ten Days' War,
+    a majority of the Hegemony's Shock Troops were decommissioned. A small number
+    of the combat robots escaped however, and they were pursued relentlessly by special
+    forces. This explosive hand cannon belonged to one such detective who tracked
+    his prey to the Gungeon.
+  title: Unicorn Of Handguns
   rank: 3
   ammo_size: 2
   ammo_count: 60

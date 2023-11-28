@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: DartGun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d3568205a9579104085f03832ea61576, type: 3}
   itemName: DartGun
-  passive: 0
-  consume: 0
+  description: Just because children are young, doesn't mean they don't have pasts
+    they would like to change. Perhaps some young soul wished to make sure his or
+    her sibling took the blame for spilling grape juice on the couch. Much less worthy
+    causes have been championed in the Gungeon.
+  title: Sticky
+  rank: 0
   ammo_size: 6
   ammo_count: -1
   reload: 1
@@ -26,6 +30,7 @@ MonoBehaviour:
   range: 25
   ammo_degree: 5
   current_ammo_size: 6
-  current_ammo_count: -1
+  current_ammo_count: -7
   current_degree: 5
   type: 0
+  proejectile: 0

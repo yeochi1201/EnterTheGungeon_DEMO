@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: RogueSpecial
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ae8e871d70fd1424fbaedf6a3d6a8faa, type: 3}
   itemName: RogueSpecial
-  passive: 0
-  consume: 0
+  description: The Rogue Special, given to the Pilot by his partner. It's never let
+    him down. This hip shooter has been known to fire half-cocked and often gets
+    itself into more trouble than it can handle.
+  title: Underhanded And Efficient
+  rank: 0
   ammo_size: 8
   ammo_count: -1
   reload: 1.2
@@ -26,6 +29,7 @@ MonoBehaviour:
   range: 13
   ammo_degree: 10
   current_ammo_size: 8
-  current_ammo_count: -1
+  current_ammo_count: -9
   current_degree: 10
   type: 0
+  proejectile: 0

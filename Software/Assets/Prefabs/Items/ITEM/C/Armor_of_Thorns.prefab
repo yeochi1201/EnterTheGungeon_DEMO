@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5591542962043635824}
   - component: {fileID: 7891094668197286641}
   - component: {fileID: 4524111744552247752}
-  - component: {fileID: 696606418138168134}
   m_Layer: 0
   m_Name: Armor_of_Thorns
   m_TagString: Passive
@@ -125,15 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a632a65744614b744aea20d0086dae71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &696606418138168134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6367130758259666926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a632a65744614b744aea20d0086dae71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  passive: {fileID: 11400000, guid: 82ee69a1d21bf414c883bbf54f66e5ad, type: 2}

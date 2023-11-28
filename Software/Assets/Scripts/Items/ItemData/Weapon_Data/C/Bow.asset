@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 5e89f1c4e991e1448a1e3320a8bd117a, type: 3}
   itemName: Bow
+  description: The classic Bow will never go out of style.
+  title: Hold Fire To Charge
   rank: 1
   ammo_size: 1
   ammo_count: 100
@@ -28,3 +30,4 @@ MonoBehaviour:
   current_ammo_count: 99
   current_degree: 0
   type: 2
+  proejectile: 0

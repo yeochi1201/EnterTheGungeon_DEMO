@@ -17,4 +17,5 @@ MonoBehaviour:
   description: This potent artifact indicates mastery of the second chamber. Any
     who enter the Gungeon are doomed to remain, living countless lives in an effort
     to break the cycle.
+  title: Second_Chamber
   rank: 0

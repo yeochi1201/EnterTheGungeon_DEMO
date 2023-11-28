@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Corsair
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cee5ab818acf651419d2e189e405c68f, type: 3}
   itemName: Corsair
-  description: 
+  description: Circumnavigates the room, then explodes. Many years ago, Gungeon mariners
+    used wind to propel their bullets instead of combustion. The trips would take
+    so long to cross a room that the bullets would sometimes mutiny and change course
+    entirely.
+  title: Plot A Course
   rank: 1
   ammo_size: 1
   ammo_count: 200

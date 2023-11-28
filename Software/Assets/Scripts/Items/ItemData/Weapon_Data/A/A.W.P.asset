@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: cc24cf202c8717c438ca67cbfd0b8d70, type: 3}
   itemName: A.W.P
-  description: 
+  description: An extremely powerful rifle. Banned in some sectors, its ease of use
+    caused it to be the weapon of choice for thousands of unskilled marksmen. Only
+    handicapped by its long chambering time. Some say that it will fire faster if
+    you put it in your backpack after every shot...
+  title: Noob Cannon
   rank: 3
   ammo_size: 8
   ammo_count: 60

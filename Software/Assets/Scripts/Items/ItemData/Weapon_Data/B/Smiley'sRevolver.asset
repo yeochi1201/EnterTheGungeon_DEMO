@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Smiley'sRevolver
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 92dcb8cf171639046975868edf64ebb9, type: 3}
   itemName: Smiley'sRevolver
+  description: The younger bullet brother's handgun. It is unhelpfully labelled with
+    an 'S'. Shopkeepers found Smiley's good nature disarming, often giving him the
+    advantage when negotiating prices.
+  title: All Smiles
   rank: 2
   ammo_size: 6
   ammo_count: 250
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 244
   current_degree: 6
   type: 0
+  proejectile: 0

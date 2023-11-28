@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Yellow_Chamber
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 09624b13e6d409b439a2636d224d087b, type: 3}
-  itemName: 
-  description: 
-  rank: 0
+  itemName: Yellow_Chamber
+  description: This exceptional artifact indicates mastery of the third chamber.
+    Few return from the deadly route that leads to the Forge. Yet fewer survive that
+    venture into less-explored territory.
+  title: '"the jammed thing"'
+  rank: 4

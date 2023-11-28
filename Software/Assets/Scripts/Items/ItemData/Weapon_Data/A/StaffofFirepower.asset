@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: StaffofFirepower
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  itemName: "\uD654\uC5FC\uB825 \uC9C0\uD321\uC774"
+  sprite: {fileID: 21300000, guid: 3608cf291ecec3e45b94c198e4960b01, type: 3}
+  itemName: Staff_of_Firepower
+  description: Reload to transform. One of the earliest gun experiments, before the
+    fires of the Forge were lit. This "magic revolver" was created when the then-master
+    of the Gungeon taped one of his staves of power to the top of the barrel.
+  title: Missing Link
   rank: 3
   ammo_size: 6
   ammo_count: 200
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 194
   current_degree: 7
   type: 0
+  proejectile: 0
