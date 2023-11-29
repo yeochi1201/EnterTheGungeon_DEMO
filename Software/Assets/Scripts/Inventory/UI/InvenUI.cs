@@ -9,6 +9,7 @@ public class InvenUI : MonoBehaviour
     List<GameObject> activeList = new List<GameObject>();
     List<GameObject> passiveList = new List<GameObject>();
     public GameObject inventory;
+    public GameObject itemButton;
     bool activeInventory = false;
     bool isPaused;
     public bool IsPaused { get { return isPaused; } }
@@ -39,19 +40,19 @@ public class InvenUI : MonoBehaviour
         }
     }
 
-
     public void AddWeaponButton(GameObject newWeapon)
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform weaponFrame = Util.FindChild<Transform>(invenUI, "WeaponFrame", true);
-        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", weaponFrame);
+        GameObject btn = Instantiate(itemButton, transform);
+        btn.transform.SetParent(weaponFrame);
 
-        RectTransform buttonRectTransform = itemButton.GetComponent<RectTransform>();
+        RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
-        weaponList.Add(itemButton);
-        Image image = itemButton.GetComponent<Image>();
+        weaponList.Add(btn);
+        Image image = btn.GetComponent<Image>();
 
         Sprite weaponSprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
         image.sprite = weaponSprite;
@@ -67,7 +68,12 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform acitveFrame = Util.FindChild<Transform>(invenUI, "ActiveFrame", true);
-        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", acitveFrame);
+        GameObject btn = Instantiate(itemButton, transform);
+        btn.transform.SetParent(acitveFrame);
+
+        RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
+        Sprite originalSprite = newActive.GetComponent<SpriteRenderer>().sprite;
+        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
         activeList.Add(itemButton);
         Image image = itemButton.GetComponent<Image>();
@@ -86,7 +92,12 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform passiveFrame = Util.FindChild<Transform>(invenUI, "PassiveFrame", true);
-        GameObject itemButton = Managers.Resource.Instantiate("Inventory/ItemButton", passiveFrame);
+        GameObject btn = Instantiate(itemButton, transform);
+        btn.transform.SetParent(passiveFrame);
+
+        RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
+        Sprite originalSprite = newPassive.GetComponent<SpriteRenderer>().sprite;
+        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
         passiveList.Add(itemButton);
         Image image = itemButton.GetComponent<Image>();
@@ -95,3 +106,5 @@ public class InvenUI : MonoBehaviour
         image.sprite = activeSprite;
     }
 }
+
+
