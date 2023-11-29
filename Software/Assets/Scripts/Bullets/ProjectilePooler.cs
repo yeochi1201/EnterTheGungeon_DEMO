@@ -16,7 +16,7 @@ public enum ProjectileType
 public class ProjectilePooler : MonoBehaviour 
 {
     public static ProjectilePooler Instance;
-    public ProjectileType type;
+
     [SerializeField] GameObject velocityProjectilePrefab;
     [SerializeField] int velocityProjectilePoolCount;
 

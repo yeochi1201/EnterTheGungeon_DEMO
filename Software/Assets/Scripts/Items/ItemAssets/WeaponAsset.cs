@@ -22,7 +22,6 @@ public class WeaponAsset : ItemAsset
     public int current_ammo_count;
     public int current_degree;
 
-    public Projectile projectile;
     public enum weapontype 
     { 
         half_auto,
@@ -44,7 +43,7 @@ public class WeaponAsset : ItemAsset
         SPLIT,
         MAX_SIZE
     }
-    public projectiletype proejctileType;
+    public projectiletype proejectile;
 
     private void Awake()
     {
