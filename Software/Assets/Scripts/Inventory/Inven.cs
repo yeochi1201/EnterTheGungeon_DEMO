@@ -29,6 +29,7 @@ public class Inven : MonoBehaviour
     {
         if (!invenUI.IsPaused)
         {
+            weapons[weaponIndex].GetComponent<WeaponItem>().Unequip();
             Debug.Log($"{wheelMove}");
             if (wheelMove < 0)
             {
@@ -46,10 +47,8 @@ public class Inven : MonoBehaviour
                 Debug.Log($"{weaponIndex + 1}번 장착중");
                 Debug.Log($"weapon리스트 크기 : {weapons.Count}");
             }
+            weapons[weaponIndex].GetComponent<WeaponItem>().OnEquip();
         }
-
-
-        // return weapons[idx];
     }
 
     public void GetWeapon(GameObject newWeapon)
