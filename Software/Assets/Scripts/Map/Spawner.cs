@@ -24,7 +24,10 @@ public class Spawner : MonoBehaviour
     {
         if (!isCleared)
         {
-
+            foreach (GameObject obj in door)
+            {
+                obj.SetActive(true);
+            }
             for (int i = 0; i < spawnCount; i++)
             {
                 spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
@@ -39,5 +42,14 @@ public class Spawner : MonoBehaviour
                 Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity);
             }
         }
+    }
+    public void CheckEnemyCount()
+    {
+        this.spawnCount--;
+        if (spawnCount <= 0)
+            foreach (GameObject obj in door)
+            {
+                obj.SetActive(false);
+            }
     }
 }
