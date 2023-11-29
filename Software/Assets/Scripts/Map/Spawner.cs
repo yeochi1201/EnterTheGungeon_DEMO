@@ -6,33 +6,37 @@ using UnityEngine.Tilemaps;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    GameObject enemy;
+    GameObject[] enemies;
     [SerializeField]
     int spawnCount;
     [SerializeField]
-    GameObject spawnPoint;
+    GameObject[] spawnPoints;
     [SerializeField]
     GameObject[] door;
-    private bool isCleared=false;
 
-    private TilemapCollider2D spawnRange;
+    private bool isCleared=false;
+    private GameObject spawnPoint;
+    private float range_X, range_Y;
+    private BoxCollider2D spawnRange;
+    private Vector2 originPosition;
 
     public void SpawmEnemies()
     {
         if (!isCleared)
         {
-            spawnRange = GameObject.Find("Floor").GetComponent<TilemapCollider2D>();
-            float range_X = spawnRange.bounds.size.x;
-            float range_Y = spawnRange.bounds.size.y;
-            Vector2 originPosition = spawnPoint.transform.position;
-
             for (int i = 0; i < spawnCount; i++)
             {
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];   //배열안의 스폰 범위 중 하나 랜덤 선택
+                spawnRange = spawnPoint.GetComponent<BoxCollider2D>();
+                range_X = spawnRange.bounds.size.x;
+                range_Y = spawnRange.bounds.size.y;
+                originPosition = spawnPoint.transform.position;
                 float randRange_X = Random.Range(0, range_X);
                 float randRange_Y = Random.Range(0, range_Y);
                 Vector2 randomPosition = new Vector2(randRange_X, randRange_Y);
 
-                Instantiate(enemy, originPosition + randomPosition, Quaternion.identity);
+
+                Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity);
             }
         }
     }
