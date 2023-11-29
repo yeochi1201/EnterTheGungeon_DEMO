@@ -24,7 +24,7 @@ public class ActiveItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
         {
             this.gameObject.GetComponentInParent<ActiveItem>().OnEquip();
-            inven.GetPassive(this.gameObject);
+            inven.GetActive(this.gameObject);
         }
         this.gameObject.SetActive(false);
         this.gameObject.transform.SetParent(collision.gameObject.transform);
