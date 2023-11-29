@@ -154,37 +154,4 @@ public class Controller : PlayerSpecification
             inven.SwapActive();
         }
     }
-
-
-    //temp
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (other.CompareTag("Weapon"))
-            {
-                Debug.Log("Weapon Collision");
-                GameObject newWeapon = other.gameObject;
-                inven.GetWeapon(newWeapon);
-                newWeapon.SetActive(false);
-                newWeapon.transform.SetParent(transform);
-            }
-            if (other.CompareTag("Active"))
-            {
-                Debug.Log("Active Collision");
-                GameObject newActive = other.gameObject;
-                inven.GetActive(newActive);
-                newActive.SetActive(false);
-                newActive.transform.SetParent(transform);
-            }
-            if (other.CompareTag("Passive"))
-            {
-                Debug.Log("Passive Collision");
-                GameObject newPassive = other.gameObject;
-                inven.GetPassive(newPassive);
-                newPassive.SetActive(false);
-                newPassive.transform.SetParent(transform);
-            }
-        }
-    }
 }

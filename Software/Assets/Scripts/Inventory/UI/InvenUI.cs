@@ -75,11 +75,10 @@ public class InvenUI : MonoBehaviour
         Sprite originalSprite = newActive.GetComponent<SpriteRenderer>().sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
-        activeList.Add(itemButton);
-        Image image = itemButton.GetComponent<Image>();
+        activeList.Add(btn);
+        Image image = btn.GetComponent<Image>();
 
-        Sprite activeSprite = newActive.GetComponent<SpriteRenderer>().sprite;
-        image.sprite = activeSprite;
+        image.sprite = originalSprite;
     }
 
     public void RemoveActiveButton(int index)
@@ -99,11 +98,10 @@ public class InvenUI : MonoBehaviour
         Sprite originalSprite = newPassive.GetComponent<SpriteRenderer>().sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
-        passiveList.Add(itemButton);
-        Image image = itemButton.GetComponent<Image>();
+        passiveList.Add(btn);
+        Image image = btn.GetComponent<Image>();
 
-        Sprite activeSprite = newPassive.GetComponent<SpriteRenderer>().sprite;
-        image.sprite = activeSprite;
+        image.sprite = originalSprite;
     }
 }
 
