@@ -20,7 +20,7 @@ public class PassiveItem : MonoBehaviour
         Inven inven = collision.GetComponentInParent<Inven>();
         if(Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
         {
-            collision.GetComponentInParent<PassiveItem>().OnEquip();
+            this.gameObject.GetComponentInParent<PassiveItem>().OnEquip();
             inven.GetPassive(this.gameObject);
         }
         this.gameObject.SetActive(false);
