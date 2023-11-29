@@ -1721,8 +1721,6 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: c4c335b08313f5a4f869b8be7b016a31, type: 2}
   - m_RefCount: 9
     m_Data: {fileID: 11400000, guid: ba9312318cc596c4bac6e99583e495a7, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 4
     m_Data: {fileID: -1956267502, guid: 1e0f75fd3baddb24b8a1f720340b57c2, type: 3}
@@ -1738,8 +1736,6 @@ Tilemap:
     m_Data: {fileID: 1625020282, guid: 1e0f75fd3baddb24b8a1f720340b57c2, type: 3}
   - m_RefCount: 9
     m_Data: {fileID: 538507260, guid: 1e0f75fd3baddb24b8a1f720340b57c2, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 87
     m_Data:
@@ -9498,7 +9494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770921960356035687, guid: 8ba96ee061372b1479058da6e5ef8917, type: 3}
       propertyPath: m_Name
-      value: Spanwer
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 6172884784061122135, guid: 8ba96ee061372b1479058da6e5ef8917, type: 3}
       propertyPath: enemy
