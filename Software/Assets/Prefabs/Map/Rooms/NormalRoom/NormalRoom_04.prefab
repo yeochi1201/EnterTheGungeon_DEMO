@@ -20772,7 +20772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770921960356035687, guid: 8ba96ee061372b1479058da6e5ef8917, type: 3}
       propertyPath: m_Name
-      value: Spanwer
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 6172884784061122135, guid: 8ba96ee061372b1479058da6e5ef8917, type: 3}
       propertyPath: enemy
