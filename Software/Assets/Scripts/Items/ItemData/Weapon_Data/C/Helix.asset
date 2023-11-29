@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Helix
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2568dd2e102f22d42b2c5220f5288f03, type: 3}
   itemName: Helix
   description: Fires two wave projectiles. Inspired by real science, the Helix is
     extremely useful for hitting two things at once, as long as they are a certain

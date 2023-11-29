@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: UnfinishedGun
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 0555550a09e113a4a9fbc01f0c4e99bc, type: 3}
   itemName: UnfinishedGun
+  description: This gun is still in the process of being forged! It barely functions
+    in its current state, but could be a viable choice in a truly desperate situation.
+    A small hourglass is embossed on the cylinder.
+  title: Still Warm
+  rank: 0
   ammo_size: 15
   ammo_count: 350
   reload: 1.5
@@ -22,6 +28,8 @@ MonoBehaviour:
   delay: 0.2
   range: 35
   ammo_degree: 15
-  current_ammo: 15
+  current_ammo_size: 15
   current_ammo_count: 335
+  current_degree: 15
   type: 0
+  proejectile: 0

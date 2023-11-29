@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Mailbox
   m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
   itemName: Mailbox
+  description: Contains junk mail and one untrustworthy package. It was a wise and
+    hopeful Gungeoneer who observed that mailboxes share the same basic shape of
+    guns. When they sought to change their past, they wondered whether any gun shaped
+    object would operate as guns do, within the Gungeons walls.
+  title: Special Delivery
+  rank: 0
   ammo_size: 10
   ammo_count: 350
   reload: 1.2
@@ -22,6 +29,8 @@ MonoBehaviour:
   delay: 0.2
   range: 0
   ammo_degree: 10
-  current_ammo: 10
+  current_ammo_size: 10
   current_ammo_count: 340
+  current_degree: 10
   type: 0
+  proejectile: 0

@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: T-ShirtCannon
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 61d43e025bb208d4faff6b2cd1bd55f4, type: 3}
   itemName: T-ShirtCannon
+  description: Fires T-Shirts. Gungeon Merch was a shortlived startup enterprise
+    founded by a few misguided Gundead. After shooting their fourth consecutive customer,
+    they turned their sights away from business.
+  title: Machine Gun Wash Only!
+  rank: 0
   ammo_size: 6
   ammo_count: 250
   reload: 0.9
@@ -22,6 +28,8 @@ MonoBehaviour:
   delay: 0.35
   range: 0
   ammo_degree: 5
-  current_ammo: 6
+  current_ammo_size: 6
   current_ammo_count: 244
+  current_degree: 5
   type: 0
+  proejectile: 0

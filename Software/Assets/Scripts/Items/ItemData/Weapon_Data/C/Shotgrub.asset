@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Shotgrub
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2ebd646a8fcb5eb4cabb7b2dfeea2840, type: 3}
   itemName: Shotgrub
+  description: No Worries!
+  title: The infant Shotgrub is typically wielded by an adult Shotgrub, a guardian
+    of Bullet Hell. It fires bullets in unnerving patterns. Gungeoneers should take
+    care that it not attach to their brainstem.
   rank: 1
   ammo_size: 8
   ammo_count: 250
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 242
   current_degree: 0
   type: 0
+  proejectile: 0

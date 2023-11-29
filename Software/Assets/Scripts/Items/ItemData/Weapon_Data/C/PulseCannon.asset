@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: PulseCannon
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3c9010050f6d5c641b57c1ccf41c6564, type: 3}
   itemName: PulseCannon
-  description: 
+  description: Fires several pulses of decoherent energy. An early, less controlled
+    version of modern energy weaponry.
+  title: Time Of Death...
   rank: 1
   ammo_size: 8
   ammo_count: 120

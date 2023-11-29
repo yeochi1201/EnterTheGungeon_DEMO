@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
   itemName: Lil'Bomber
-  description: 
+  description: Charge to fire bombs. A forgetful adventurer left a pouch full of
+    bombs deep in the Gungeon, and they eventually sprouted into this amusing weapon.
+    A favorite of the Gunsling King, who often sends Manservantes to pick up the
+    bombs.
+  title: ReFuse To Lose!
   rank: 0
   ammo_size: 3
   ammo_count: 60

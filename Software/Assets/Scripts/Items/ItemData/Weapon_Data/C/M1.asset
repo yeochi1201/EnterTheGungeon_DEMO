@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: M1
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: a942465d42779df45970e02898138df0, type: 3}
   itemName: M1
+  description: The most famous rifle in history. This gun's usefulness and reliability
+    have become legend. Though not native to the Gungeon, its arrival seemed to be
+    expected by the Gundead.
+  title: Bolt Action
   rank: 1
   ammo_size: 6
   ammo_count: 100
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 94
   current_degree: 2
   type: 0
+  proejectile: 0

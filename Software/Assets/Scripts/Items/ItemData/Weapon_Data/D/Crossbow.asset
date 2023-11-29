@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Crossbow
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 2651532ba331b28468cc6eb01aebee46, type: 3}
   itemName: Crossbow
-  passive: 0
-  consume: 0
+  description: One of the earliest examples of trigger fired projectiles.
+  title: The Original
+  rank: 0
   ammo_size: 1
   ammo_count: 100
   reload: 0.75
@@ -27,5 +28,6 @@ MonoBehaviour:
   ammo_degree: 15
   current_ammo_size: 1
   current_ammo_count: 99
-  current_degree: 0
+  current_degree: 15
   type: 0
+  proejectile: 0

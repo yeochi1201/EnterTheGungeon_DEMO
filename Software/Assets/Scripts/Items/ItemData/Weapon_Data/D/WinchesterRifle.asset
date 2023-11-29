@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: WinchesterRifle
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 93e32dc1e7abfea4dbc8f23f00514d2b, type: 3}
   itemName: WinchesterRifle
+  description: The Winchester Rifle was used to famous effect by Frifle during his
+    first adventures with the Grey Mauser. It might be a bit dated, but still packs
+    quite the punch.
+  title: Guns And Deviltry.
+  rank: 0
   ammo_size: 12
   ammo_count: 130
   reload: 1.2
@@ -22,6 +28,8 @@ MonoBehaviour:
   delay: 0.72
   range: 0
   ammo_degree: 5
-  current_ammo: 12
+  current_ammo_size: 12
   current_ammo_count: 118
+  current_degree: 5
   type: 0
+  proejectile: 0

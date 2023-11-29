@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Gunther
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ef44e3aef2324084ca9a20617e3d4d36, type: 3}
   itemName: Gunther
-  description: 
+  description: Grows more powerful with each room cleared. This distrustful gun has
+    gained sentience. As with all intelligent weapons, he should be treated with
+    respect and care.
+  title: Jealous Weapon
   rank: 4
   ammo_size: 15
   ammo_count: 0

@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: SnowBaller
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: dd2edf714b6a2b24b92eff659f1af197, type: 3}
   itemName: SnowBaller
+  description: This weapon was constructed the single time the Gungeon experienced
+    a snow day. New Gundead simply appeared with these cannons strapped to their
+    bodies and pelted everything in sight with powdery projectiles. There were also
+    many chipped teeth.
+  title: May Contain Rocks
+  rank: 0
   ammo_size: 20
   ammo_count: 400
   reload: 1.2
@@ -22,6 +29,8 @@ MonoBehaviour:
   delay: 0.15
   range: 35
   ammo_degree: 10
-  current_ammo: 20
+  current_ammo_size: 20
   current_ammo_count: 380
+  current_degree: 10
   type: 1
+  proejectile: 0

@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Sling
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 7d7473439ad1e9442ab0d763739a1a78, type: 3}
   itemName: Sling
+  description: Sometimes the old ways are the best ways. Deals more damage to powerful
+    foes. This is not one of those old, best ways. The lowly sling is barely a gun,
+    even by Gungeon standards. Only recommended as a last resort for serious Gungeoneers.
+  title: Outrageous!
+  rank: 0
   ammo_size: 1
   ammo_count: 80
   reload: 0.9
@@ -22,6 +28,8 @@ MonoBehaviour:
   delay: 0.1
   range: 0
   ammo_degree: 0
-  current_ammo: 1
+  current_ammo_size: 1
   current_ammo_count: 79
+  current_degree: 0
   type: 2
+  proejectile: 0

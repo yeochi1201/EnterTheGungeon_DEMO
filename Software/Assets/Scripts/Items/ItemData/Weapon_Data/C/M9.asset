@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: M9
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: b2e1122c76bfcf04d9025f5dd9451ea4, type: 3}
   itemName: M9
+  description: This pistol is often modified to use tranquilizer rounds. This one
+    has not been.
+  title: Non Non Lethal
   rank: 1
   ammo_size: 12
   ammo_count: 200
@@ -28,3 +31,4 @@ MonoBehaviour:
   current_ammo_count: 188
   current_degree: 6
   type: 0
+  proejectile: 0

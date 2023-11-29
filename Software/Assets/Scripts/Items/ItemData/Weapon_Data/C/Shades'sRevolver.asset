@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Shades'sRevolver
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 80ee9d2b28f97e447b5f92ea0c43ba0f, type: 3}
   itemName: Shades'sRevolver
+  description: Someone Loses An Eye
+  title: The cooler bullet brother's handgun. The barrel has 17 notches carved along
+    its length, and somewhat incongruously, a picture of a smiling Bullet Kin. Anyone
+    who uses this handgun would look pretty cool.
   rank: 1
   ammo_size: 6
   ammo_count: 250
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 244
   current_degree: 6
   type: 0
+  proejectile: 0

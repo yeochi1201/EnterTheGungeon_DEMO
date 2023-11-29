@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: FossilizedGun
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 99456ba15b86c174388c69ddecb88c16, type: 3}
   itemName: FossilizedGun
+  description: Reloading this skull produces a gout of flame that can ignite oil.
+    This is a spectacularly preserved specimen of a gun that went extinct during
+    the Ballistac era.
+  title: Proof That Guns Once Existed
+  rank: 0
   ammo_size: 500
   ammo_count: 500
   reload: 0
@@ -22,6 +28,8 @@ MonoBehaviour:
   delay: 0.1
   range: 20
   ammo_degree: 0
-  current_ammo: 500
+  current_ammo_size: 500
   current_ammo_count: 0
+  current_degree: 0
   type: 3
+  proejectile: 0

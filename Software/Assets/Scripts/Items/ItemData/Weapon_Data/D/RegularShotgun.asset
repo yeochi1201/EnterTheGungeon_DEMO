@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: RegularShotgun
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: bd929e8661f16324fb8dc34a59ae16e3, type: 3}
   itemName: RegularShotgun
+  description: A regular shotgun. There's nothing special about it! Favored by the
+    Shotgun Kin that roam the Gungeon, as it reminds them of their home.
+  title: Cocked and Locked
+  rank: 0
   ammo_size: 8
   ammo_count: 150
   reload: 1.8
@@ -22,6 +27,8 @@ MonoBehaviour:
   delay: 0.6
   range: 60
   ammo_degree: 10
-  current_ammo: 8
+  current_ammo_size: 8
   current_ammo_count: 142
+  current_degree: 10
   type: 2
+  proejectile: 0

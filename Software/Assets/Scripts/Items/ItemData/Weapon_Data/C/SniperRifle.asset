@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: SniperRifle
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f10a7fa26d69ab24db5bb18c1b8f7069, type: 3}
   itemName: SniperRifle
-  description: 
+  description: Low rate of fire, piercing. Handcrafted by the Rifle Gundead, each
+    Sniper Rifle performs slightly differently. Though the Gungeon rarely offers
+    many opportunities for distance shooting, this gun still rewards a steady hand.
+  title: Scope Creep
   rank: 1
   ammo_size: 10
   ammo_count: 80

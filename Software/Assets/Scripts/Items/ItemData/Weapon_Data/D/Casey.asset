@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Casey
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 8ae2b57cc8ed5074bbacf810f020d4ea, type: 3}
   itemName: Casey
-  passive: 0
-  consume: 0
+  description: A standard baseball bat, modified to hit bullets instead of balls.
+    Launches enemy projectiles back with a vengeance!  Nothing can happen until you
+    swing the bat.
+  title: Batting .50
+  rank: 0
   ammo_size: 1
   ammo_count: 0
   reload: 0
@@ -26,6 +29,7 @@ MonoBehaviour:
   range: 0
   ammo_degree: 0
   current_ammo_size: 1
-  current_ammo_count: 0
+  current_ammo_count: -1
   current_degree: 0
   type: 2
+  proejectile: 0

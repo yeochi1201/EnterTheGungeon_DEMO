@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: YariLauncher
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 3299ba86d6792164b83797578360de29, type: 3}
   itemName: YariLauncher
-  description: 
+  description: Chain-fires homing rockets. A legendary weapon manufactured by Zilla
+    Industries. This one was created bespoke for a powerful warrior, whose name has
+    been lost to shadow.
+  title: Hell. Yes.
   rank: 4
   ammo_size: 20
   ammo_count: 140

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: AlienSidearm
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 894572c33d46427458de4cfb3c8592e3, type: 3}
   itemName: AlienSidearm
-  passive: 0
-  consume: 0
+  description: Shield Breaker
+  title: The Hegemony of Man has fought, and won, three major wars with alien races.
+    Hundreds of these pistols were salvaged after the second of these wars.
+  rank: 0
   ammo_size: 8
   ammo_count: 120
   reload: 1.8
@@ -29,3 +31,4 @@ MonoBehaviour:
   current_ammo_count: 112
   current_degree: 0
   type: 2
+  proejectile: 0

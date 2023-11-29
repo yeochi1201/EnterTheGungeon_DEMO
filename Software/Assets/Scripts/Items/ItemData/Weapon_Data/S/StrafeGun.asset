@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: StrafeGun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 8c04202bc18ad044781b54b529a605e9, type: 3}
   itemName: StrafeGun
-  description: 
+  description: Fires explosive nails that detonate when the trigger is released,
+    or after a brief period of time. This particular model is from the 1996 Gun of
+    the year re-release edition.
+  title: Bleeding Edge Gameplay
   rank: 4
   ammo_size: 20
   ammo_count: 400

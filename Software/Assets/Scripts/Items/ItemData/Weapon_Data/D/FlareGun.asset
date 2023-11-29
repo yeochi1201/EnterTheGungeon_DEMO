@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: FlareGun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 21dd292fcd25bf547adb494c626d2e9b, type: 3}
   itemName: FlareGun
-  description: 
+  description: Sets targets aflame! Unfortunately, deep in the Gungeon, no one will
+    see this flare but you.
+  title: Over Here
   rank: 0
   ammo_size: 1
   ammo_count: 150

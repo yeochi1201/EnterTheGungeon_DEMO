@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: WindUPGun
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 443adc1c16bbeac4b9dd1f2a06ea0895, type: 3}
   itemName: WindUpGun
+  description: Decreases in damage output as the clip empties. You gotta wind it!
+  title: Charge It
+  rank: 0
   ammo_size: 20
   ammo_count: 600
   reload: 1.5
@@ -22,6 +26,8 @@ MonoBehaviour:
   delay: 0.13
   range: 35
   ammo_degree: 8
-  current_ammo: 20
+  current_ammo_size: 20
   current_ammo_count: 580
+  current_degree: 8
   type: 1
+  proejectile: 0

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Gungine
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: efb6b200d9dfd3a4eb998766ba854908, type: 3}
   itemName: Gungine
+  description: Move faster. Reloading converts goop into ammo. Old technology, but
+    reliable. The Gungine, once revved up, emits 40x more bullets than it was rated
+    for.
+  title: 12 Cylinder
   rank: 4
   ammo_size: 100
   ammo_count: 800
@@ -28,3 +32,4 @@ MonoBehaviour:
   current_ammo_count: 700
   current_degree: 6
   type: 1
+  proejectile: 0
