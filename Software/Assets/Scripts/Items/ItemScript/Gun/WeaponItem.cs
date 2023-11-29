@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,19 +17,23 @@ public class WeaponItem : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        Inven inven = collision.GetComponentInParent<Inven>();
-        if (inven.weapons.Count < 6)
+        
+        if (Input.GetKeyDown(KeyCode.E) && collision.CompareTag("Player"))
         {
-            PlayerSpecification ps = collision.GetComponentInParent<PlayerSpecification>();
-            WeaponUpdateDegree(ps.ammo_degree_buf);
-            WeaponUpdateAmmoCount(ps.ammo_count_buf);
-            WeaponUpdateAmmoSize(ps.ammo_size_buf);
-            WeaponUpdateDamage(ps.weapon_dmg_buf);
-            WeaponUpdateDelay(ps.weapon_delay_buf);
-            WeaponUpdateReload(ps.weapon_reload_buf);
-            inven.GetWeapon(this.gameObject);
-            this.gameObject.SetActive(false);
-            this.gameObject.transform.SetParent(collision.gameObject.transform);
+            Inven inven = collision.GetComponentInParent<Inven>();
+            if (inven.weapons.Count < 6)
+            {
+                PlayerSpecification ps = collision.GetComponentInParent<PlayerSpecification>();
+                WeaponUpdateDegree(ps.ammo_degree_buf);
+                WeaponUpdateAmmoCount(ps.ammo_count_buf);
+                WeaponUpdateAmmoSize(ps.ammo_size_buf);
+                WeaponUpdateDamage(ps.weapon_dmg_buf);
+                WeaponUpdateDelay(ps.weapon_delay_buf);
+                WeaponUpdateReload(ps.weapon_reload_buf);
+                inven.GetWeapon(this.gameObject);
+                this.gameObject.SetActive(false);
+                this.gameObject.transform.SetParent(collision.gameObject.transform);
+            }
         }
     }
     public void OnEquip()

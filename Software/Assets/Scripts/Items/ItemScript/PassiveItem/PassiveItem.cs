@@ -22,8 +22,8 @@ public class PassiveItem : MonoBehaviour
         {
             this.gameObject.GetComponentInParent<PassiveItem>().OnEquip();
             inven.GetPassive(this.gameObject);
+            this.gameObject.SetActive(false);
+            this.gameObject.transform.SetParent(collision.gameObject.transform);
         }
-        this.gameObject.SetActive(false);
-        this.gameObject.transform.SetParent(collision.gameObject.transform);
     }
 }

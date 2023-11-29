@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActiveItem : MonoBehaviour
@@ -25,8 +26,8 @@ public class ActiveItem : MonoBehaviour
         {
             this.gameObject.GetComponentInParent<ActiveItem>().OnEquip();
             inven.GetActive(this.gameObject);
+            this.gameObject.SetActive(false);
+            this.gameObject.transform.SetParent(collision.gameObject.transform);
         }
-        this.gameObject.SetActive(false);
-        this.gameObject.transform.SetParent(collision.gameObject.transform);
     }
 }
