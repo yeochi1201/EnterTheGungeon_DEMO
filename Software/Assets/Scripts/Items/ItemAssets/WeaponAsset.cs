@@ -22,6 +22,8 @@ public class WeaponAsset : ItemAsset
     public int current_ammo_count;
     public int current_degree;
 
+    public Vector2 muzzle_loc;
+
     public Projectile projectile;
     public enum weapontype 
     { 

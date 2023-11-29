@@ -6,12 +6,12 @@ using UnityEngine;
 public class WeaponItem : MonoBehaviour
 {
     [SerializeField]
-    public List<GameObject> muzzle = new List<GameObject>();
     public WeaponAsset weapon;
     private bool is_reload;
     private bool is_delay;
     public Bullet ammo;
-    private List<Vector2> muzzleDirection = new List<Vector2>();
+    private GameObject muzzle;
+    private Vector2 muzzle_direction;
     private bool is_equip = false;
 
 
@@ -50,7 +50,7 @@ public class WeaponItem : MonoBehaviour
         is_equip = true;
         this.gameObject.SetActive(true);
         ProjectilePooler.Instance.type = (ProjectileType)weapon.proejctileType;
-        
+        muzzle.transform.localPosition = weapon.muzzle_loc;
     }
     public void Unequip()
     {
@@ -64,15 +64,11 @@ public class WeaponItem : MonoBehaviour
             {
                 if (!is_delay && !is_reload)
                 {
-
-                    for (int i = 0; i < muzzle.Count; i++)
-                    {
-                        muzzleDirection[i] = muzzle[i].transform.right;
-                        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
-                        _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzleDirection[i]);
-                        _projectile.transform.position = muzzle[i].transform.position;
-                        _projectile.gameObject.SetActive(true);
-                    }
+                    muzzle_direction = muzzle.transform.right;
+                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
+                    _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
+                    _projectile.transform.position = muzzle.transform.position;
+                    _projectile.gameObject.SetActive(true);
                     weapon.current_ammo_size -= 1;
                 }
             }
