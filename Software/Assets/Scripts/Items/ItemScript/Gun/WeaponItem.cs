@@ -30,17 +30,20 @@ public class WeaponItem : MonoBehaviour
                 WeaponUpdateDamage(ps.weapon_dmg_buf);
                 WeaponUpdateDelay(ps.weapon_delay_buf);
                 WeaponUpdateReload(ps.weapon_reload_buf);
-
                 inven.GetWeapon(this.gameObject);
-                
-                GameObject gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
-                this.gameObject.transform.SetParent(gunPivot.transform);
-                this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
-                this.gameObject.transform.position = gunPivot.transform.position;
-                this.gameObject.transform.rotation = gunPivot.transform.rotation;
-                this.gameObject.SetActive(false);
+                PlayerGetGun();
             }
         }
+    }
+
+    public void PlayerGetGun()
+    {
+        GameObject gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
+        this.gameObject.transform.SetParent(gunPivot.transform);
+        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
+        this.gameObject.transform.position = gunPivot.transform.position;
+        this.gameObject.transform.rotation = gunPivot.transform.rotation;
+        this.gameObject.SetActive(false);
     }
     public void OnEquip()
     {
