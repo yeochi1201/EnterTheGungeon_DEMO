@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - StartTrigger
   - EndTrigger
+  - Teleporter
   layers:
   - Default
   - TransparentFX
