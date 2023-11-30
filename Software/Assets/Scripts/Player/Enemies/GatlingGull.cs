@@ -159,8 +159,6 @@ public class GatlingGull : Enemy
 
             attackTimer += Time.deltaTime;
 
-            Debug.Log(attackTimer);
-
             yield return new WaitForSeconds(0.01f);
         }
         rb.velocity = Vector2.zero;

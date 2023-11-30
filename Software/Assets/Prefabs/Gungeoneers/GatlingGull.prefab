@@ -162,7 +162,7 @@ MonoBehaviour:
   health: 10
   damage: 2
   distance: 0
-  moveRange: 10
+  moveRange: 20
   attackRange: 15
   attackCooldown: 3
   muzzle: {fileID: 4186985394661711945}

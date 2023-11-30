@@ -68,6 +68,9 @@ public class PlayerController : PlayerSpecification
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
+        if(inputX == 0 && inputY == 0) playerAnim.SetBool("isWalking", false);
+        else playerAnim.SetBool("isWalking", true);
+
         if (inputX < 0) spritecompo.flipX = true;
         else spritecompo.flipX = false;
 
@@ -100,14 +103,17 @@ public class PlayerController : PlayerSpecification
     void Shooting()
     {
         muzzleDirection = muzzle.transform.right;
-
         /*
         GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
         _bullet.transform.position = muzzle.transform.position;
         _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
         _bullet.SetActive(true);
         */
-        
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
+        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
+
     }
 
     void ItemThrow()
