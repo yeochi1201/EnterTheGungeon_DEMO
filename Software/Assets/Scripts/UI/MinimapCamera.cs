@@ -65,6 +65,7 @@ public class MinimapCamera : MonoBehaviour
 
         // 마우스 위치를 월드 좌표로 변환
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Debug.Log(worldMousePos);
 
         // 드래그 앤 드롭
         if (Input.GetMouseButton(0)) {
