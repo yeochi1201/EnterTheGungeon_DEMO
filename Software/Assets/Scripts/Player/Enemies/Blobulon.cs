@@ -29,7 +29,7 @@ public class Blobulon : Enemy
 
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-    // Á¤ÀÇÇÒ »óÅÂ ¿­°ÅÇü(Enum)
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(Enum)
     public enum EnemyState
     {
         Idle,
@@ -108,7 +108,7 @@ public class Blobulon : Enemy
     {
         enemyAnim.SetBool("isWalking", false);
 
-        //idle »óÅÂ¿¡¼­´Â Á¤Áö
+        //idle ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         rb.velocity = Vector2.zero;
 
         if (distance <= moveRange) StartChasing();

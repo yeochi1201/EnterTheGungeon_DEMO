@@ -107,6 +107,23 @@ public class MinimapCamera : MonoBehaviour
     }
 
     void Teleport() {
-        
+        if (Input.GetMouseButtonDown(0))
+		{
+			Vector2 worldPoint = minimapCam.ScreenToWorldPoint(Input.mousePosition);
+			RaycastHit2D hit = Physics2D.Raycast(worldPoint,Vector2.zero);
+
+			if (hit.collider != null && hit.collider.gameObject.tag == "Teleporter") {
+                Debug.Log("Teleport!!");
+                Vector3 teleportPosition = hit.collider.transform.position;
+                playerTransform.position = teleportPosition;
+                Camera.main.transform.position = playerTransform.position + Vector3.back * 10;
+                Camera.main.GetComponent<CameraController>().enabled = true;
+                playerUI.SetActive(true);
+                minimapUI.SetActive(false);
+                minimapCam.orthographicSize = 20f;
+                transform.position = playerTransform.position + Vector3.back * 10;
+                clickTab = false;
+            }     
+		}
     }
 }
