@@ -22,10 +22,10 @@ public class Controller : PlayerSpecification
     float slideTimer = 0f;
     bool isSlide = false;
 
-    [Header("Inven Property")]
+    [Header("Inventory Property")]
     [SerializeField] float holdTime = 1.0f;
+    bool isKeyPressed = false;
     float pressTime = 0.0f;
-    bool isPress = false;
 
 
     private void Awake()
@@ -131,14 +131,43 @@ public class Controller : PlayerSpecification
 
     void ItemThrow()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.G))
         {
-            inven.ThrowWeapon();
+            isKeyPressed = true;
+            pressTime = 0.0f;
+            Debug.Log("Key Pressed!!!");
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (isKeyPressed && Input.GetKey(KeyCode.F))
         {
-            inven.ThrowActive();
+            pressTime += Time.deltaTime;
+            if (pressTime >= holdTime)
+            {
+                inven.ThrowWeapon();
+                isKeyPressed = false;
+                pressTime = 0.0f;
+                Debug.Log("Item Throw");
+            }
+        }
+
+        if (isKeyPressed && Input.GetKey(KeyCode.G))
+        {
+            pressTime += Time.deltaTime;
+            if (pressTime >= holdTime)
+            {
+                inven.ThrowActive();
+                isKeyPressed = false;
+                Debug.Log("Item Throw");
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            isKeyPressed = false;
+        }
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+            isKeyPressed = false;
         }
     }
 
