@@ -167,9 +167,20 @@ public class PlayerController : PlayerSpecification
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Floor"))
+        if(collision.CompareTag("EndTrigger"))
+        {
+            GameObject.Find("MapManager").GetComponent<MapManager>().RemoveEndPoint();
+        }
+        else if (collision.CompareTag("Floor"))
         {
             collision.transform.GetChild(0).gameObject.GetComponent<Spawner>().SpawmEnemies();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("StartTrigger"))
+        {
+            GameObject.Find("MapManager").GetComponent<MapManager>().RemoveStartPoint();
         }
     }
 
