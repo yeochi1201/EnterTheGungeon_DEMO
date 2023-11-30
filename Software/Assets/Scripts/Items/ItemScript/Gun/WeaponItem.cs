@@ -13,7 +13,7 @@ public class WeaponItem : MonoBehaviour
     private GameObject muzzle;
     private Vector2 muzzle_direction;
     private bool is_equip = false;
-
+    private GameObject gunPivot;
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -38,7 +38,7 @@ public class WeaponItem : MonoBehaviour
 
     public void PlayerGetGun()
     {
-        GameObject gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
+        gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
         this.gameObject.transform.SetParent(gunPivot.transform);
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
         this.gameObject.transform.position = gunPivot.transform.position;
@@ -49,6 +49,8 @@ public class WeaponItem : MonoBehaviour
     {
         is_equip = true;
         this.gameObject.SetActive(true);
+        gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
+        muzzle = gunPivot.transform.GetChild(0).gameObject;
         ProjectilePooler.Instance.type = (ProjectileType)weapon.proejctileType;
         muzzle.transform.localPosition = weapon.muzzle_loc;
     }
