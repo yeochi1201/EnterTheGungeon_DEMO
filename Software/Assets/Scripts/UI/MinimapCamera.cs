@@ -17,7 +17,6 @@ public class MinimapCamera : MonoBehaviour
     void Awake() {
         minimapCam = gameObject.GetComponent<Camera>();
         transform = gameObject.GetComponent<Transform>();
-        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
         turnSpeed = 2f;
     }
     void Start()
@@ -25,13 +24,16 @@ public class MinimapCamera : MonoBehaviour
         minimapUI.SetActive(false);
         playerUI.SetActive(true);
         clickTab = false;
-
+        
         minimapCam.orthographicSize = 20f;
-        transform.position = playerTransform.position + Vector3.back * 10;
     }
 
     void Update()
     {
+        if(playerTransform == null) {
+            playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            transform.position = playerTransform.position + Vector3.back * 10;
+        }
         if(clickTab) {
             ZoomMap();
             if(Input.GetKeyDown(KeyCode.Tab)) {
