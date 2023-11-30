@@ -49781,6 +49781,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 225048268954461069, guid: 404d82f23ea7360488996c579b3e1d15, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 118
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404d82f23ea7360488996c579b3e1d15, type: 3}
 --- !u!1001 &9200556753756681815
@@ -49790,6 +49794,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9200556753504604042, guid: e3b35745d5be9ec47887bcde95dc8b98, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200556753504604042, guid: e3b35745d5be9ec47887bcde95dc8b98, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200556753504604042, guid: e3b35745d5be9ec47887bcde95dc8b98, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 9200556753504604044, guid: e3b35745d5be9ec47887bcde95dc8b98, type: 3}
       propertyPath: m_Name
       value: Canvas
