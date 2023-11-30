@@ -134,6 +134,12 @@ public class Inven : MonoBehaviour
         }
 
     }
+
+    public void UseAcitve()
+    {
+        actives[activeIndex].GetComponent<ActiveItem>().Consume();
+    }
+
     public void GetPassive(GameObject newPassive)
     {
         if (passives.Count == 6)
