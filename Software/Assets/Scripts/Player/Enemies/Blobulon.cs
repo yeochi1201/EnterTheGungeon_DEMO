@@ -29,7 +29,7 @@ public class Blobulon : Enemy
 
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-    // ������ ���� ������(Enum)
+    // 정의할 상태 열거형(Enum)
     public enum EnemyState
     {
         Idle,
@@ -94,6 +94,7 @@ public class Blobulon : Enemy
     void SpawnDef()
     {
         spritecompo.enabled = false;
+        this.GetComponentInParent<Spawner>().PlusEnemyCount(1);
 
         GameObject spawner1 = Instantiate(spawner);
         GameObject spawner2 = Instantiate(spawner);
@@ -101,14 +102,18 @@ public class Blobulon : Enemy
         spawner1.transform.position = spawn1.position;
         spawner2.transform.position = spawn2.position;
 
+        spawner1.transform.SetParent(this.transform.parent.transform, true);
+        spawner2.transform.SetParent(this.transform.parent.transform, true);
+
         Destroy(this, 2f);
     }
+   
 
     private void UpdateIdleState()
     {
         enemyAnim.SetBool("isWalking", false);
 
-        //idle ���¿����� ����
+        //idle 상태에서는 정지
         rb.velocity = Vector2.zero;
 
         if (distance <= moveRange) StartChasing();
@@ -137,5 +142,7 @@ public class Blobulon : Enemy
     public void Die()
     {
         ChangeState(EnemyState.Dead);
+        if (!canDivide)
+            this.GetComponentInParent<Spawner>().CheckEnemyCount();
     }
 }

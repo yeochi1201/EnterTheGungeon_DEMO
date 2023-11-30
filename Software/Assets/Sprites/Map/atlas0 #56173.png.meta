@@ -755,6 +755,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_31
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 719
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fdeecbae173f645a8645342a403d63
+      internalID: -195682531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_32
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 673
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d418c8109a67b41b0ce544753ade7e
+      internalID: 972219895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_33
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 624
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc01c9df524a5d42b85164933bb248e
+      internalID: 1046201248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_34
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 622
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58eccfcdf7e2744b963b4f7389e3447
+      internalID: -1057154656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_35
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 529
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7aee926a6160742bb81d624035d36d
+      internalID: -1484976484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_36
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 471
+        width: 64
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33660cadaf0e0f42a8a1ca01fc3f60f
+      internalID: 473085989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas0 #56173_37
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 530
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c2a920e7b4bc64281f4a24cd3942a9
+      internalID: 1703499417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -791,6 +938,13 @@ TextureImporter:
       atlas0 #56173_29: 2042891417
       atlas0 #56173_3: 1222461963
       atlas0 #56173_30: -707371014
+      atlas0 #56173_31: -195682531
+      atlas0 #56173_32: 972219895
+      atlas0 #56173_33: 1046201248
+      atlas0 #56173_34: -1057154656
+      atlas0 #56173_35: -1484976484
+      atlas0 #56173_36: 473085989
+      atlas0 #56173_37: 1703499417
       atlas0 #56173_4: 144646611
       atlas0 #56173_5: 1197536264
       atlas0 #56173_6: -569364869

@@ -169,6 +169,7 @@ public class BulletKin : Enemy
     public void Die()
     {
         ChangeState(EnemyState.Dead);
+        this.GetComponentInParent<Spawner>().CheckEnemyCount();
     }
 
     void FollowPlayer() //조준

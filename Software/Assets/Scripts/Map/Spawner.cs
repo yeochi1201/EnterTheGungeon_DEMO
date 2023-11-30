@@ -13,6 +13,8 @@ public class Spawner : MonoBehaviour
     GameObject[] spawnPoints;
     [SerializeField]
     GameObject[] door;
+    [SerializeField]
+    GameObject telepoter;
 
     private bool isCleared = false;
     private GameObject spawnPoint;
@@ -47,9 +49,21 @@ public class Spawner : MonoBehaviour
     {
         this.spawnCount--;
         if (spawnCount <= 0)
+        {
             foreach (GameObject obj in door)
             {
                 obj.SetActive(false);
             }
+            if (telepoter != null)
+            {
+                telepoter.GetComponent<Animator>().SetTrigger("Activate");
+            }
+            isCleared = true;
+        }
     }
+    public void PlusEnemyCount(int i)
+    {
+        spawnCount += i;
+    }
+
 }
