@@ -36,7 +36,7 @@ public class PlayerHUD : MonoBehaviour
     void Update()
     {
         if(playerSpec == null) {
-            GameObject go = GameObject.Find("Player");
+            GameObject go = GameObject.FindWithTag("Player");
             if(go != null) {
                 playerSpec = go.GetComponent<PlayerSpecification>();
             }

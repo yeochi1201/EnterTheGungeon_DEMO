@@ -76,6 +76,21 @@ public class Blobulon : Enemy
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (health > 0)
+        {
+            if (collision.gameObject.tag == "PlayerBullet")
+            {
+                /*
+                float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
+                health -= getDamage;
+                */
+                health -= 1;
+            }
+        }
+    }
+
     void SpawnDef()
     {
         spritecompo.enabled = false;
@@ -87,15 +102,6 @@ public class Blobulon : Enemy
         spawner2.transform.position = spawn2.position;
 
         Destroy(this, 2f);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "PlayerBullet")
-        {
-            float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
-            health -= getDamage;
-        }
     }
 
     private void UpdateIdleState()
