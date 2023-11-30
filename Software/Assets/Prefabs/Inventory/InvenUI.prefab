@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 1195441870063355406}
   - component: {fileID: 1195441870063355403}
   - component: {fileID: 1195441870063355400}
-  - component: {fileID: 1195441870063355401}
+  - component: {fileID: 7113815291022114528}
   m_Layer: 5
   m_Name: WeaponFrame
   m_TagString: Untagged
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1195441870063355401
+--- !u!114 &7113815291022114528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
