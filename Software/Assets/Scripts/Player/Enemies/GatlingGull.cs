@@ -50,22 +50,25 @@ public class GatlingGull : Enemy
         if (!isCoroutine && isAlive)
         {
             attackTimer += Time.deltaTime;
-            Debug.Log(attackTimer);
 
-            if (health <= 0)
-                Die();
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
             if (rb.transform.position.x < playertrans.position.x)
                 spritecompo.flipX = true;
             else spritecompo.flipX = false;
-
             FollowPlayer();
+
+
             if (currentState != EnemyState.Attacking && distance <= moveRange) StartChasing();
             else ChangeState(EnemyState.Idle);
 
             if (currentState == EnemyState.Chasing && attackTimer >= attackCooldown)
                 StartAttacking();
+
+            if (health <= 0)
+            {
+                Die();
+            }
 
             switch (currentState)
             {
@@ -92,7 +95,6 @@ public class GatlingGull : Enemy
 
     private void UpdateIdleState()
     {
-        Debug.Log("Idle");
 
         enemyAnim.SetBool("isWalking", false);
 
@@ -102,7 +104,6 @@ public class GatlingGull : Enemy
 
     private void UpdateChasingState()
     {
-        Debug.Log("Walking");
 
         enemyAnim.SetBool("isWalking", true);
 
@@ -114,7 +115,6 @@ public class GatlingGull : Enemy
 
     IEnumerator UpdateAttackingState()
     {
-        Debug.Log("Attacking");
         isCoroutine = true;
 
         rb.velocity = Vector2.zero;
@@ -124,7 +124,7 @@ public class GatlingGull : Enemy
 
         attackTimer = 0f;
 
-        int randAction = Random.Range(0, 3);
+        int randAction = Random.Range(0, 2);
 
         switch (randAction)
         {
@@ -134,18 +134,14 @@ public class GatlingGull : Enemy
             case 1:
                 StartCoroutine(Pattern2());
                 break;
-            case 2:
-                StartCoroutine(Pattern2());
-                //StartCoroutine(Pattern3());
-                break;
         }
 
         yield return null;
     }
 
-    IEnumerator Pattern1(){
+    IEnumerator Pattern1()
+    {
 
-        Debug.Log("Pattern1");
         coll.enabled = false;
         enemyAnim.SetBool("isShooting", false);
         enemyAnim.SetBool("pattern1", true);
@@ -153,7 +149,9 @@ public class GatlingGull : Enemy
         attackTimer = 0f;
         yield return new WaitForSeconds(1f);
 
-        while (attackTimer < attackCooldown)
+        float pattern1Cool = attackCooldown / 2;
+
+        while (attackTimer < pattern1Cool)
         {
             Vector2 playerDir = playertrans.position - rb.transform.position;
             Vector2 nextVec = playerDir * speed * Time.deltaTime * 3f;
@@ -178,9 +176,9 @@ public class GatlingGull : Enemy
         yield return null;
     }
 
-    IEnumerator Pattern2(){
+    IEnumerator Pattern2()
+    {
 
-        Debug.Log("Pattern2");
         isCoroutine = true;
 
         rb.velocity = Vector2.zero;
@@ -192,18 +190,28 @@ public class GatlingGull : Enemy
 
         while (attackTimer < attackCooldown)
         {
+
             Vector2 playerDir = playertrans.position - rb.transform.position;
             Vector2 nextVec = playerDir * speed * Time.deltaTime * 0.3f;
             rb.MovePosition(rb.position + nextVec);
 
+            if (rb.transform.position.x < playertrans.position.x)
+                spritecompo.flipX = true;
+            else spritecompo.flipX = false;
+
             attackTimer += Time.deltaTime;
+            FollowPlayer();
             Shooting();
+
+            if (health <= 0)
+            {
+                attackTimer += attackCooldown;
+            }
 
             yield return new WaitForSeconds(0.01f);
         }
         rb.velocity = Vector2.zero;
 
-        yield return new WaitForSeconds(0.5f);
         attackTimer = 0f;
         isCoroutine = false;
         enemyAnim.SetBool("isShooting", false);

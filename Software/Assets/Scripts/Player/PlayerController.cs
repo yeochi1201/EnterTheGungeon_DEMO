@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,10 +11,13 @@ public class PlayerController : PlayerSpecification
     Rigidbody2D playerRigidbody;
     SpriteRenderer spritecompo;
     Animator playerAnim;
+    Inven inven;
+    Vector3 mouse;
+
     float damagedCool = 2f;
     float damagedTimer = 0f;
     bool damagedCheck = false;
-    Vector3 mouse;
+    
 
     [Header("Slide Property")]
     Vector2 slideDirection;
@@ -30,13 +34,7 @@ public class PlayerController : PlayerSpecification
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
     }
-    void OnTriggerEnter2D(Collider2D obj)
-    {
-        if (obj.CompareTag("Floor"))
-        {
-            obj.transform.GetChild(0).gameObject.GetComponent<Spawner>().SpawmEnemies();
-        }
-    }
+
     private void Update()
     {
         if (currentHP <= 0)
@@ -49,6 +47,9 @@ public class PlayerController : PlayerSpecification
         {
             FollowMouse();
             PlayerMove();
+
+            ItemThrow();
+            ItemSwap();
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -71,7 +72,7 @@ public class PlayerController : PlayerSpecification
         // Player Move
         playerRigidbody.velocity = playerVelocity * speed;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isSlide)
+        if (Input.GetMouseButtonDown(1) && !isSlide)
         {
             if (Mathf.Abs(inputX) > 0.1f || Mathf.Abs(inputY) > 0.1f)
             {
@@ -102,6 +103,72 @@ public class PlayerController : PlayerSpecification
         _bullet.SetActive(true);
         */
         
+    }
+
+    void ItemThrow()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            inven.ThrowWeapon();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            inven.ThrowActive();
+        }
+    }
+
+    void ItemSwap()
+    {
+        float wheelMove = Input.GetAxis("Mouse ScrollWheel");
+        if (wheelMove != 0)
+        {
+            inven.SwapWeapon(wheelMove);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            inven.SwapActive();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Floor"))
+        {
+            collision.transform.GetChild(0).gameObject.GetComponent<Spawner>().SpawmEnemies();
+        }
+    }
+
+    //temp
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (other.CompareTag("Weapon"))
+            {
+                Debug.Log("Weapon Collision");
+                GameObject newWeapon = other.gameObject;
+                inven.GetWeapon(newWeapon);
+                newWeapon.SetActive(false);
+                newWeapon.transform.SetParent(transform);
+            }
+            if (other.CompareTag("Active"))
+            {
+                Debug.Log("Active Collision");
+                GameObject newActive = other.gameObject;
+                inven.GetActive(newActive);
+                newActive.SetActive(false);
+                newActive.transform.SetParent(transform);
+            }
+            if (other.CompareTag("Passive"))
+            {
+                Debug.Log("Passive Collision");
+                GameObject newPassive = other.gameObject;
+                inven.GetPassive(newPassive);
+                newPassive.SetActive(false);
+                newPassive.transform.SetParent(transform);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -167,6 +234,6 @@ public class PlayerController : PlayerSpecification
     {
         playerAnim.SetTrigger("Die");
 
-        // Scene Gameover�� �̵�
+        // Scene Gameover
     }
 }

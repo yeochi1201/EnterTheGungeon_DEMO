@@ -168,7 +168,7 @@ MonoBehaviour:
   attackCooldown: 3
   spawn1: {fileID: 5397939835974272779}
   spawn2: {fileID: 5397939834198784270}
-  spawner: {fileID: 8035912862687095989, guid: 0237f398ad4bcb540878ba7ece2d0d78, type: 3}
+  spawner: {fileID: 2259278156065608485, guid: 0237f398ad4bcb540878ba7ece2d0d78, type: 3}
   canDivide: 1
 --- !u!1 &5397939834198784271
 GameObject:
