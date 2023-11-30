@@ -37,7 +37,9 @@ public class PlayerHUD : MonoBehaviour
     {
         if(playerSpec == null) {
             GameObject go = GameObject.Find("Player");
-            playerSpec = go.GetComponent<PlayerSpecification>();
+            if(go != null) {
+                playerSpec = go.GetComponent<PlayerSpecification>();
+            }
         }
         else {
             SetHpUI();
