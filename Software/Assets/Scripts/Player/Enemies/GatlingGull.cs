@@ -93,6 +93,21 @@ public class GatlingGull : Enemy
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (health > 0)
+        {
+            if (collision.gameObject.tag == "PlayerBullet")
+            {
+                /*
+                float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
+                health -= getDamage;
+                */
+                health -= 1;
+            }
+        }
+    }
+
     private void UpdateIdleState()
     {
 
@@ -185,6 +200,7 @@ public class GatlingGull : Enemy
 
         attackTimer = 0f;
         yield return new WaitForSeconds(1f);
+        int count = 0;
 
         while (attackTimer < attackCooldown)
         {
@@ -198,8 +214,12 @@ public class GatlingGull : Enemy
             else spritecompo.flipX = false;
 
             attackTimer += Time.deltaTime;
+
+            count++;
+            if(count % 100 ==0)
+                Shooting();
+
             FollowPlayer();
-            Shooting();
 
             if (health <= 0)
             {
@@ -260,5 +280,10 @@ public class GatlingGull : Enemy
         _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
         _bullet.SetActive(true);
         */
+
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
+        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
     }
 }
