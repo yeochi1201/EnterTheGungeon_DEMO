@@ -13,7 +13,7 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     GameObject chestSpawner;
     [SerializeField]
-    GameObject palyer;
+    GameObject player;
 
 
     void Start()
@@ -46,11 +46,11 @@ public class MapManager : MonoBehaviour
     }
     void InstantiatePlayer()
     {
-        Instantiate(palyer, startPoint.transform.position, Quaternion.identity);
+        Instantiate(player, startPoint.transform.position, Quaternion.identity);
     }
     void DisablePlayer()
     {
-        palyer.SetActive(false);
+        GameObject.FindGameObjectWithTag("Player").SetActive(false);
     }
 
 

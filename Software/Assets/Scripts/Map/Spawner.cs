@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
                 float randRange_Y = Random.Range(0, range_Y);
                 Vector2 randomPosition = new Vector2(randRange_X, randRange_Y);
 
-                Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity);
+                Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity).transform.parent = this.transform;
             }
         }
     }

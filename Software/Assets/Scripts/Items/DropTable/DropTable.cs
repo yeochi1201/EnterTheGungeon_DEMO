@@ -25,7 +25,7 @@ public class DropTable : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown("E")&&collision.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.E)&&collision.CompareTag("Player"))
         {
             Drop();
             Destroy(this.gameObject);

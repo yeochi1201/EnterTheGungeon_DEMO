@@ -45,7 +45,7 @@ public class ChestSpawner : MonoBehaviour
     {
         foreach(GameObject obj in spwanPoints)
         {
-            Instantiate(chests[Random.Range(1, 9)], obj.transform.position, Quaternion.identity);
+            Instantiate(chests[Random.Range(0, 8)], obj.transform.position, Quaternion.identity);
         }
     }
 
