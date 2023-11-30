@@ -7,8 +7,8 @@ public class WeaponItem : MonoBehaviour
 {
     [SerializeField]
     public WeaponAsset weapon;
-    private bool is_reload;
-    private bool is_delay;
+    private bool is_reload = false;
+    private bool is_delay = false;
     public Bullet ammo;
     private GameObject muzzle;
     private Vector2 muzzle_direction;
@@ -64,14 +64,16 @@ public class WeaponItem : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && is_equip)
             if (!is_delay && !is_reload)
             {
-                if (!is_delay && !is_reload)
                 {
-                    muzzle_direction = muzzle.transform.right;
-                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
-                    _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
-                    _projectile.transform.position = muzzle.transform.position;
-                    _projectile.gameObject.SetActive(true);
-                    weapon.current_ammo_size -= 1;
+                    if (!is_delay && !is_reload)
+                    {
+                        muzzle_direction = muzzle.transform.right;
+                        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
+                        _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
+                        _projectile.transform.position = muzzle.transform.position;
+                        _projectile.gameObject.SetActive(true);
+                        weapon.current_ammo_size -= 1;
+                    }
                 }
             }
     }
