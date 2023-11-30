@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class InvenUI : MonoBehaviour
 {
+    List<GameObject> itemList = new List<GameObject>();
     List<GameObject> weaponList = new List<GameObject>();
     List<GameObject> activeList = new List<GameObject>();
     List<GameObject> passiveList = new List<GameObject>();
@@ -48,8 +49,8 @@ public class InvenUI : MonoBehaviour
         btn.transform.SetParent(weaponFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
-        Sprite originalSprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
-        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
+        Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
+        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height) * 3;
 
         weaponList.Add(btn);
         Image image = btn.GetComponent<Image>();
@@ -72,7 +73,7 @@ public class InvenUI : MonoBehaviour
         btn.transform.SetParent(acitveFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
-        Sprite originalSprite = newActive.GetComponent<SpriteRenderer>().sprite;
+        Sprite originalSprite = newActive.GetComponent<ActiveItem>().active.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
         activeList.Add(btn);
@@ -95,7 +96,7 @@ public class InvenUI : MonoBehaviour
         btn.transform.SetParent(passiveFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
-        Sprite originalSprite = newPassive.GetComponent<SpriteRenderer>().sprite;
+        Sprite originalSprite = newPassive.GetComponent<PassiveItem>().passive.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
         passiveList.Add(btn);

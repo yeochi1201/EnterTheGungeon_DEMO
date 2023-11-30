@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ItemButton : UIPopup
 {
     public Button itemButton;
+    public int buttonID;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class ItemButton : UIPopup
 
         RectTransform buttonRectTransform = itemButton.GetComponent<RectTransform>();
         RectTransform imageSize = itemImage.GetComponent<RectTransform>();
-        imageSize.sizeDelta = new Vector2(buttonRectTransform.rect.width * 2, buttonRectTransform.rect.height * 2);
+        imageSize.sizeDelta = new Vector2(buttonRectTransform.rect.width, buttonRectTransform.rect.height);
 
         itemImage.sprite = itemButton.image.sprite;
 
