@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 263403638705948607}
   - component: {fileID: 263403638705948604}
   - component: {fileID: 263403638705948578}
+  - component: {fileID: 4896972745811181505}
   - component: {fileID: 263403638705948580}
   - component: {fileID: 263403638705948581}
   - component: {fileID: 263403638705948579}
@@ -160,6 +161,24 @@ MonoBehaviour:
   muzzleDirection: {x: 0, y: 0}
   slideSpeed: 10
   holdTime: 1
+--- !u!114 &4896972745811181505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263403638705948605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0031ac278a852294d8adca0ea6feab6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons: []
+  actives: []
+  passives: []
+  basicGun: {fileID: 5362492783116262891, guid: 0f12c09ebcee81c47ba6b7b0ad49860b, type: 3}
+  invenUI: {fileID: 0}
+  maxActiveSlot: 6
 --- !u!50 &263403638705948580
 Rigidbody2D:
   serializedVersion: 4

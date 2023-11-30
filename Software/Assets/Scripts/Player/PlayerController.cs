@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.WSA;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerController : PlayerSpecification
@@ -38,6 +39,7 @@ public class PlayerController : PlayerSpecification
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         spritecompo = GetComponent<SpriteRenderer>();
+        inven = GetComponent<Inven>();
     }
 
     private void Update()
