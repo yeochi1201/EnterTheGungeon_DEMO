@@ -11,7 +11,7 @@ public class DropTable : MonoBehaviour
     public void Drop()
     {
         GameObject item = ChoiceItem();
-        Instantiate<GameObject>(item, this.gameObject.transform);
+        Instantiate<GameObject>(item, this.gameObject.transform.position, this.gameObject.transform.rotation);
     }
 
     public GameObject ChoiceItem() //choice item randomly in droptable

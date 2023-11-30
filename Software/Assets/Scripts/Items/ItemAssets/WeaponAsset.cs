@@ -23,8 +23,6 @@ public class WeaponAsset : ItemAsset
     public int current_degree;
 
     public Vector2 muzzle_loc;
-
-    public Projectile projectile;
     public enum weapontype 
     { 
         half_auto,
