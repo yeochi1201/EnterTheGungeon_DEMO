@@ -49,7 +49,7 @@ public class Controller : PlayerSpecification
 
         if (Input.GetMouseButtonDown(0))
         {
-            Shooting();
+            //Shooting();
         }
     }
 

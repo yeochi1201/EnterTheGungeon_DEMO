@@ -35,7 +35,23 @@ public class WeaponItem : MonoBehaviour
             }
         }
     }
-
+    public void Start()
+    {
+        weapon.current_ammo_size = weapon.ammo_size;
+        weapon.current_ammo_count = weapon.ammo_count - weapon.ammo_size;
+        weapon.current_degree = weapon.ammo_degree;
+    }
+    public void Update()
+    {
+        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(fire());
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(Reload());
+        }
+    }
     public void PlayerGetGun()
     {
         gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
@@ -59,31 +75,20 @@ public class WeaponItem : MonoBehaviour
         is_equip = false;
         this.gameObject.SetActive(false);
     }
-    public void fire()
+    IEnumerator fire()
     {
-        if (Input.GetMouseButtonDown(0) && is_equip)
-            if (!is_delay && !is_reload)
-            {
-                {
-                    if (!is_delay && !is_reload)
-                    {
-                        muzzle_direction = muzzle.transform.right;
-                        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
-                        _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
-                        _projectile.transform.position = muzzle.transform.position;
-                        _projectile.gameObject.SetActive(true);
-                        weapon.current_ammo_size -= 1;
-                    }
-                }
-            }
+        muzzle_direction = muzzle.transform.right;
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectilePooler.Instance.type);
+        _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
+        _projectile.transform.position = muzzle.transform.position;
+        _projectile.gameObject.SetActive(true);
+        weapon.current_ammo_size -= 1;
+        is_delay = true;
+        yield return new WaitForSeconds(weapon.delay);
+        is_delay = false;
     }
-    private void Reload()
+    IEnumerator Reload()
     {
-        if(weapon.current_ammo_count == 0)
-        {
-            return;
-        }
-        float time_start = Time.deltaTime;
         is_reload = true;
         if(weapon.ammo_count == -1)
         {
@@ -102,16 +107,8 @@ public class WeaponItem : MonoBehaviour
                 weapon.current_ammo_size = weapon.ammo_size;
             }
         }
-
-        while(true)
-        {
-            if(Time.deltaTime - time_start >= weapon.reload)
-            {
-                is_reload = false;
-                break;
-            }
-        }
-        return;
+        yield return new WaitForSeconds(weapon.reload);
+        is_reload = false;
     }
     private void Delay()
     {
