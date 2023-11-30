@@ -15,10 +15,18 @@ public class WeaponItem : MonoBehaviour
     private bool is_equip = false;
     private GameObject gunPivot;
 
-    private int current_magazine;
-    private int current_ammo;
-    private float current_ammo_degree;
+    public int magazine; //źâ
+    public int ammo_count; //ź�˼�
+    public float reload; //reload time
+    public int ammo_speed;
+    public int knock_back;
+    public float damage; //weapon damage
+    public float delay; //delay at fire
+    public int range;
+    public int ammo_degree;
 
+    public int current_magazine;
+    public int current_ammo_count;
     public void OnTriggerStay2D(Collider2D collision)
     {
         
@@ -41,13 +49,22 @@ public class WeaponItem : MonoBehaviour
     }
     public void Start()
     {
-        weapon.current_ammo_size = weapon.ammo_size;
-        weapon.current_ammo_count = weapon.ammo_count - weapon.ammo_size;
-        weapon.current_degree = weapon.ammo_degree;
+        magazine = weapon.magazine;
+        ammo_count = weapon.ammo_count;
+        reload = weapon.reload;
+        ammo_speed = weapon.ammo_speed;
+        knock_back = weapon.knock_back;
+        damage = weapon.damage;
+        delay = weapon.delay;
+        range = weapon.range;
+        ammo_degree = weapon.ammo_degree;
+
+        current_ammo_count = ammo_count;
+        current_magazine = magazine;
     }
     public void Update()
     {
-        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && weapon.current_ammo_size>0)
+        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && magazine>0)
         {
             StartCoroutine(fire());
         }
@@ -86,7 +103,7 @@ public class WeaponItem : MonoBehaviour
         _projectile.GetComponent<Projectile>().SetProjectileProperty(weapon.name, weapon.damage, weapon.ammo_speed, weapon.range, 0, 0, 0, muzzle_direction);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
-        weapon.current_ammo_size -= 1;
+        current_magazine -= 1;
         is_delay = true;
         yield return new WaitForSeconds(weapon.delay);
         is_delay = false;
@@ -96,96 +113,82 @@ public class WeaponItem : MonoBehaviour
         is_reload = true;
         if(weapon.ammo_count == -1)
         {
-            weapon.current_ammo_size = weapon.ammo_size;
+            current_magazine = magazine;
         }
         else
         {
-            if (weapon.current_ammo_count < weapon.ammo_size - weapon.current_ammo_size)
+            if (current_ammo_count < magazine - current_ammo_count)
             {
-                weapon.current_ammo_size = weapon.current_ammo_count;
-                weapon.current_ammo_count = 0;
+                current_magazine = current_ammo_count;
+                current_ammo_count = 0;
             }
             else
             {
-                weapon.current_ammo_count -= (weapon.ammo_size - weapon.current_ammo_size);
-                weapon.current_ammo_size = weapon.ammo_size;
+                current_ammo_count -= magazine;
+                current_magazine = magazine;
             }
         }
         yield return new WaitForSeconds(weapon.reload);
         is_reload = false;
     }
-    private void Delay()
-    {
-        float time_start = Time.deltaTime;
-        is_delay = true;
-        while (true)
-        {
-            if (Time.deltaTime - time_start >= weapon.delay)
-            {
-                is_delay = false;
-                break;
-            }
-        }
-        return;
-    }
 
     public void WeaponUpdateDegree(float ammo_degree_buf)
     {
-        weapon.current_degree = (int)(weapon.current_degree * ammo_degree_buf);
+        ammo_degree = (int)(weapon.ammo_degree * ammo_degree_buf);
     }
 
     public void WeaponUpdateDamage(float weapon_damage_buf)
     {
-        weapon.damage = weapon.damage * weapon_damage_buf;
+        damage = weapon.damage * weapon_damage_buf;
     }
 
     public void WeaponUpdateAmmoSize(float ammo_size_buf)
     {
-        weapon.current_ammo_size = (int)(weapon.current_ammo_size * ammo_size_buf);
+        magazine = (int)(weapon.magazine * ammo_size_buf);
     }
 
     public void WeaponUpdateReload(float weapon_reload_buf)
     {
-        weapon.reload = (weapon.reload * weapon_reload_buf);
+        reload = (weapon.reload * weapon_reload_buf);
     }
 
     public void WeaponRollbackDegree(float ammo_degree_buf)
     {
-        weapon.current_degree = (int)(weapon.current_degree / ammo_degree_buf);
+        ammo_degree = (int)(weapon.ammo_degree / ammo_degree_buf);
     }
 
     public void WeaponRollbackDamage(float weapon_damage_buf)
     {
-        weapon.damage = weapon.damage / weapon_damage_buf;
+        damage = weapon.damage / weapon_damage_buf;
     }
 
     public void WeaponRollbackAmmoSize(float ammo_size_buf)
     {
-        weapon.current_ammo_size = (int)(weapon.current_ammo_size / ammo_size_buf);
+        magazine = (int)(weapon.magazine / ammo_size_buf);
     }
 
     public void WeaponRollbackReload(float weapon_reload_buf)
     {
-        weapon.reload = (weapon.reload / weapon_reload_buf);
+        reload = (weapon.reload / weapon_reload_buf);
     }
 
     public void WeaponUpdateDelay(float weapon_delay_buf)
     {
-        weapon.delay = (weapon.delay * weapon_delay_buf);
+        delay = (weapon.delay * weapon_delay_buf);
     }
 
     public void WeaponRollbackDelay(float weapon_delay_buf)
     {
-        weapon.delay = weapon.delay / weapon_delay_buf;
+        delay = weapon.delay / weapon_delay_buf;
     }
 
     public void WeaponUpdateAmmoCount(float ammo_count_buf)
     {
-        weapon.ammo_count = (int)(weapon.ammo_count * ammo_count_buf);
+        ammo_count = (int)(weapon.ammo_count * ammo_count_buf);
     }
 
     public void WeaponRollbackAmmoCount(float ammo_count_buf)
     {
-        weapon.ammo_count = (int)(weapon.ammo_count / ammo_count_buf);
+        ammo_count = (int)(weapon.ammo_count / ammo_count_buf);
     }
 }

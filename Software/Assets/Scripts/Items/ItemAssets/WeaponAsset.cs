@@ -8,7 +8,7 @@ using UnityEngine;
 public class WeaponAsset : ItemAsset
 {
     [SerializeField]
-    public int ammo_size; //źâ
+    public int magazine; //źâ
     public int ammo_count; //ź�˼�
     public float reload; //reload time
     public int ammo_speed;
@@ -17,10 +17,6 @@ public class WeaponAsset : ItemAsset
     public float delay; //delay at fire
     public int range;
     public int ammo_degree;
-
-    public int current_ammo_size;
-    public int current_ammo_count;
-    public int current_degree;
 
     public Vector2 muzzle_loc;
     public enum weapontype 
