@@ -71,7 +71,7 @@ public class MinimapCamera : MonoBehaviour
         }
     }
     void ZoomMap() {
-        if(minimapCam.orthographicSize <= 70f) {
+        if(minimapCam.orthographicSize <= 70f && minimapCam.orthographicSize >= 20f) {
             // 마우스 위치 가져오기
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = minimapCam.transform.position.z;
@@ -99,7 +99,10 @@ public class MinimapCamera : MonoBehaviour
                 // minimapCam.transform.position = new Vector3(95 + worldMousePos.x * turnSpeed, 50 + worldMousePos.y * turnSpeed, minimapCam.transform.position.z);
             } 
         } else {
-            minimapCam.orthographicSize = 70f;
+            if(minimapCam.orthographicSize > 70f) 
+                minimapCam.orthographicSize = 70f;
+            if(minimapCam.orthographicSize < 20f)
+                minimapCam.orthographicSize = 20f;
         }
     }
 

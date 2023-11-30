@@ -27,19 +27,24 @@ public class PlayerHUD : MonoBehaviour
     // public GameObject gameOverUI;
 
     void Awake() {
-        GameObject go = GameObject.Find("Player");
-        playerSpec = go.GetComponent<PlayerSpecification>();
         //gameOverUI.SetActive(false);
     }
     void Start() {
-        SetHpUI();
-        SetBlankUI();
-        SetCoinText();
-        SetKeyText();
+        
     }
     
     void Update()
     {
+        if(playerSpec == null) {
+            GameObject go = GameObject.Find("Player");
+            playerSpec = go.GetComponent<PlayerSpecification>();
+        }
+        else {
+            SetHpUI();
+            SetBlankUI();
+            SetCoinText();
+            SetKeyText();
+        }
         
         // else {
         //     gameOverUI.SetActive(true);
