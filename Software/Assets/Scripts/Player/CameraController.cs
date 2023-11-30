@@ -23,25 +23,32 @@ public class CameraController : MonoBehaviour
 
     void CameraControl()
     {
-        if(playerTrans == null)
+        if (playerTrans == null)
         {
-            playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerTrans = player.GetComponent<Transform>();
+            }
         }
-
-        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouse.z = playerTrans.position.z;
-
-        cameraPosition = ((mouse + playerTrans.position)/2);
-
-        float distance = Vector3.Distance(mouse, playerTrans.position);
-
-        if (distance > maxDistance)
+        else
         {
-            Vector3 direction = (mouse - playerTrans.position).normalized;
-            cameraPosition = playerTrans.position + direction * maxDistance;
-        }
-        cameraPosition.z = -10;
 
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, cameraSpeed * Time.deltaTime);
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouse.z = playerTrans.position.z;
+
+            cameraPosition = ((mouse + playerTrans.position) / 2);
+
+            float distance = Vector3.Distance(mouse, playerTrans.position);
+
+            if (distance > maxDistance)
+            {
+                Vector3 direction = (mouse - playerTrans.position).normalized;
+                cameraPosition = playerTrans.position + direction * maxDistance;
+            }
+            cameraPosition.z = -10;
+
+            transform.position = Vector3.Lerp(transform.position, cameraPosition, cameraSpeed * Time.deltaTime);
+        }
     }
 }
