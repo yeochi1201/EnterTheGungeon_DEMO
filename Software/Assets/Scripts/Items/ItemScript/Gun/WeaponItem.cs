@@ -15,6 +15,10 @@ public class WeaponItem : MonoBehaviour
     private bool is_equip = false;
     private GameObject gunPivot;
 
+    private int current_magazine;
+    private int current_ammo;
+    private float current_ammo_degree;
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         
@@ -43,7 +47,7 @@ public class WeaponItem : MonoBehaviour
     }
     public void Update()
     {
-        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0))
+        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && weapon.current_ammo_size>0)
         {
             StartCoroutine(fire());
         }

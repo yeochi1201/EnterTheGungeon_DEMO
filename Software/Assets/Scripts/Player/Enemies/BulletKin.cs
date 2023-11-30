@@ -95,10 +95,16 @@ public class BulletKin : Enemy
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "PlayerBullet")
+        if (health > 0)
         {
-            float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
-            health -= getDamage;
+            if (collision.gameObject.tag == "PlayerBullet")
+            {
+                /*
+                float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
+                health -= getDamage;
+                */
+                health -= 1;
+            }
         }
     }
 
