@@ -67,8 +67,8 @@ public class Blobulon : Enemy
                     coll.enabled = false;
                     isAlive = false;
                     if (canDivide)
-                    { 
-                        SpawnDef(); 
+                    {
+                        Invoke("SpawnDef", 1f);
                     }
 
                     break;
@@ -78,6 +78,8 @@ public class Blobulon : Enemy
 
     void SpawnDef()
     {
+        spritecompo.enabled = false;
+
         GameObject spawner1 = Instantiate(spawner);
         GameObject spawner2 = Instantiate(spawner);
 

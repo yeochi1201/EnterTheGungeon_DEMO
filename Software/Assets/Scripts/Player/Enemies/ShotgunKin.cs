@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GatlingGull : Enemy
+public class ShotgunKin : Enemy
 {
     [Header("Enemy Property")]
     Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class GatlingGull : Enemy
     float attackTimer = 0f;
     bool isCoroutine = false;
     bool isAlive = true;
-    
+
     Transform playertrans;
 
     [Header("Gun Property")]
@@ -50,23 +50,23 @@ public class GatlingGull : Enemy
         if (!isCoroutine && isAlive)
         {
             attackTimer += Time.deltaTime;
-
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
             if (rb.transform.position.x < playertrans.position.x)
                 spritecompo.flipX = true;
             else spritecompo.flipX = false;
+
             FollowPlayer();
-
-
             if (currentState != EnemyState.Attacking && distance <= moveRange) StartChasing();
             else ChangeState(EnemyState.Idle);
 
             if (currentState == EnemyState.Chasing && attackTimer >= attackCooldown)
                 StartAttacking();
 
+
             if (health <= 0)
             {
+                StopAllCoroutines();
                 Die();
             }
 
@@ -93,9 +93,17 @@ public class GatlingGull : Enemy
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
+            health -= getDamage;
+        }
+    }
+
     private void UpdateIdleState()
     {
-
         enemyAnim.SetBool("isWalking", false);
 
         //idle 상태에서는 정지
@@ -104,7 +112,6 @@ public class GatlingGull : Enemy
 
     private void UpdateChasingState()
     {
-
         enemyAnim.SetBool("isWalking", true);
 
         Vector2 playerDir = playertrans.position - rb.transform.position;
@@ -122,104 +129,19 @@ public class GatlingGull : Enemy
         enemyAnim.SetBool("isShooting", true);
         enemyAnim.SetBool("isWalking", false);
 
+        Shooting();
         attackTimer = 0f;
-
-        int randAction = Random.Range(0, 2);
-
-        switch (randAction)
-        {
-            case 0:
-                StartCoroutine(Pattern1());
-                break;
-            case 1:
-                StartCoroutine(Pattern2());
-                break;
-        }
-
-        yield return null;
-    }
-
-    IEnumerator Pattern1()
-    {
-
-        coll.enabled = false;
-        enemyAnim.SetBool("isShooting", false);
-        enemyAnim.SetBool("pattern1", true);
-
-        attackTimer = 0f;
-        yield return new WaitForSeconds(1f);
-
-        float pattern1Cool = attackCooldown / 2;
-
-        while (attackTimer < pattern1Cool)
-        {
-            Vector2 playerDir = playertrans.position - rb.transform.position;
-            Vector2 nextVec = playerDir * speed * Time.deltaTime * 3f;
-            rb.MovePosition(rb.position + nextVec);
-
-            attackTimer += Time.deltaTime;
-
-            Debug.Log(attackTimer);
-
-            yield return new WaitForSeconds(0.01f);
-        }
-        rb.velocity = Vector2.zero;
-
-        yield return new WaitForSeconds(0.5f);
-
-        coll.enabled = true;
-
-        attackTimer = 0f;
-        isCoroutine = false;
-        enemyAnim.SetBool("pattern1", false);
-
-        yield return null;
-    }
-
-    IEnumerator Pattern2()
-    {
-
-        isCoroutine = true;
-
-        rb.velocity = Vector2.zero;
-
-        enemyAnim.SetBool("isShooting", true);
-
-        attackTimer = 0f;
-        yield return new WaitForSeconds(1f);
 
         while (attackTimer < attackCooldown)
         {
-
-            Vector2 playerDir = playertrans.position - rb.transform.position;
-            Vector2 nextVec = playerDir * speed * Time.deltaTime * 0.3f;
-            rb.MovePosition(rb.position + nextVec);
-
-            if (rb.transform.position.x < playertrans.position.x)
-                spritecompo.flipX = true;
-            else spritecompo.flipX = false;
-
             attackTimer += Time.deltaTime;
-            FollowPlayer();
-            Shooting();
-
-            if (health <= 0)
-            {
-                attackTimer += attackCooldown;
-            }
-
-            yield return new WaitForSeconds(0.01f);
+            yield return null;
         }
-        rb.velocity = Vector2.zero;
 
         attackTimer = 0f;
         isCoroutine = false;
         enemyAnim.SetBool("isShooting", false);
 
-        yield return null;
-    }
-
-    IEnumerator Pattern3(){
         yield return null;
     }
 
@@ -255,12 +177,22 @@ public class GatlingGull : Enemy
     void Shooting()
     {
         muzzleDirection = muzzle.transform.right;
+        Vector2 rotatedUp = Quaternion.Euler(0, 0, 15) * muzzleDirection;
+        Vector2 rotatedDown = Quaternion.Euler(0, 0, -15) * muzzleDirection;
 
         /*
-        GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
-        _bullet.transform.position = muzzle.transform.position;
-        _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
-        _bullet.SetActive(true);
+        GameObject _bullet1 = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
+        GameObject _bullet2 = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
+        GameObject _bullet3 = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
+        _bullet1.transform.position = muzzle.transform.position;
+        _bullet2.transform.position = muzzle.transform.position;
+        _bullet3.transform.position = muzzle.transform.position;
+        _bullet1.GetComponent<Bullet>().SetDirection(muzzleDirection);
+        _bullet2.GetComponent<Bullet>().SetDirection(rotatedUp);
+        _bullet3.GetComponent<Bullet>().SetDirection(rotatedDown);
+        _bullet1.SetActive(true);
+        _bullet2.SetActive(true);
+        _bullet3.SetActive(true);
         */
     }
 }

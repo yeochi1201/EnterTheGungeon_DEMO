@@ -8,25 +8,26 @@ public class CameraController : MonoBehaviour
     [Header("Camera Property")]
     [SerializeField] float cameraSpeed = 5.0f;
     float maxDistance = 3f;
+    bool cameraActivated = true;
     Transform playerTrans;
     Vector3 cameraPosition;
     Vector3 mouse;
-    Vector3 offset;
-
-    void Awake()
-    {
-        playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
-
-        offset = transform.position - playerTrans.position;
-    }
 
     void LateUpdate()
     {
-        CameraControl();
+        if (cameraActivated)
+        {
+            CameraControl();
+        }
     }
 
     void CameraControl()
     {
+        if(playerTrans == null)
+        {
+            playerTrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        }
+
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouse.z = playerTrans.position.z;
 
