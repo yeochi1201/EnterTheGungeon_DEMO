@@ -33,4 +33,4 @@ MonoBehaviour:
   muzzle_loc: {x: 0.16, y: 0.02}
   projectile: {fileID: 0}
   type: 0
-  proejctileType: 0
+  proejctileType: 6
