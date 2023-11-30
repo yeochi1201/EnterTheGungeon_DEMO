@@ -104,15 +104,6 @@ public class Blobulon : Enemy
         Destroy(this, 2f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "PlayerBullet")
-        {
-            float getDamage = collision.gameObject.GetComponent<Enemy>().damage;
-            health -= getDamage;
-        }
-    }
-
     private void UpdateIdleState()
     {
         enemyAnim.SetBool("isWalking", false);
