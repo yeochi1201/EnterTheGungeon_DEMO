@@ -24,8 +24,17 @@ public class Spawner : MonoBehaviour
 
     public void SpawmEnemies()
     {
+       
         if (!isCleared)
         {
+             if (enemies.Length == 0)
+            {
+                if (telepoter != null)
+                {
+                    telepoter.GetComponentInChildren<Animator>().SetBool("IsActivated", true);
+                }
+                isCleared = true;
+            }
             foreach (GameObject obj in door)
             {
                 obj.SetActive(true);
@@ -56,7 +65,7 @@ public class Spawner : MonoBehaviour
             }
             if (telepoter != null)
             {
-                telepoter.GetComponent<Animator>().SetTrigger("Activate");
+                telepoter.GetComponentInChildren<Animator>().SetBool("IsActivated",true);
             }
             isCleared = true;
         }
