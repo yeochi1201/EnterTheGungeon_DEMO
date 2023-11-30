@@ -12,7 +12,12 @@ TagManager:
   - Enemy
   - StartTrigger
   - EndTrigger
+<<<<<<< Updated upstream
   - Teleporter
+=======
+  - PlayerBullet
+  - EnemyBullet
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
