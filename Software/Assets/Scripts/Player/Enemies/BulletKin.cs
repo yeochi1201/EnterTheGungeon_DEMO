@@ -50,9 +50,6 @@ public class BulletKin : Enemy
         if (!isCoroutine && isAlive)
         {
             attackTimer += Time.deltaTime;
-
-            if (health <= 0)
-                Die();
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
             if (rb.transform.position.x < playertrans.position.x)
@@ -65,6 +62,13 @@ public class BulletKin : Enemy
 
             if (currentState == EnemyState.Chasing && attackTimer >= attackCooldown)
                 StartAttacking();
+
+
+            if (health <= 0)
+            {
+                StopAllCoroutines();
+                Die();
+            }
 
             switch (currentState)
             {
@@ -100,8 +104,6 @@ public class BulletKin : Enemy
 
     private void UpdateIdleState()
     {
-        Debug.Log("Idle");
-
         enemyAnim.SetBool("isWalking", false);
 
         //idle 상태에서는 정지
@@ -110,8 +112,6 @@ public class BulletKin : Enemy
 
     private void UpdateChasingState()
     {
-        Debug.Log("Walking");
-
         enemyAnim.SetBool("isWalking", true);
 
         Vector2 playerDir = playertrans.position - rb.transform.position;
@@ -122,7 +122,6 @@ public class BulletKin : Enemy
 
     IEnumerator UpdateAttackingState()
     {
-        Debug.Log("Attacking");
         isCoroutine = true;
 
         rb.velocity = Vector2.zero;
