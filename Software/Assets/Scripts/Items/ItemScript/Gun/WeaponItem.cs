@@ -64,7 +64,7 @@ public class WeaponItem : MonoBehaviour
     }
     public void Update()
     {
-        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && magazine>0)
+        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && current_magazine>0)
         {
             StartCoroutine(fire());
         }
@@ -184,11 +184,11 @@ public class WeaponItem : MonoBehaviour
 
     public void WeaponUpdateAmmoCount(float ammo_count_buf)
     {
-        ammo_count = (int)(weapon.ammo_count * ammo_count_buf);
+        current_ammo_count = (int)(current_ammo_count * ammo_count_buf);
     }
 
     public void WeaponRollbackAmmoCount(float ammo_count_buf)
     {
-        ammo_count = (int)(weapon.ammo_count / ammo_count_buf);
+        current_ammo_count = (int)(current_ammo_count / ammo_count_buf);
     }
 }

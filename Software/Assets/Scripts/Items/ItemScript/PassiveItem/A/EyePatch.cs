@@ -11,8 +11,8 @@ public class EyePatch : PassiveItem
         ps.weapon_dmg_buf *= 2.00f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(1.35f);
-            weapon.GetComponent<WeaponItem>().WeaponUpdateDegree(2.00f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.ammo_degree_buf);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDegree(ps.weapon_dmg_buf);
         }
     }
 
@@ -23,8 +23,8 @@ public class EyePatch : PassiveItem
         ps.weapon_dmg_buf /= 2.00f;
         Inven inven = GameObject.Find("Player").GetComponent<Inven>();
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(1.35f);
-            weapon.GetComponent<WeaponItem>().WeaponRollbackDegree(2.00f);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(ps.ammo_degree_buf);
+            weapon.GetComponent<WeaponItem>().WeaponRollbackDegree(ps.weapon_dmg_buf);
         }
     }
 }

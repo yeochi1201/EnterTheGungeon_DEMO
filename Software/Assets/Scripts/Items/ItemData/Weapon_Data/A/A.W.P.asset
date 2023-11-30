@@ -20,19 +20,15 @@ MonoBehaviour:
     you put it in your backpack after every shot...
   title: Noob Cannon
   rank: 3
-  ammo_size: 8
+  magazine: 8
   ammo_count: 60
   reload: 2.1
   ammo_speed: 100
   knock_back: 25
   damage: 40
-  delay: 12
+  delay: 1.2
   range: 0
   ammo_degree: 5
-  current_ammo_size: 8
-  current_ammo_count: 52
-  current_degree: 5
   muzzle_loc: {x: 0.15, y: 0.005}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

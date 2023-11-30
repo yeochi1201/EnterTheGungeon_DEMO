@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4310216964041752854
 Transform:
   m_ObjectHideFlags: 0
@@ -100,6 +100,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: c2df89563beee4345a980519bf3a0929, type: 2}
   ammo: {fileID: 0}
+  magazine: 0
+  ammo_count: 0
+  reload: 0
+  ammo_speed: 0
+  knock_back: 0
+  damage: 0
+  delay: 0
+  range: 0
+  ammo_degree: 0
+  current_magazine: 0
+  current_ammo_count: 0
 --- !u!61 &9086217124858115776
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -181,7 +181,7 @@ MonoBehaviour:
   weapon_delay_buf: 1
   ammo_count_buf: 1
   muzzle: {fileID: 457369778}
-  bulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
+  bulletPrefab: {fileID: 6955189011649077636, guid: 5e80b3cefad213847a00603947c243de, type: 3}
   gunPivot: {fileID: 609791092}
   muzzleDirection: {x: 0, y: 0}
   slideSpeed: 5
