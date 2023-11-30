@@ -31,5 +31,7 @@ MonoBehaviour:
   current_ammo_size: 100
   current_ammo_count: 700
   current_degree: 6
+  muzzle_loc: {x: 0.13, y: 0.03}
+  projectile: {fileID: 0}
   type: 1
-  proejectile: 0
+  proejctileType: 0

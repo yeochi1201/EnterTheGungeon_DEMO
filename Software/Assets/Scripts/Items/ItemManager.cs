@@ -6,12 +6,15 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public static ItemManager itemManager;
-    private Inven inven = GameObject.Find("Player").GetComponent<Inven>();
-    private PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-    private bool[] CursedItems = new bool[3];
+    private Inven inven;
+    private PlayerSpecification ps;
+    private bool[] CursedItems;
     private void Awake()
     {
         itemManager = this;
+        inven = GameObject.Find("Player").GetComponent<Inven>();
+        ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        CursedItems = new bool[3];
     }
     public float Calc_Cooltime(float itemCool)
     {
