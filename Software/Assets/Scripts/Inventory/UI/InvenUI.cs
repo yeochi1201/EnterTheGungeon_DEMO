@@ -45,7 +45,7 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform weaponFrame = Util.FindChild<Transform>(invenUI, "WeaponFrame", true);
-        GameObject btn = Instantiate(itemButton, transform);
+        GameObject btn = Instantiate(itemButton);
         btn.transform.SetParent(weaponFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
@@ -69,7 +69,7 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform acitveFrame = Util.FindChild<Transform>(invenUI, "ActiveFrame", true);
-        GameObject btn = Instantiate(itemButton, transform);
+        GameObject btn = Instantiate(itemButton);
         btn.transform.SetParent(acitveFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
@@ -92,7 +92,7 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Transform passiveFrame = Util.FindChild<Transform>(invenUI, "PassiveFrame", true);
-        GameObject btn = Instantiate(itemButton, transform);
+        GameObject btn = Instantiate(itemButton);
         btn.transform.SetParent(passiveFrame);
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();

@@ -177,7 +177,7 @@ MonoBehaviour:
   actives: []
   passives: []
   basicGun: {fileID: 5362492783116262891, guid: 0f12c09ebcee81c47ba6b7b0ad49860b, type: 3}
-  invenUI: {fileID: 0}
+  invenUI: {fileID: 1195441870593618328, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
   maxActiveSlot: 6
 --- !u!50 &263403638705948580
 Rigidbody2D:

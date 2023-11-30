@@ -30,31 +30,43 @@ public class MinimapCamera : MonoBehaviour
 
     void Update()
     {
-        if(playerTransform == null) {
-            playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
-            transform.position = playerTransform.position + Vector3.back * 10;
-        }
-        if(clickTab) {
-            ZoomMap();
-            Teleport();
-            if(Input.GetKeyDown(KeyCode.Tab)) {
-                Camera.main.GetComponent<CameraController>().enabled = true;
-                playerUI.SetActive(true);
-                minimapUI.SetActive(false);
-                minimapCam.orthographicSize = 20f;
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                playerTransform = player.GetComponent<Transform>();
                 transform.position = playerTransform.position + Vector3.back * 10;
-                clickTab = false;
             }
         }
-        else {
-            transform.position = playerTransform.position + Vector3.back * 10;
-            if(Input.GetKeyDown(KeyCode.Tab)) {
-                Camera.main.GetComponent<CameraController>().enabled = false;
-                playerUI.SetActive(false);
-                minimapUI.SetActive(true);
-                minimapCam.orthographicSize = 70f;
-                transform.position = new Vector3(95, 50, -10);
-                clickTab = true;
+        else
+        {
+            if (clickTab)
+            {
+                ZoomMap();
+                Teleport();
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    Camera.main.GetComponent<CameraController>().enabled = true;
+                    playerUI.SetActive(true);
+                    minimapUI.SetActive(false);
+                    minimapCam.orthographicSize = 20f;
+                    transform.position = playerTransform.position + Vector3.back * 10;
+                    clickTab = false;
+                }
+            }
+            else
+            {
+                transform.position = playerTransform.position + Vector3.back * 10;
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    Camera.main.GetComponent<CameraController>().enabled = false;
+                    playerUI.SetActive(false);
+                    minimapUI.SetActive(true);
+                    minimapCam.orthographicSize = 70f;
+                    transform.position = new Vector3(95, 50, -10);
+                    clickTab = true;
+                }
             }
         }
     }
