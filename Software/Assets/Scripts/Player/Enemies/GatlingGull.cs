@@ -24,6 +24,7 @@ public class GatlingGull : Enemy
     [SerializeField] GameObject gunPivot;
     [SerializeField] Vector2 muzzleDirection;
     [SerializeField] GameObject BossUI;
+    GameObject BossUIHP;
     Image BossHP;
     Vector2 target;
     float angle;
@@ -35,7 +36,7 @@ public class GatlingGull : Enemy
         coll = GetComponent<CapsuleCollider2D>();
         spritecompo = GetComponent<SpriteRenderer>();
         
-        GameObject BossUIHP = Instantiate(BossUI);
+        BossUIHP = Instantiate(BossUI);
         BossHP = BossUIHP.transform.Find("BossHP").GetComponent<Image>();
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
@@ -73,8 +74,8 @@ public class GatlingGull : Enemy
 
             if (health <= 0)
             {
+                BossUIHP.SetActive(false);
                 Die();
-                BossUI.SetActive(false);
             }
 
             switch (currentState)
