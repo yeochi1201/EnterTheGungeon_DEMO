@@ -47,9 +47,18 @@ public class Blobulon : Enemy
                 Die();
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
-            if (rb.transform.position.x < playertrans.position.x)
-                spritecompo.flipX = true;
-            else spritecompo.flipX = false;
+            if(canDivide)
+            {
+                if (rb.transform.position.x < playertrans.position.x)
+                    spritecompo.flipX = true;
+                else spritecompo.flipX = false;
+            }
+            else if(!canDivide)
+            {
+                if (rb.transform.position.x < playertrans.position.x)
+                    spritecompo.flipY = true;
+                else spritecompo.flipY = false;
+            }
 
             switch (currentState)
             {

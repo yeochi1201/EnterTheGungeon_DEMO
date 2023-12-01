@@ -277,6 +277,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2259278156065608480, guid: 0237f398ad4bcb540878ba7ece2d0d78, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2259278156065608485, guid: 0237f398ad4bcb540878ba7ece2d0d78, type: 3}
       propertyPath: m_Name
       value: Blobuloid
@@ -348,6 +352,14 @@ PrefabInstance:
     - target: {fileID: 4032260999056621475, guid: 24ed7369c1d97934ab4e840fb181fc92, type: 3}
       propertyPath: m_Name
       value: Blobulin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032260999056621478, guid: 24ed7369c1d97934ab4e840fb181fc92, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032260999056621478, guid: 24ed7369c1d97934ab4e840fb181fc92, type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4032260999056621481, guid: 24ed7369c1d97934ab4e840fb181fc92, type: 3}
       propertyPath: m_RootOrder
@@ -621,6 +633,8 @@ MonoBehaviour:
   rayProjectilePoolCount: 0
   splitProjectilePrefab: {fileID: 2054312101317733949, guid: 1f61d8fb4a3a1234dac7d35e287fa2be, type: 3}
   splitProjectilePoolCount: 0
+  enemyBasicProjectilePrefab: {fileID: 0}
+  enemyBasicProjectilePoolCount: 0
 --- !u!1001 &4186985394903994730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 5156974051955715665, guid: 96966d4f216e3364fac3451b739e83ca, type: 3}
       propertyPath: m_Name
       value: Blobulon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156974051955715666, guid: 96966d4f216e3364fac3451b739e83ca, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5156974051955715667, guid: 96966d4f216e3364fac3451b739e83ca, type: 3}
       propertyPath: m_RootOrder
