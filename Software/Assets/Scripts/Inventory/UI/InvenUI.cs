@@ -117,8 +117,6 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
-        Text itemName = Util.FindChild<Text>(invenUI, "ItemName", true);
-        Text itemTitle = Util.FindChild<Text>(invenUI, "ItemTitle", true);
         RectTransform buttonRectTransform = weaponList[0].GetComponent<RectTransform>();
         RectTransform itemRectTransform = itemImage.GetComponent<RectTransform>();
         Image image = weaponList[0].GetComponent<Image>();
