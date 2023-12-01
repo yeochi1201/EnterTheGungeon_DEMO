@@ -9,7 +9,17 @@ public class ItemManager : MonoBehaviour
     public Inven inven;
     public PlayerSpecification ps;
     private bool[] CursedItems;
-    private void Awake()
+    private bool first_do = false;
+    private void Update()
+    {
+        if(first_do == false)
+        {
+            settingManager();
+            first_do = true;
+        }
+    }
+
+    private void settingManager()
     {
         itemManager = this;
         inven = GameObject.FindGameObjectWithTag("Player").GetComponent<Inven>();
