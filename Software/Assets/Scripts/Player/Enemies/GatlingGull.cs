@@ -35,8 +35,8 @@ public class GatlingGull : Enemy
         coll = GetComponent<CapsuleCollider2D>();
         spritecompo = GetComponent<SpriteRenderer>();
         
-        Instantiate(BossUI);
-        BossHP = BossUI.GetComponentInChildren<Image>();
+        GameObject BossUIHP = Instantiate(BossUI);
+        BossHP = BossUIHP.transform.Find("BossHP").GetComponent<Image>();
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
     // 정의할 상태 열거형(Enum)
@@ -55,7 +55,7 @@ public class GatlingGull : Enemy
         if (!isCoroutine && isAlive)
         {
             attackTimer += Time.deltaTime;
-            BossHP.fillAmount = maxHealth / health;
+            BossHP.fillAmount = health / maxHealth;
 
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
