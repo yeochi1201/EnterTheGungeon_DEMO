@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float health = 3.0f;
     public float damage = 1.0f;
     [SerializeField] public float distance; //distance between player and monster
-    [SerializeField] public float moveRange = 20.0f;
+    [SerializeField] public float moveRange = 30.0f;
     [SerializeField] public float attackRange = 2.0f;
     [SerializeField] public float attackCooldown = 3.0f;
 
