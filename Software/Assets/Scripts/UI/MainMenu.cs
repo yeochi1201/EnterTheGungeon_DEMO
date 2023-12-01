@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
         for(int i = 0; i < gameObjects.Length; i++) {
             gameObjects[i].SetActive(true);
         }
-        Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.Auto);
     }
 
     public void QuitBtnClick() {
