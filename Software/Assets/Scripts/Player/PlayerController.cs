@@ -63,10 +63,13 @@ public class PlayerController : PlayerSpecification
             {
                 inven.UseAcitve();
             }
+
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 Shooting();
             }
+            */
         }  
     }
 
@@ -117,7 +120,7 @@ public class PlayerController : PlayerSpecification
         _bullet.SetActive(true);
         */
         GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 1, 10, 40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
 
