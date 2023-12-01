@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class ItemButton : MonoBehaviour
 {
     public Button itemButton;
+    public string itemName;
+    public string itemTitle;
+    public string itemType;
 
     private void Start()
     {
@@ -18,6 +21,10 @@ public class ItemButton : MonoBehaviour
         Debug.Log("Button Click!!!");
         GameObject invenUI = GameObject.Find("InvenUI");
         Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
+        Text name = Util.FindChild<Text>(invenUI, "ItemName", true);
+        Text title = Util.FindChild<Text>(invenUI, "ItemTitle", true);
+        name.text = itemName;
+        title.text = itemTitle;
 
         RectTransform buttonRectTransform = itemButton.GetComponent<RectTransform>();
         RectTransform imageSize = itemImage.GetComponent<RectTransform>();

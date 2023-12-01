@@ -53,6 +53,11 @@ public class InvenUI : MonoBehaviour
         GameObject btn = Instantiate(itemButton);
         btn.transform.SetParent(weaponFrame);
 
+        ItemButton itemBtnInfo = btn.GetComponent<ItemButton>();
+
+        itemBtnInfo.itemName = newWeapon.GetComponent<WeaponItem>().weapon.itemName;
+        itemBtnInfo.itemTitle = newWeapon.GetComponent<WeaponItem>().weapon.title;
+
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
@@ -112,6 +117,8 @@ public class InvenUI : MonoBehaviour
     {
         GameObject invenUI = GameObject.Find("InvenUI");
         Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
+        Text itemName = Util.FindChild<Text>(invenUI, "ItemName", true);
+        Text itemTitle = Util.FindChild<Text>(invenUI, "ItemTitle", true);
         RectTransform buttonRectTransform = weaponList[0].GetComponent<RectTransform>();
         RectTransform itemRectTransform = itemImage.GetComponent<RectTransform>();
         Image image = weaponList[0].GetComponent<Image>();
