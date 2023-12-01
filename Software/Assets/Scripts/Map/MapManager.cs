@@ -37,7 +37,7 @@ public class MapManager : MonoBehaviour
         Invoke("SceneChange", 1.5f);
     }
 
-    void SceneChange()
+    public void SceneChange()
     {
         SceneManager.LoadScene("BaseCamp");
     }
