@@ -63,10 +63,13 @@ public class PlayerController : PlayerSpecification
             {
                 inven.UseAcitve();
             }
+
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 Shooting();
             }
+            */
         }  
     }
 
