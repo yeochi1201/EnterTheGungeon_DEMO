@@ -7,6 +7,7 @@ public class ItemManager : MonoBehaviour
 {
     public static ItemManager itemManager;
     public Inven inven;
+    public InvenUI invenUI;
     public PlayerSpecification ps;
     private bool[] CursedItems;
     private bool first_do = false;
@@ -25,6 +26,7 @@ public class ItemManager : MonoBehaviour
             itemManager = this;
             inven = GameObject.FindGameObjectWithTag("Player").GetComponent<Inven>();
             ps = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpecification>();
+            invenUI = GameObject.Find("InvenUI").GetComponent<InvenUI>();
             CursedItems = new bool[3];
             first_do = true;
         }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponItem : MonoBehaviour
 {
@@ -46,6 +48,7 @@ public class WeaponItem : MonoBehaviour
 
     public void Update()
     {
+        if(!ItemManager.itemManager.invenUI.IsPaused && SceneManager.GetActiveScene().name != "BaseCamp")
         if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && current_magazine>0)
         {
             Shooting();
