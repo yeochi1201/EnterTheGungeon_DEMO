@@ -130,6 +130,7 @@ MonoBehaviour:
   muzzleDirection: {x: 0, y: 0}
   slideSpeed: 10
   holdTime: 1
+  loadTime: 3
 --- !u!114 &4896972745811181505
 MonoBehaviour:
   m_ObjectHideFlags: 0

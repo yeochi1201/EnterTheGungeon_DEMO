@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.WSA;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : PlayerSpecification
 {
@@ -32,7 +33,7 @@ public class PlayerController : PlayerSpecification
     [SerializeField] float holdTime = 1.0f;
     bool isKeyPressed = false;
     float pressTime = 0.0f;
-
+    [SerializeField] float loadTime = 2.0f;
 
     private void Awake()
     {
@@ -254,6 +255,9 @@ public class PlayerController : PlayerSpecification
     void Die()
     {
         playerAnim.SetTrigger("Die");
+        loadTime -= Time.deltaTime;
+
+        if(loadTime <= 0f) SceneManager.LoadScene(1);
 
         // Scene Gameover
     }
