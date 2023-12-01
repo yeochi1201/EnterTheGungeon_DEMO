@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Wall
+  - Teleporter
+  - Weapon
+  - Enemy
+  - StartTrigger
+  - EndTrigger
+  - PlayerBullet
+  - Active
+  - Passive
+  - HP
   layers:
   - Default
   - TransparentFX

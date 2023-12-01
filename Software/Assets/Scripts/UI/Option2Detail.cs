@@ -14,15 +14,13 @@ public class Option2Detail : MonoBehaviour
         gamePlayOption.SetActive(true);
     }
     public void ControlBtnClick() {
-        gameObject.SetActive(false);
-        controlOption.SetActive(false);
+        
     }
     public void VedioBtnClick() {
         gameObject.SetActive(false);
         vedioOption.SetActive(true);
     }
     public void AudioBtnClick() {
-        gameObject.SetActive(false);
-        audioOption.SetActive(false);
+        
     }
 }

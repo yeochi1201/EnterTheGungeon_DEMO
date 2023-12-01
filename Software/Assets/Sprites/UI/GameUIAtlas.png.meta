@@ -3051,10 +3051,10 @@ TextureImporter:
       name: GameUIAtlas_139
       rect:
         serializedVersion: 2
-        x: 176
-        y: 548
-        width: 880
-        height: 404
+        x: 13
+        y: 273
+        width: 461
+        height: 273
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4311,10 +4311,10 @@ TextureImporter:
       name: GameUIAtlas_199
       rect:
         serializedVersion: 2
-        x: 993
-        y: 483
-        width: 1053
-        height: 431
+        x: 256
+        y: 691
+        width: 175
+        height: 143
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
