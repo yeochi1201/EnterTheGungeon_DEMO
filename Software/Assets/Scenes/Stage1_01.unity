@@ -3592,8 +3592,8 @@ MonoBehaviour:
   - {fileID: 1692340806}
   - {fileID: 611746790}
   fullHeart: {fileID: 1755176082, guid: 538494b1db15faa4485c1f2c344a0fac, type: 3}
-  halfHeart: {fileID: -595126977, guid: a4c7c2bd8b620a4469463dacece13ca6, type: 3}
-  emptyHeart: {fileID: 690452816, guid: a4c7c2bd8b620a4469463dacece13ca6, type: 3}
+  halfHeart: {fileID: 690452816, guid: a4c7c2bd8b620a4469463dacece13ca6, type: 3}
+  emptyHeart: {fileID: 529600160, guid: a4c7c2bd8b620a4469463dacece13ca6, type: 3}
   _currentBlank: 0
   blank:
   - {fileID: 1408044227}

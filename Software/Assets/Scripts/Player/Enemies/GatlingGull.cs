@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GatlingGull : Enemy
 {
@@ -22,6 +23,8 @@ public class GatlingGull : Enemy
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject gunPivot;
     [SerializeField] Vector2 muzzleDirection;
+    [SerializeField] GameObject BossUI;
+    Image BossHP;
     Vector2 target;
     float angle;
 
@@ -31,7 +34,9 @@ public class GatlingGull : Enemy
         enemyAnim = GetComponent<Animator>();
         coll = GetComponent<CapsuleCollider2D>();
         spritecompo = GetComponent<SpriteRenderer>();
-
+        
+        Instantiate(BossUI);
+        BossHP = BossUI.GetComponentInChildren<Image>();
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
     // 정의할 상태 열거형(Enum)
@@ -50,6 +55,7 @@ public class GatlingGull : Enemy
         if (!isCoroutine && isAlive)
         {
             attackTimer += Time.deltaTime;
+            BossHP.fillAmount = maxHealth / health;
 
             distance = Vector3.Distance(playertrans.position, this.transform.position);
 
@@ -68,6 +74,7 @@ public class GatlingGull : Enemy
             if (health <= 0)
             {
                 Die();
+                BossUI.SetActive(false);
             }
 
             switch (currentState)
