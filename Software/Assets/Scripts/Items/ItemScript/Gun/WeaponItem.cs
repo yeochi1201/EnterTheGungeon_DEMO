@@ -49,16 +49,18 @@ public class WeaponItem : MonoBehaviour
     public void Update()
     {
         if(!ItemManager.itemManager.invenUI.IsPaused && SceneManager.GetActiveScene().name != "BaseCamp")
-        if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && current_magazine>0)
         {
-            Shooting();
-            StartCoroutine(DelayTime());
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
-            StartCoroutine(ReloadTime());
-        }
+            if (is_equip && !is_delay && !is_reload && Input.GetMouseButtonDown(0) && current_magazine > 0)
+            {
+                Shooting();
+                StartCoroutine(DelayTime());
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                Reload();
+                StartCoroutine(ReloadTime());
+            }
+        } 
     }
 
     public void OnTriggerStay2D(Collider2D collision)

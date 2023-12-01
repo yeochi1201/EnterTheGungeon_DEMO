@@ -864,6 +864,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &158786612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158786614}
+  - component: {fileID: 158786613}
+  m_Layer: 0
+  m_Name: ProjectilePooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &158786613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158786612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d478bd9402ff247a8dd955dd9a6fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  velocityProjectilePrefab: {fileID: 2454912851067823375, guid: 97a8124bcde909748972fe480d20aa29, type: 3}
+  velocityProjectilePoolCount: 100
+  helixProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
+  helixProjectilePoolCount: 100
+  homingProjectilePrefab: {fileID: 6357783160714478742, guid: c00ae42488ae123418ad397f943fa75a, type: 3}
+  homingProjectilePoolCount: 100
+  colorProjectilePrefab: {fileID: 1119192269915296378, guid: a30e0e9e9250f27468f4b690fd5d39ea, type: 3}
+  colorProjectilePoolCount: 100
+  trailProjectilePrefab: {fileID: 122556038963494842, guid: ae578643cd3b8de43a27f2b930099f20, type: 3}
+  trailProjectilePoolCount: 100
+  rayProjectilePrefab: {fileID: 5199027930908112914, guid: c23e67005f6812c45b4cbefb5200849b, type: 3}
+  rayProjectilePoolCount: 100
+  splitProjectilePrefab: {fileID: 2054312101317733949, guid: 1f61d8fb4a3a1234dac7d35e287fa2be, type: 3}
+  splitProjectilePoolCount: 100
+  enemyBasicProjectilePrefab: {fileID: 2454912851067823375, guid: 3d06737bc3bd62b41b4579fa15a1c510, type: 3}
+  enemyBasicProjectilePoolCount: 100
+  enemyAnomalyProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
+  enemyAnomalyProjectilePoolCount: 500
+--- !u!4 &158786614
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158786612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160290860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3195,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2045029439}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &738730206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738730208}
+  - component: {fileID: 738730207}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &738730207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738730206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5043152afdfeb5947b1468fb4aafb4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inven: {fileID: 0}
+  invenUI: {fileID: 0}
+  ps: {fileID: 0}
+--- !u!4 &738730208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738730206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.9133215, y: 1.4316689, z: -0.013014635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &747021492
 GameObject:
@@ -6621,6 +6731,56 @@ Transform:
   m_Father: {fileID: 2045029439}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!1 &1961708066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961708068}
+  - component: {fileID: 1961708067}
+  m_Layer: 0
+  m_Name: EffectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1961708067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961708066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4732be9d70139474baa48264bd182d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletImpactPrefab: {fileID: 3423789950978537781, guid: dec7988eac80c364faa7aeff6d0ee2cb, type: 3}
+  bulletImpactPoolCount: 100
+  explosionImpactPrefab: {fileID: 6252822237219207736, guid: 6a24d5a042bb8f241b81317ee79a1a89, type: 3}
+  explosionImpactPoolCount: 50
+  splitImpactPrefab: {fileID: 6252822237219207736, guid: 7fe333c6e1cc590408a0cb3390ee59f6, type: 3}
+  splitImpactPoolCount: 50
+--- !u!4 &1961708068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961708066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020951650
 GameObject:
   m_ObjectHideFlags: 0
