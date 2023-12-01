@@ -9,7 +9,7 @@ public class Inven : MonoBehaviour
     public List<GameObject> passives = new List<GameObject>();
     [SerializeField] GameObject basicGun;
     [SerializeField] InvenUI invenUI;
-    // int blank = 2;
+    int blank = 2;
     public int maxActiveSlot = 6;
     int weaponIndex = 0;
     int activeIndex = 0;
@@ -22,7 +22,7 @@ public class Inven : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void SwapWeapon(float wheelMove)
@@ -97,9 +97,6 @@ public class Inven : MonoBehaviour
             }
             Debug.Log($"{activeIndex + 1}¹ø ÀåÂøÁß");
         }
-
-
-        // return actives[activeIndex];
     }
 
     public void GetActive(GameObject newActive)
@@ -137,7 +134,20 @@ public class Inven : MonoBehaviour
 
     public void UseAcitve()
     {
+        if(actives.Count == 0)
+        {
+            Debug.Log("No Item");
+            return;
+        }
         actives[activeIndex].GetComponent<ActiveItem>().Consume();
+        actives.RemoveAt(activeIndex);
+        invenUI.RemoveActiveButton(activeIndex);
+        activeIndex -= 1;
+        if (activeIndex == -1)
+        {
+            activeIndex = 0;
+        }
+        Debug.Log("Use Item");
     }
 
     public void GetPassive(GameObject newPassive)
