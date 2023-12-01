@@ -598,6 +598,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6745255533217925208, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745255533217925208, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8172474534967079922, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
       propertyPath: m_Name
       value: InvenUI
