@@ -59,6 +59,10 @@ public class PlayerController : PlayerSpecification
             ItemThrow();
             ItemSwap();
 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                inven.UseAcitve();
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 Shooting();
