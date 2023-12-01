@@ -10,11 +10,13 @@ public class InvenUI : MonoBehaviour
     List<GameObject> passiveList = new List<GameObject>();
     public GameObject inventory;
     public GameObject itemButton;
+    Canvas canvas;
     bool activeInventory = false;
     bool isPaused;
     public bool IsPaused { get { return isPaused; } }
     void Start()
     {
+        canvas = GetComponent<Canvas>();
         inventory.SetActive(activeInventory);
         isPaused = false;
     }
@@ -26,14 +28,18 @@ public class InvenUI : MonoBehaviour
             activeInventory = !activeInventory;
             if (activeInventory == true)
             {
+                
                 Time.timeScale = 0;
                 isPaused = true;
+                ChangeItemInfo();
+                canvas.sortingOrder = 1;
             }
 
             if (activeInventory == false)
             {
                 Time.timeScale = 1;
                 isPaused = false;
+                canvas.sortingOrder = 0;
             }
             inventory.SetActive(activeInventory);
 
@@ -51,11 +57,10 @@ public class InvenUI : MonoBehaviour
         Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
-        weaponList.Add(btn);
         Image image = btn.GetComponent<Image>();
 
-        Sprite weaponSprite = newWeapon.GetComponent<SpriteRenderer>().sprite;
-        image.sprite = weaponSprite;
+        image.sprite = originalSprite;
+        weaponList.Add(btn);
     }
 
     public void RemoveWeaponButton(int index)
@@ -73,11 +78,11 @@ public class InvenUI : MonoBehaviour
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newActive.GetComponent<ActiveItem>().active.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
-
-        activeList.Add(btn);
+    
         Image image = btn.GetComponent<Image>();
 
         image.sprite = originalSprite;
+        activeList.Add(btn);
     }
 
     public void RemoveActiveButton(int index)
@@ -97,10 +102,22 @@ public class InvenUI : MonoBehaviour
         Sprite originalSprite = newPassive.GetComponent<PassiveItem>().passive.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
-        passiveList.Add(btn);
         Image image = btn.GetComponent<Image>();
 
         image.sprite = originalSprite;
+        passiveList.Add(btn);
+    }
+
+    public void ChangeItemInfo()
+    {
+        GameObject invenUI = GameObject.Find("InvenUI");
+        Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
+        RectTransform buttonRectTransform = weaponList[0].GetComponent<RectTransform>();
+        RectTransform itemRectTransform = itemImage.GetComponent<RectTransform>();
+        Image image = weaponList[0].GetComponent<Image>();
+
+        itemRectTransform.sizeDelta = buttonRectTransform.sizeDelta;
+        itemImage.sprite = image.sprite;
     }
 }
 

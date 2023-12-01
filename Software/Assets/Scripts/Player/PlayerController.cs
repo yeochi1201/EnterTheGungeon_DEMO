@@ -127,7 +127,6 @@ public class PlayerController : PlayerSpecification
         {
             isKeyPressed = true;
             pressTime = 0.0f;
-            Debug.Log("Key Pressed!!!");
         }
 
         if (isKeyPressed && Input.GetKey(KeyCode.F))
@@ -138,7 +137,6 @@ public class PlayerController : PlayerSpecification
                 inven.ThrowWeapon();
                 isKeyPressed = false;
                 pressTime = 0.0f;
-                Debug.Log("Item Throw");
             }
         }
 
@@ -149,7 +147,6 @@ public class PlayerController : PlayerSpecification
             {
                 inven.ThrowActive();
                 isKeyPressed = false;
-                Debug.Log("Item Throw");
             }
         }
 

@@ -20,31 +20,26 @@ public class Inven : MonoBehaviour
         GameObject go = GameObject.Find("InvenUI");
         invenUI = go.GetComponent<InvenUI>();
         basicGun = Instantiate(basicGun);
-        basicGun.GetComponent<WeaponItem>().PlayerGetGun();
-        basicGun.SetActive(true);
         GetWeapon(basicGun);
+        weapons[weaponIndex].GetComponent<WeaponItem>().PlayerGetGun();
+        weapons[weaponIndex].GetComponent<WeaponItem>().OnEquip();
     }
     public void SwapWeapon(float wheelMove)
     {
         if (!invenUI.IsPaused)
         {
             weapons[weaponIndex].GetComponent<WeaponItem>().Unequip();
-            Debug.Log($"{wheelMove}");
             if (wheelMove < 0)
             {
                 weaponIndex++;
                 if (weaponIndex == weapons.Count)
                     weaponIndex = 0;
-                Debug.Log($"{weaponIndex + 1}번 장착중");
-                Debug.Log($"weapon리스트 크기 : {weapons.Count}");
             }
             if (wheelMove > 0)
             {
                 weaponIndex--;
                 if (weaponIndex == -1)
                     weaponIndex = weapons.Count - 1;
-                Debug.Log($"{weaponIndex + 1}번 장착중");
-                Debug.Log($"weapon리스트 크기 : {weapons.Count}");
             }
             weapons[weaponIndex].GetComponent<WeaponItem>().OnEquip();
         }
@@ -70,7 +65,6 @@ public class Inven : MonoBehaviour
                 Debug.Log("Throw Failed");
                 return;
             }
-            Debug.Log($"{weaponIndex + 1}번 무기 Throw");
             weapons[weaponIndex].SetActive(true);
             weapons[weaponIndex].transform.SetParent(null);
             weapons.RemoveAt(weaponIndex);
@@ -89,11 +83,11 @@ public class Inven : MonoBehaviour
         if (!invenUI.IsPaused)
         {
             activeIndex++;
-            if (activeIndex == actives.Count)
+            if (activeIndex >= actives.Count)
             {
                 activeIndex = 0;
             }
-            Debug.Log($"{activeIndex + 1}번 장착중");
+            Debug.Log($"{activeIndex}번 장착중");
         }
     }
 
@@ -115,8 +109,8 @@ public class Inven : MonoBehaviour
             if (actives.Count == 0)
             {
                 Debug.Log("Throw Failed");
+                return;
             }
-            Debug.Log($"{activeIndex + 1}번 Active Item Thorw");
             actives[activeIndex].SetActive(true);
             actives[activeIndex].transform.SetParent(null);
             actives.RemoveAt(activeIndex);
