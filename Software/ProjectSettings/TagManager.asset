@@ -4,20 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
-  - Passive
-  - Active
-  - Weapon
   - Floor
+  - Wall
+  - Teleporter
+  - Weapon
   - Enemy
   - StartTrigger
   - EndTrigger
-<<<<<<< Updated upstream
-  - Teleporter
-=======
   - PlayerBullet
-  - EnemyBullet
->>>>>>> Stashed changes
+  - Active
+  - Passive
+  - HP
   layers:
   - Default
   - TransparentFX
@@ -54,25 +51,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Wall
-    uniqueID: 1673038701
-    locked: 0
-  - name: Rear-Background
-    uniqueID: 3091440189
-    locked: 0
-  - name: Front-Background
-    uniqueID: 743503973
-    locked: 0
-  - name: Floor
-    uniqueID: 1126633025
-    locked: 0
-  - name: Foreground
-    uniqueID: 3176809513
-    locked: 0
-  - name: Border
-    uniqueID: 681864739
-    locked: 0
-  - name: Player
-    uniqueID: 3095151867
     locked: 0

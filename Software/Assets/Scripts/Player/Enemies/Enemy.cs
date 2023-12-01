@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [Header ("Enemy Property")]
     [SerializeField] public float speed = 1.0f;
+    [SerializeField] public float maxHealth = 3.0f;
     [SerializeField] public float health = 3.0f;
     public float damage = 1.0f;
     [SerializeField] public float distance; //distance between player and monster

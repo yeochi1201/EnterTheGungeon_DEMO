@@ -75,7 +75,7 @@ public class WeaponItem : MonoBehaviour
     }
     public void PlayerGetGun()
     {
-        gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
+        gunPivot = GameObject.FindWithTag("Player").transform.GetChild(0).gameObject;
         this.gameObject.transform.SetParent(gunPivot.transform);
         this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 4;
         this.gameObject.transform.position = gunPivot.transform.position;

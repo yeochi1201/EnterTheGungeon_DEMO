@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  maxHealth: 10
   health: 10
   damage: 2
   distance: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6955189011649077636, guid: 17cb079eed8c96344b349bb8167c39d0, type: 3}
   gunPivot: {fileID: 4186985393452586217}
   muzzleDirection: {x: 0, y: 0}
+  BossUI: {fileID: 3453727837464844997, guid: a64a70bc9f7b8af4bac541e3a3ab8746, type: 3}
 --- !u!1 &4186985393452586217
 GameObject:
   m_ObjectHideFlags: 0
