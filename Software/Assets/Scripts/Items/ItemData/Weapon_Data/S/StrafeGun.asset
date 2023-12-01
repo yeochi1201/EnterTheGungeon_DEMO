@@ -19,19 +19,15 @@ MonoBehaviour:
     the year re-release edition.
   title: Bleeding Edge Gameplay
   rank: 4
-  ammo_size: 20
+  magazine: 20
   ammo_count: 400
   reload: 1.4
-  ammo_speed: 0
+  ammo_speed: 500
   knock_back: 0
-  damage: 1
+  damage: 8
   delay: 0.13
-  range: 0
+  range: 50
   ammo_degree: 0
-  current_ammo_size: 20
-  current_ammo_count: 380
-  current_degree: 0
   muzzle_loc: {x: 0.18, y: 0.03}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

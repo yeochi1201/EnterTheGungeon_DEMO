@@ -19,7 +19,7 @@ MonoBehaviour:
     itself into more trouble than it can handle.
   title: Underhanded And Efficient
   rank: 0
-  ammo_size: 8
+  magazine: 8
   ammo_count: -1
   reload: 1.2
   ammo_speed: 25
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.25
   range: 13
   ammo_degree: 10
-  current_ammo_size: 8
-  current_ammo_count: -9
-  current_degree: 10
   muzzle_loc: {x: 0.062, y: 0.2}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

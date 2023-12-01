@@ -19,7 +19,7 @@ MonoBehaviour:
     overlap. Any damage caused by this "gun" has little to do with the Gungeon.
   title: Squiddley-Squiddley-wheeyooo!
   rank: 2
-  ammo_size: 600
+  magazine: 600
   ammo_count: 600
   reload: 1.2
   ammo_speed: 15
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.1
   range: 15
   ammo_degree: 6
-  current_ammo_size: 600
-  current_ammo_count: 0
-  current_degree: 6
   muzzle_loc: {x: 0.15, y: 0}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

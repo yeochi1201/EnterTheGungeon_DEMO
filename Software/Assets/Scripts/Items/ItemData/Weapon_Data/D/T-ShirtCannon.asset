@@ -19,19 +19,15 @@ MonoBehaviour:
     they turned their sights away from business.
   title: Machine Gun Wash Only!
   rank: 0
-  ammo_size: 6
+  magazine: 6
   ammo_count: 250
   reload: 0.9
   ammo_speed: 25
   knock_back: 60
   damage: 8
   delay: 0.35
-  range: 0
+  range: 9999
   ammo_degree: 5
-  current_ammo_size: 6
-  current_ammo_count: 244
-  current_degree: 5
   muzzle_loc: {x: 0.11, y: 0.02}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

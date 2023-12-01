@@ -18,7 +18,7 @@ MonoBehaviour:
     has not been.
   title: Non Non Lethal
   rank: 1
-  ammo_size: 12
+  magazine: 12
   ammo_count: 200
   reload: 1.2
   ammo_speed: 23
@@ -27,10 +27,6 @@ MonoBehaviour:
   delay: 0.1
   range: 60
   ammo_degree: 6
-  current_ammo_size: 12
-  current_ammo_count: 188
-  current_degree: 6
   muzzle_loc: {x: 0.085, y: 0.037}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

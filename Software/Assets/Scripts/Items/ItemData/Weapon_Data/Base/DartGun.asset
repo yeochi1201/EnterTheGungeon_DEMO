@@ -20,7 +20,7 @@ MonoBehaviour:
     causes have been championed in the Gungeon.
   title: Sticky
   rank: 0
-  ammo_size: 6
+  magazine: 6
   ammo_count: -1
   reload: 1
   ammo_speed: 20
@@ -29,10 +29,6 @@ MonoBehaviour:
   delay: 0.2
   range: 25
   ammo_degree: 5
-  current_ammo_size: 6
-  current_ammo_count: -7
-  current_degree: 5
   muzzle_loc: {x: 0.06, y: 0.025}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -20,19 +20,15 @@ MonoBehaviour:
     marked with two small tick marks.
   title: Storied
   rank: 2
-  ammo_size: 12
+  magazine: 12
   ammo_count: 450
   reload: 0.6
   ammo_speed: 40
   knock_back: 10
   damage: 5
   delay: 0.25
-  range: 0
+  range: 1000
   ammo_degree: 5
-  current_ammo_size: 12
-  current_ammo_count: 438
-  current_degree: 5
   muzzle_loc: {x: 0.08, y: 0.032}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

@@ -19,19 +19,15 @@ MonoBehaviour:
     for.
   title: 12 Cylinder
   rank: 4
-  ammo_size: 100
+  magazine: 100
   ammo_count: 800
-  reload: 1.14
+  reload: 1.25
   ammo_speed: 35
   knock_back: 15
   damage: 5
   delay: 0.05
-  range: 0
+  range: 1000
   ammo_degree: 6
-  current_ammo_size: 100
-  current_ammo_count: 700
-  current_degree: 6
   muzzle_loc: {x: 0.13, y: 0.03}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

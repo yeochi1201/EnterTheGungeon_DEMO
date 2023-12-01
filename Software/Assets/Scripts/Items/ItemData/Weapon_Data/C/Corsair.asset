@@ -20,19 +20,15 @@ MonoBehaviour:
     entirely.
   title: Plot A Course
   rank: 1
-  ammo_size: 1
+  magazine: 1
   ammo_count: 200
   reload: 0.5
   ammo_speed: 26
   knock_back: 25
   damage: 10
-  delay: 0
-  range: 0
+  delay: 0.3
+  range: 1000
   ammo_degree: 6
-  current_ammo_size: 1
-  current_ammo_count: 199
-  current_degree: 6
   muzzle_loc: {x: 0.115, y: -0.04}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

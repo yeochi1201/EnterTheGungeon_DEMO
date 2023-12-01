@@ -20,19 +20,15 @@ MonoBehaviour:
     before assembly. His revenge came swiftly, and from a great distance.
   title: Light Fantastic
   rank: 2
-  ammo_size: 1
+  magazine: 1
   ammo_count: 75
   reload: 1.02
   ammo_speed: 200
   knock_back: 25
   damage: 35
   delay: 0.001
-  range: 0
+  range: 1000
   ammo_degree: 0
-  current_ammo_size: 1
-  current_ammo_count: 74
-  current_degree: 0
   muzzle_loc: {x: 0.16, y: 0.01}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

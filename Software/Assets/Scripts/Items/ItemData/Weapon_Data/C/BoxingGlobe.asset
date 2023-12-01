@@ -19,19 +19,15 @@ MonoBehaviour:
     in a humorous manner.
   title: Pistol Hondo
   rank: 1
-  ammo_size: 350
+  magazine: 350
   ammo_count: 350
   reload: 0
   ammo_speed: 0
   knock_back: 0
   damage: 12
   delay: 0.4
-  range: 0
+  range: 3
   ammo_degree: 0
-  current_ammo_size: 350
-  current_ammo_count: 0
-  current_degree: 0
   muzzle_loc: {x: -0.03, y: 0}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

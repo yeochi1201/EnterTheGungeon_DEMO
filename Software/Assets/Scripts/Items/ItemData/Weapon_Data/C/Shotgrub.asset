@@ -19,7 +19,7 @@ MonoBehaviour:
     of Bullet Hell. It fires bullets in unnerving patterns. Gungeoneers should take
     care that it not attach to their brainstem.
   rank: 1
-  ammo_size: 8
+  magazine: 8
   ammo_count: 250
   reload: 1.5
   ammo_speed: 23
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.9
   range: 60
   ammo_degree: 0
-  current_ammo_size: 8
-  current_ammo_count: 242
-  current_degree: 0
   muzzle_loc: {x: 0.125, y: 0.014}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

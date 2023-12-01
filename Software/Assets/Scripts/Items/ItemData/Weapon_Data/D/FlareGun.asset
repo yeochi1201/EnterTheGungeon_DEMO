@@ -18,19 +18,15 @@ MonoBehaviour:
     see this flare but you.
   title: Over Here
   rank: 0
-  ammo_size: 1
-  ammo_count: 150
-  reload: 0.8
+  magazine: 1
+  ammo_count: 165
+  reload: 0.75
   ammo_speed: 23
   knock_back: 35
   damage: 13
   delay: 0.1
-  range: 0
+  range: 1000
   ammo_degree: 6
-  current_ammo_size: 1
-  current_ammo_count: 149
-  current_degree: 6
   muzzle_loc: {x: 0.11, y: 0.02}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

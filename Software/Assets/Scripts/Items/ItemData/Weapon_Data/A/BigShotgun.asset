@@ -18,19 +18,15 @@ MonoBehaviour:
     bigger.
   title: A Shotgun That's Big
   rank: 3
-  ammo_size: 4
+  magazine: 4
   ammo_count: 70
-  reload: 0
-  ammo_speed: 0
+  reload: 2.1
+  ammo_speed: 50
   knock_back: 0
   damage: 5.5
   delay: 0.6
-  range: 0
+  range: 1000
   ammo_degree: 0
-  current_ammo_size: 4
-  current_ammo_count: 66
-  current_degree: 0
   muzzle_loc: {x: 0.16, y: 0.02}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 6

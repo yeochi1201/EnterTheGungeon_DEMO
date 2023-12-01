@@ -19,8 +19,8 @@ MonoBehaviour:
     its length, and somewhat incongruously, a picture of a smiling Bullet Kin. Anyone
     who uses this handgun would look pretty cool.
   rank: 1
-  ammo_size: 6
-  ammo_count: 250
+  magazine: 6
+  ammo_count: 150
   reload: 1.5
   ammo_speed: 23
   knock_back: 30
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.3
   range: 60
   ammo_degree: 6
-  current_ammo_size: 6
-  current_ammo_count: 244
-  current_degree: 6
   muzzle_loc: {x: 0.086, y: 0.024}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

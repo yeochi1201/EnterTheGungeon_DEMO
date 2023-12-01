@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Lil'Bomber
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 294d304ec0c2bf54896ffb70df94790c, type: 3}
   itemName: Lil'Bomber
   description: Charge to fire bombs. A forgetful adventurer left a pouch full of
     bombs deep in the Gungeon, and they eventually sprouted into this amusing weapon.
@@ -20,19 +20,15 @@ MonoBehaviour:
     bombs.
   title: ReFuse To Lose!
   rank: 0
-  ammo_size: 3
+  magazine: 3
   ammo_count: 60
   reload: 2
   ammo_speed: 23
   knock_back: 35
   damage: 15
   delay: 1
-  range: 0
+  range: 9999
   ammo_degree: 6
-  current_ammo_size: 3
-  current_ammo_count: 57
-  current_degree: 6
   muzzle_loc: {x: 0.06, y: 0.015}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

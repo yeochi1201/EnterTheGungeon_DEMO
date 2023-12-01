@@ -19,7 +19,7 @@ MonoBehaviour:
     the Ballistac era.
   title: Proof That Guns Once Existed
   rank: 0
-  ammo_size: 500
+  magazine: 500
   ammo_count: 500
   reload: 0
   ammo_speed: 15
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.1
   range: 20
   ammo_degree: 0
-  current_ammo_size: 500
-  current_ammo_count: 0
-  current_degree: 0
   muzzle_loc: {x: 0.087, y: -0.01}
-  projectile: {fileID: 0}
   type: 3
   proejctileType: 0

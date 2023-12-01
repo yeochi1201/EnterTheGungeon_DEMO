@@ -18,19 +18,15 @@ MonoBehaviour:
   title: The Hegemony of Man has fought, and won, three major wars with alien races.
     Hundreds of these pistols were salvaged after the second of these wars.
   rank: 0
-  ammo_size: 8
-  ammo_count: 120
-  reload: 1.8
+  magazine: 10
+  ammo_count: 350
+  reload: 1.2
   ammo_speed: 23
-  knock_back: 60
-  damage: 4
-  delay: 0.6
-  range: 60
-  ammo_degree: 0
-  current_ammo_size: 8
-  current_ammo_count: 112
-  current_degree: 0
+  knock_back: 10
+  damage: 5
+  delay: 0.15
+  range: 15
+  ammo_degree: 5
   muzzle_loc: {x: 0.078, y: 0.018}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

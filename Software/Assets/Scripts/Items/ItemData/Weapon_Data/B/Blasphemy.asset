@@ -17,19 +17,15 @@ MonoBehaviour:
   description: Betrayer!
   title: To The Point
   rank: 2
-  ammo_size: 0
-  ammo_count: 0
+  magazine: 6
+  ammo_count: -1
   reload: 1
   ammo_speed: 26
   knock_back: 10
   damage: 14
   delay: 0.2
-  range: 0
+  range: 1000
   ammo_degree: 10
-  current_ammo_size: 0
-  current_ammo_count: 0
-  current_degree: 10
   muzzle_loc: {x: 0.14, y: 0}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -19,19 +19,15 @@ MonoBehaviour:
     of the Gungeon taped one of his staves of power to the top of the barrel.
   title: Missing Link
   rank: 3
-  ammo_size: 6
+  magazine: 6
   ammo_count: 200
   reload: 1
   ammo_speed: 25
   knock_back: 12
   damage: 7
   delay: 0.15
-  range: 0
+  range: 9999
   ammo_degree: 7
-  current_ammo_size: 6
-  current_ammo_count: 194
-  current_degree: 7
   muzzle_loc: {x: 0.1, y: 0.002}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

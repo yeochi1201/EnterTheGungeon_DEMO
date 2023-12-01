@@ -18,19 +18,15 @@ MonoBehaviour:
     gun that upon reload, switches projectiles to grenade launcher.
   title: Underslung
   rank: 3
-  ammo_size: 30
+  magazine: 30
   ammo_count: 500
   reload: 1.2
   ammo_speed: 23
   knock_back: 11
   damage: 5.5
   delay: 0.1
-  range: 0
+  range: 9999
   ammo_degree: 7
-  current_ammo_size: 30
-  current_ammo_count: 470
-  current_degree: 7
   muzzle_loc: {x: 0.16, y: 0.001}
-  projectile: {fileID: 0}
   type: 4
   proejctileType: 0

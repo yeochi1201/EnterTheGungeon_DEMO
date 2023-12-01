@@ -19,17 +19,15 @@ MonoBehaviour:
     swing the bat.
   title: Batting .50
   rank: 0
-  ammo_size: 1
-  ammo_count: 0
-  reload: 0
+  magazine: 1
+  ammo_count: -1
+  reload: 1
   ammo_speed: 0
-  knock_back: 0
+  knock_back: 120
   damage: 100
   delay: 0.2
-  range: 0
+  range: 2
   ammo_degree: 0
-  current_ammo_size: 1
-  current_ammo_count: -1
-  current_degree: 0
+  muzzle_loc: {x: 0, y: 0}
   type: 2
-  proejectile: 0
+  proejctileType: 0

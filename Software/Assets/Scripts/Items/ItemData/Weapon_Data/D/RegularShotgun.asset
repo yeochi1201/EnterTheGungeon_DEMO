@@ -18,7 +18,7 @@ MonoBehaviour:
     Shotgun Kin that roam the Gungeon, as it reminds them of their home.
   title: Cocked and Locked
   rank: 0
-  ammo_size: 8
+  magazine: 8
   ammo_count: 150
   reload: 1.8
   ammo_speed: 23
@@ -27,10 +27,6 @@ MonoBehaviour:
   delay: 0.6
   range: 60
   ammo_degree: 10
-  current_ammo_size: 8
-  current_ammo_count: 142
-  current_degree: 10
   muzzle_loc: {x: 0.098, y: 0.013}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

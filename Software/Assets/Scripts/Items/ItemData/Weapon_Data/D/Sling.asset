@@ -19,19 +19,15 @@ MonoBehaviour:
     even by Gungeon standards. Only recommended as a last resort for serious Gungeoneers.
   title: Outrageous!
   rank: 0
-  ammo_size: 1
+  magazine: 1
   ammo_count: 80
   reload: 0.9
   ammo_speed: 23
   knock_back: 35
   damage: 25
   delay: 0.1
-  range: 0
+  range: 1000
   ammo_degree: 0
-  current_ammo_size: 1
-  current_ammo_count: 79
-  current_degree: 0
   muzzle_loc: {x: 0, y: 0.03}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

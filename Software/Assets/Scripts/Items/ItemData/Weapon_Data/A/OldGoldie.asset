@@ -20,7 +20,7 @@ MonoBehaviour:
     the best of traditional guncraft.
   title: For The Discerning
   rank: 3
-  ammo_size: 4
+  magazine: 4
   ammo_count: 150
   reload: 1.2
   ammo_speed: 23
@@ -29,10 +29,6 @@ MonoBehaviour:
   delay: 0.5
   range: 60
   ammo_degree: 5
-  current_ammo_size: 4
-  current_ammo_count: 146
-  current_degree: 5
   muzzle_loc: {x: 0.15, y: 0.02}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -19,19 +19,15 @@ MonoBehaviour:
     tandem with a blade, this one has been modified to recharge itself.
   title: Skill Honed Sharp
   rank: 2
-  ammo_size: 12
+  magazine: 12
   ammo_count: 12
-  reload: 0
-  ammo_speed: 0
-  knock_back: 0
+  reload: 1.5
+  ammo_speed: 26
+  knock_back: 6
   damage: 20
   delay: 0.15
-  range: 0
+  range: 20
   ammo_degree: 0
-  current_ammo_size: 12
-  current_ammo_count: 0
-  current_degree: 0
   muzzle_loc: {x: 0.084, y: 0.02}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

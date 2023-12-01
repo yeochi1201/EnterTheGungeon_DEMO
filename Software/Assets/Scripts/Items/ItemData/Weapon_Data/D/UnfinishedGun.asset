@@ -19,7 +19,7 @@ MonoBehaviour:
     A small hourglass is embossed on the cylinder.
   title: Still Warm
   rank: 0
-  ammo_size: 15
+  magazine: 15
   ammo_count: 350
   reload: 1.5
   ammo_speed: 15
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.2
   range: 35
   ammo_degree: 15
-  current_ammo_size: 15
-  current_ammo_count: 335
-  current_degree: 15
   muzzle_loc: {x: 0.11, y: 0.03}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

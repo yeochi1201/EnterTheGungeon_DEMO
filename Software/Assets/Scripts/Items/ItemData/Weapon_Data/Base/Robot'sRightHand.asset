@@ -20,7 +20,7 @@ MonoBehaviour:
     in intricacy. Under the control of a targeting AI it becomes fearsome indeed.
   title: Built To Kill
   rank: 0
-  ammo_size: 20
+  magazine: 20
   ammo_count: -1
   reload: 1.2
   ammo_speed: 25
@@ -29,10 +29,6 @@ MonoBehaviour:
   delay: 0.2
   range: 20
   ammo_degree: 7
-  current_ammo_size: 20
-  current_ammo_count: -21
-  current_degree: 7
   muzzle_loc: {x: 0.036, y: 0}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

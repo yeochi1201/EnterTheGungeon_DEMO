@@ -18,19 +18,15 @@ MonoBehaviour:
     chicks).
   title: Totally Rad
   rank: 2
-  ammo_size: 12
+  magazine: 12
   ammo_count: 250
-  reload: 0
-  ammo_speed: 0
-  knock_back: 0
+  reload: 0.6
+  ammo_speed: 40
+  knock_back: 30
   damage: 4
   delay: 0.15
-  range: 0
-  ammo_degree: 0
-  current_ammo_size: 12
-  current_ammo_count: 238
-  current_degree: 0
+  range: 9999
+  ammo_degree: 5
   muzzle_loc: {x: 0.101, y: 0.014}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

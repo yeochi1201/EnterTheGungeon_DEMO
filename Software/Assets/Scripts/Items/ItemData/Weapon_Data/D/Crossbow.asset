@@ -17,19 +17,15 @@ MonoBehaviour:
   description: One of the earliest examples of trigger fired projectiles.
   title: The Original
   rank: 0
-  ammo_size: 1
+  magazine: 1
   ammo_count: 100
   reload: 0.75
   ammo_speed: 26
   knock_back: 25
   damage: 22
   delay: 0.5
-  range: 35
-  ammo_degree: 15
-  current_ammo_size: 1
-  current_ammo_count: 99
-  current_degree: 15
+  range: 1000
+  ammo_degree: 7
   muzzle_loc: {x: 0.104, y: -0.004}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -18,19 +18,15 @@ MonoBehaviour:
     the spirit from the body.
   title: Soul Reaver
   rank: 3
-  ammo_size: 66
-  ammo_count: 666
-  reload: 0
-  ammo_speed: 0
-  knock_back: 0
+  magazine: 11
+  ammo_count: 111
+  reload: 0.4
+  ammo_speed: 22
+  knock_back: 13
   damage: 15
   delay: 0.5
-  range: 0
+  range: 25
   ammo_degree: 0
-  current_ammo_size: 66
-  current_ammo_count: 600
-  current_degree: 0
   muzzle_loc: {x: 0.07, y: 0.027}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

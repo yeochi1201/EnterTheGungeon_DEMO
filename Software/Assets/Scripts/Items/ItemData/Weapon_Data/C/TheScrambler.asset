@@ -18,19 +18,15 @@ MonoBehaviour:
     Upon impact, a swarm of newborn bullets is released, hungry for their first meal!
   title: Bullet Or The Gun?
   rank: 1
-  ammo_size: 1
+  magazine: 1
   ammo_count: 120
   reload: 1.2
   ammo_speed: 20
   knock_back: 20
   damage: 6
   delay: 0.1
-  range: 0
+  range: 32
   ammo_degree: 6
-  current_ammo_size: 1
-  current_ammo_count: 119
-  current_degree: 6
   muzzle_loc: {x: 0.074, y: 0.018}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

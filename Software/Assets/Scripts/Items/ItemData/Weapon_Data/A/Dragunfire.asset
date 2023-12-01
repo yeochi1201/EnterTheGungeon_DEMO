@@ -19,19 +19,15 @@ MonoBehaviour:
     wrath of the beast from which it takes its name.
   title: Roar
   rank: 3
-  ammo_size: 30
+  magazine: 30
   ammo_count: 600
   reload: 1.6
   ammo_speed: 25
   knock_back: 27
   damage: 635
   delay: 0.05
-  range: 0
+  range: 1000
   ammo_degree: 7
-  current_ammo_size: 30
-  current_ammo_count: 570
-  current_degree: 7
   muzzle_loc: {x: 0.1, y: 0.004}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

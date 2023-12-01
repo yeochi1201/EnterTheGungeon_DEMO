@@ -19,7 +19,7 @@ MonoBehaviour:
     respect and care.
   title: Jealous Weapon
   rank: 4
-  ammo_size: 1
+  magazine: 1
   ammo_count: 1
   reload: 2.1
   ammo_speed: 35
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.5
   range: 1000
   ammo_degree: 6
-  current_ammo_size: 1
-  current_ammo_count: 0
-  current_degree: 6
   muzzle_loc: {x: 0.09, y: -0.014}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

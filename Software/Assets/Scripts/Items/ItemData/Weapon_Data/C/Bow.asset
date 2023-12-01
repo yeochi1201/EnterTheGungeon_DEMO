@@ -17,19 +17,15 @@ MonoBehaviour:
   description: The classic Bow will never go out of style.
   title: Hold Fire To Charge
   rank: 1
-  ammo_size: 1
+  magazine: 1
   ammo_count: 100
   reload: 0.12
   ammo_speed: 26
   knock_back: 25
   damage: 7.5
   delay: 1
-  range: 0
+  range: 1000
   ammo_degree: 0
-  current_ammo_size: 1
-  current_ammo_count: 99
-  current_degree: 0
   muzzle_loc: {x: -0.007, y: 0.009}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

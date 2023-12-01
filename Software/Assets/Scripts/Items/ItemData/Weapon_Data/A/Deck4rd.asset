@@ -21,19 +21,15 @@ MonoBehaviour:
     his prey to the Gungeon.
   title: Unicorn Of Handguns
   rank: 3
-  ammo_size: 2
+  magazine: 2
   ammo_count: 60
   reload: 1.5
   ammo_speed: 20
   knock_back: 22
   damage: 5
   delay: 0.2
-  range: 0
+  range: 9999
   ammo_degree: 10
-  current_ammo_size: 2
-  current_ammo_count: 58
-  current_degree: 10
   muzzle_loc: {x: 0.09, y: 0.017}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5c58cee71868408174935237d29a3, type: 3}
   m_Name: Mailbox
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: e4a065e1d109ab04bb0b36cc893dd9ad, type: 3}
   itemName: Mailbox
   description: Contains junk mail and one untrustworthy package. It was a wise and
     hopeful Gungeoneer who observed that mailboxes share the same basic shape of
@@ -20,19 +20,15 @@ MonoBehaviour:
     object would operate as guns do, within the Gungeons walls.
   title: Special Delivery
   rank: 0
-  ammo_size: 10
+  magazine: 10
   ammo_count: 350
   reload: 1.2
   ammo_speed: 22
   knock_back: 10
   damage: 5
   delay: 0.2
-  range: 0
+  range: 1000
   ammo_degree: 10
-  current_ammo_size: 10
-  current_ammo_count: 340
-  current_degree: 10
   muzzle_loc: {x: 0.12, y: 0}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Decreases in damage output as the clip empties. You gotta wind it!
   title: Charge It
   rank: 0
-  ammo_size: 20
+  magazine: 20
   ammo_count: 600
   reload: 1.5
   ammo_speed: 30
@@ -26,10 +26,6 @@ MonoBehaviour:
   delay: 0.13
   range: 35
   ammo_degree: 8
-  current_ammo_size: 20
-  current_ammo_count: 580
-  current_degree: 8
   muzzle_loc: {x: 0.13, y: 0.01}
-  projectile: {fileID: 0}
   type: 1
   proejctileType: 0

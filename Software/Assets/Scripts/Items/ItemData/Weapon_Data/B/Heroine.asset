@@ -18,19 +18,15 @@ MonoBehaviour:
     use, but its upkeep has been immaculate.
   title: Charge Beam Active
   rank: 2
-  ammo_size: 6
+  magazine: 6
   ammo_count: 200
   reload: 0.54
   ammo_speed: 25
   knock_back: 10
   damage: 5
   delay: 0.07
-  range: 0
+  range: 9999
   ammo_degree: 0
-  current_ammo_size: 6
-  current_ammo_count: 194
-  current_degree: 0
   muzzle_loc: {x: 0.085, y: 0}
-  projectile: {fileID: 0}
   type: 2
   proejctileType: 0

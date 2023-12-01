@@ -27,8 +27,8 @@ MonoBehaviour:
   knock_back: 25
   damage: 40
   delay: 1.2
-  range: 0
+  range: 9999
   ammo_degree: 5
   muzzle_loc: {x: 0.15, y: 0.005}
   type: 0
-  proejctileType: 0
+  proejctileType: 4

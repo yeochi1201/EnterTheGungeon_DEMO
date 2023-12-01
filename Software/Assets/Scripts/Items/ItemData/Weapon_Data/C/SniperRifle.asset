@@ -19,19 +19,15 @@ MonoBehaviour:
     many opportunities for distance shooting, this gun still rewards a steady hand.
   title: Scope Creep
   rank: 1
-  ammo_size: 10
+  magazine: 10
   ammo_count: 80
   reload: 1.5
   ammo_speed: 200
   knock_back: 15
   damage: 26
   delay: 1
-  range: 0
+  range: 9999
   ammo_degree: 1
-  current_ammo_size: 10
-  current_ammo_count: 70
-  current_degree: 1
   muzzle_loc: {x: 0.15, y: 0}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

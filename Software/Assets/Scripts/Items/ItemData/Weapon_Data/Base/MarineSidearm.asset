@@ -19,7 +19,7 @@ MonoBehaviour:
     most needed.
   title: Always With You
   rank: 0
-  ammo_size: 10
+  magazine: 10
   ammo_count: -1
   reload: 1.2
   ammo_speed: 16
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.2
   range: 16
   ammo_degree: 7
-  current_ammo_size: 10
-  current_ammo_count: -11
-  current_degree: 7
   muzzle_loc: {x: 0.07, y: 0.034}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0

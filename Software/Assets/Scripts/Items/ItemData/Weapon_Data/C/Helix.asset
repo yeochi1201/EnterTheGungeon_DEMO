@@ -19,7 +19,7 @@ MonoBehaviour:
     distance apart.
   title: Splice n' Dice
   rank: 1
-  ammo_size: 12
+  magazine: 12
   ammo_count: 250
   reload: 2
   ammo_speed: 23
@@ -28,10 +28,6 @@ MonoBehaviour:
   delay: 0.25
   range: 35
   ammo_degree: 7
-  current_ammo_size: 12
-  current_ammo_count: 238
-  current_degree: 7
   muzzle_loc: {x: 0.08, y: 0.004}
-  projectile: {fileID: 0}
   type: 0
   proejctileType: 0
