@@ -6,11 +6,11 @@ public class AmuletofPitLord : PassiveItem
 {
     public override void OnEquip()
     {
-        GameObject.Find("Player").GetComponent<PlayerSpecification>().pitArmor = true;
+        ItemManager.itemManager.ps.pitArmor = true;
     }
 
     public override void UnEquip()
     {
-        GameObject.Find("Player").GetComponent<PlayerSpecification>().pitArmor = false;
+        ItemManager.itemManager.ps.pitArmor = false;
     }
 }

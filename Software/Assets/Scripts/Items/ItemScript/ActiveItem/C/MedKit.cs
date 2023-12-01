@@ -16,6 +16,6 @@ public class MedKit : ActiveItem
 
     public override void Consume()
     {
-        GameObject.Find("Player").GetComponent<PlayerSpecification>().currentHP += 4.0f;
+        ItemManager.itemManager.ps.currentHP += 4.0f;
     }
 }

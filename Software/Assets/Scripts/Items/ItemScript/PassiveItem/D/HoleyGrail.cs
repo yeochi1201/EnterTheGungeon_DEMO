@@ -6,15 +6,13 @@ public class HoleyGrail : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.cursed++;
-        
-        
     }
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.cursed--;
     }
 }

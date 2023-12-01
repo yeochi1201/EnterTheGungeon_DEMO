@@ -6,18 +6,18 @@ public class CursedBullets : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps; ;
         ps.cursed += 1;
         for(int i=0;i<ps.cursed;i++)
         {
             ps.weapon_dmg_buf *= 1.1f;
         }
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
             for (int i = 0; i < ps.cursed; i++)
             {
-                weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(1.1f);
+                weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.weapon_dmg_buf);
             }
         }
         ItemManager.itemManager.Cursed_Changed(1);
@@ -26,18 +26,18 @@ public class CursedBullets : PassiveItem
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps; ;
         ps.cursed -= 1;
         for (int i = 0; i < ps.cursed; i++)
         {
             ps.weapon_dmg_buf /= 1.1f;
         }
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
             for (int i = 0; i < ps.cursed; i++)
             {
-                weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(1.1f);
+                weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.weapon_dmg_buf);
             }
         }
         ItemManager.itemManager.Cursed_Changed(-1);

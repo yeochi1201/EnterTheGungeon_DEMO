@@ -14,7 +14,7 @@ public class Cigarrettes : ActiveItem
     }
     override public void Consume()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.currentHP--;
         ps.coolness++;
     }

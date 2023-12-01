@@ -17,7 +17,7 @@ public class Box : ActiveItem
 
     public override void Consume()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.invisible = true;
         float cur = ps.currentHP;
         while (true)

@@ -6,12 +6,12 @@ public class MasterRound1 : PassiveItem
 {
     override public void OnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification PS = ItemManager.itemManager.ps;
         PS.maxHP++;
     }
     override public void UnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification PS = ItemManager.itemManager.ps;
         PS.maxHP--;
     }
 }

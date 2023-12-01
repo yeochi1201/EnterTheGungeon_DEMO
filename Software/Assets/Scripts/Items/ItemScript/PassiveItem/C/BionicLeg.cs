@@ -6,14 +6,14 @@ public class BionicLeg : PassiveItem
 {
     override public void OnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        PS.speed += 2.0f;
-        PS.armor++;
+        PlayerSpecification ps = ItemManager.itemManager.ps;
+        ps.speed += 2.0f;
+        ps.armor++;
     }
     override public void UnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        PS.armor--;
-        PS.speed -= 2.0f;
+        PlayerSpecification ps = ItemManager.itemManager.ps;
+        ps.armor--;
+        ps.speed -= 2.0f;
     }
 }

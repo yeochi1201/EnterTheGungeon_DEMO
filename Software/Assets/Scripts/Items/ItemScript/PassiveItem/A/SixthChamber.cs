@@ -6,19 +6,17 @@ public class SixthChamber : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.cursed += 2;
         ps.coolness += ps.cursed * 2;
-        ItemManager.itemManager.Cursed_Changed(2);
         ItemManager.itemManager.SetExist(0, true);
     }
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        ps.cursed -= 2;
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.coolness -= ps.cursed * 2;
-        ItemManager.itemManager.Cursed_Changed(-2);
+        ps.cursed -= 2;
         ItemManager.itemManager.SetExist(0, false);
     }
 }

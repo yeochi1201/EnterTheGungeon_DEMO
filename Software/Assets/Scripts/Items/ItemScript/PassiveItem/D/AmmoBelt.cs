@@ -6,21 +6,21 @@ public class AmmoBelt : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_size_buf *= 1.20f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoSize(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoSize(ps.ammo_size_buf);
         }
     }
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_size_buf /= 1.20f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<WeaponItem>().WeaponRollbackAmmoSize(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoSize(ps.ammo_size_buf);
         }
     }
 

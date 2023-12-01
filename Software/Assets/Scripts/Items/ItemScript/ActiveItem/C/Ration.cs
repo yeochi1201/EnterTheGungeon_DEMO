@@ -16,6 +16,6 @@ public class Ration : ActiveItem
 
     public override void Consume()
     {
-        GameObject.Find("Player").GetComponent<PlayerSpecification>().currentHP += 2.0f;
+        ItemManager.itemManager.ps.currentHP += 2.0f;
     }
 }

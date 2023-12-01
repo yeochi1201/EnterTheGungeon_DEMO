@@ -6,25 +6,25 @@ public class YellowChamber : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.maxHP += 2;
         ps.weapon_delay_buf *= 1.15f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<WeaponItem>().WeaponUpdateDelay(1.15f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDelay(ps.weapon_delay_buf);
         }
     }
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps; ;
         ps.maxHP -= 2.0f;
         ps.weapon_delay_buf /= 1.15f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<WeaponItem>().WeaponRollbackDelay(1.15f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDelay(ps.weapon_delay_buf);
         }
     }
 }

@@ -6,15 +6,13 @@ public class HeavyBoots : PassiveItem
 {
     public override void OnEquip()
     {
-        GameObject go = GameObject.Find("Player");
-        go.GetComponent<PlayerSpecification>().trapArmor = true;
-        go.GetComponent<PlayerSpecification>().ignoreKnockback = true;
+        ItemManager.itemManager.ps.trapArmor = true;
+        ItemManager.itemManager.ps.ignoreKnockback = true;
     }
 
     public override void UnEquip()
     {
-        GameObject go = GameObject.Find("Player");
-        go.GetComponent<PlayerSpecification>().trapArmor = false;
-        go.GetComponent<PlayerSpecification>().ignoreKnockback = false;
+        ItemManager.itemManager.ps.trapArmor = false;
+        ItemManager.itemManager.ps.ignoreKnockback = false;
     }
 }

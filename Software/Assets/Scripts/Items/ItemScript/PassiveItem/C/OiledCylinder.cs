@@ -7,9 +7,9 @@ public class OiledCylinder : PassiveItem
     // Start is called before the first frame update
     void Start()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.weapon_reload_buf *= 1.20f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
             weapon.GetComponent<WeaponItem>().WeaponUpdateReload(1.20f);
@@ -21,10 +21,10 @@ public class OiledCylinder : PassiveItem
     {
         PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
         ps.weapon_reload_buf /= 1.20f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven; ;
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<WeaponItem>().WeaponRollbackReload(1.20f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateReload(ps.weapon_reload_buf);
         }
     }
 }

@@ -6,14 +6,14 @@ using UnityEngine;
 public class ItemManager : MonoBehaviour
 {
     public static ItemManager itemManager;
-    private Inven inven;
-    private PlayerSpecification ps;
+    public Inven inven;
+    public PlayerSpecification ps;
     private bool[] CursedItems;
     private void Awake()
     {
         itemManager = this;
-        inven = GameObject.Find("Player").GetComponent<Inven>();
-        ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        inven = GameObject.FindGameObjectWithTag("Player").GetComponent<Inven>();
+        ps = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpecification>();
         CursedItems = new bool[3];
     }
     public float Calc_Cooltime(float itemCool)
@@ -71,7 +71,7 @@ public class ItemManager : MonoBehaviour
                     {
                         for (int j = 0; j < ps.cursed; j++)
                         {
-                            weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(1.1f);
+                            weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.weapon_dmg_buf);
                         }
                     }
                 }

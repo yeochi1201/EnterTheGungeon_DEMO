@@ -6,10 +6,10 @@ public class EyePatch : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_degree_buf *= 1.35f;
         ps.weapon_dmg_buf *= 2.00f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons){
             weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.ammo_degree_buf);
             weapon.GetComponent<WeaponItem>().WeaponUpdateDegree(ps.weapon_dmg_buf);
@@ -18,13 +18,13 @@ public class EyePatch : PassiveItem
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_degree_buf /= 0.35f;
         ps.weapon_dmg_buf /= 2.00f;
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons){
-            weapon.GetComponent<WeaponItem>().WeaponRollbackDamage(ps.ammo_degree_buf);
-            weapon.GetComponent<WeaponItem>().WeaponRollbackDegree(ps.weapon_dmg_buf);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDamage(ps.ammo_degree_buf);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateDegree(ps.weapon_dmg_buf);
         }
     }
 }

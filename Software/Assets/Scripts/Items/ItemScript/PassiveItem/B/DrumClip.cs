@@ -6,25 +6,26 @@ public class DrumClip : PassiveItem
 {
     public override void OnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_count_buf *= 1.5f;
-        
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoCount(1.5f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoCount(ps.ammo_count_buf);
         }
     }
 
     public override void UnEquip()
     {
-        PlayerSpecification ps = GameObject.Find("Player").GetComponent<PlayerSpecification>();
+        PlayerSpecification ps = ItemManager.itemManager.ps;
         ps.ammo_count_buf /= 1.5f;
 
-        Inven inven = GameObject.Find("Player").GetComponent<Inven>();
+        Inven inven = ItemManager.itemManager.inven;
         foreach (GameObject weapon in inven.weapons)
         {
-            weapon.GetComponent<WeaponItem>().WeaponRollbackAmmoCount(1.5f);
+            weapon.GetComponent<WeaponItem>().WeaponUpdateAmmoCount(ps.ammo_count_buf);
         }
+        
     }
 }

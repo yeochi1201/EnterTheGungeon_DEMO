@@ -6,14 +6,14 @@ public class ArmorofThorns : PassiveItem
 {
     override public void OnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        PS.armor++;
-        PS.contactArmor = true;
+        PlayerSpecification ps = ItemManager.itemManager.ps;
+        ps.armor++;
+        ps.contactArmor = true;
     }
     override public void UnEquip()
     {
-        PlayerSpecification PS = GameObject.Find("Player").GetComponent<PlayerSpecification>();
-        PS.armor--;
-        PS.contactArmor = false;
+        PlayerSpecification ps = ItemManager.itemManager.ps;
+        ps.armor--;
+        ps.contactArmor = false;
     }
 }
