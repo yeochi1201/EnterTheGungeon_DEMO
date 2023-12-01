@@ -10,11 +10,9 @@ public class Managers : MonoBehaviour
 
     ResourceManager _resource = new ResourceManager();
     UIManager _ui = new UIManager();
-    InvenUI _invenUI = new InvenUI();
 
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static UIManager UI { get { return Instance._ui; } }
-    public static InvenUI InvenUI { get { return Instance._invenUI; } }
 
     void Start()
     {

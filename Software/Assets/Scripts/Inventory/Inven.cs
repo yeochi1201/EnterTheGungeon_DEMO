@@ -17,6 +17,8 @@ public class Inven : MonoBehaviour
 
     void Start()
     {
+        GameObject go = GameObject.Find("InvenUI");
+        invenUI = go.GetComponent<InvenUI>();
         basicGun = Instantiate(basicGun);
         basicGun.GetComponent<WeaponItem>().PlayerGetGun();
         basicGun.SetActive(true);
@@ -71,7 +73,6 @@ public class Inven : MonoBehaviour
             Debug.Log($"{weaponIndex + 1}¹ø ¹«±â Throw");
             weapons[weaponIndex].SetActive(true);
             weapons[weaponIndex].transform.SetParent(null);
-
             weapons.RemoveAt(weaponIndex);
             invenUI.RemoveWeaponButton(weaponIndex);
             weaponIndex -= 1;

@@ -4,19 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemButton : UIPopup
+public class ItemButton : MonoBehaviour
 {
     public Button itemButton;
-    public int buttonID;
 
     private void Start()
     {
         itemButton.onClick.AddListener(OnButtonClicked);
-    }
-    public override void Init()
-    {
-        base.Init();
-
     }
 
     public void OnButtonClicked()

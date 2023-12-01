@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class InvenUI : MonoBehaviour
 {
-    List<GameObject> itemList = new List<GameObject>();
     List<GameObject> weaponList = new List<GameObject>();
     List<GameObject> activeList = new List<GameObject>();
     List<GameObject> passiveList = new List<GameObject>();
@@ -50,7 +49,7 @@ public class InvenUI : MonoBehaviour
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
-        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height) * 3;
+        buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
 
         weaponList.Add(btn);
         Image image = btn.GetComponent<Image>();
@@ -63,7 +62,6 @@ public class InvenUI : MonoBehaviour
     {
         Managers.Resource.Destroy(weaponList[index]);
         weaponList.RemoveAt(index);
-
     }
     public void AddActiveButton(GameObject newActive)
     {
