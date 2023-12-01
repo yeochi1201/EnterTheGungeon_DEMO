@@ -15,16 +15,19 @@ public class ItemManager : MonoBehaviour
         if(first_do == false)
         {
             settingManager();
-            first_do = true;
         }
     }
 
     private void settingManager()
     {
-        itemManager = this;
-        inven = GameObject.FindGameObjectWithTag("Player").GetComponent<Inven>();
-        ps = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpecification>();
-        CursedItems = new bool[3];
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            itemManager = this;
+            inven = GameObject.FindGameObjectWithTag("Player").GetComponent<Inven>();
+            ps = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSpecification>();
+            CursedItems = new bool[3];
+            first_do = true;
+        }
     }
     public float Calc_Cooltime(float itemCool)
     {
