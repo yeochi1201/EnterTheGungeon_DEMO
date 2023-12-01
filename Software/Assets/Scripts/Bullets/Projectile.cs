@@ -156,9 +156,10 @@ public class Projectile : MonoBehaviour
                 projectilePierce--;
             }
             else
-            {
-                ProjectileInit();
+            {                
                 collision.GetComponent<Enemy>().GetDamage(projectileDamage);
+
+                ProjectileInit();
             }
         }
         /*

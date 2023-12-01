@@ -212,6 +212,14 @@ public class PlayerController : PlayerSpecification
         }
     }
 
+    public void GetDamage(float _damage)
+    {
+        if(currentHP > 0)
+        {
+            currentHP -= _damage;
+        }
+    }
+
     IEnumerator DamageEffect()
     {
         damagedTimer = 0f;

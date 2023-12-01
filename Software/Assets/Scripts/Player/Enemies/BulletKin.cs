@@ -194,7 +194,7 @@ public class BulletKin : Enemy
         */
 
         GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
-        _projectile.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        _projectile.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
     }

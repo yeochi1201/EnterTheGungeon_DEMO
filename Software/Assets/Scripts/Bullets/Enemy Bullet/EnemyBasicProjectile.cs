@@ -37,14 +37,14 @@ public class EnemyBasicProjectile : Projectile
         {
             if (projectilePierce > 0) //Pierce
             {
-                //collision.GetComponent<>().GetDamage(projectileDamage);
+                collision.GetComponent<PlayerController>().GetDamage(projectileDamage);
 
                 projectilePierce--;
             }
             else
             {
                 ProjectileInit();
-                //collision.GetComponent<>().GetDamage(projectileDamage);
+                collision.GetComponent<PlayerController>().GetDamage(projectileDamage);
             }
         }
         /*

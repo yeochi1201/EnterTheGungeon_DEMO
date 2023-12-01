@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileData: {fileID: 11400000, guid: f2055241993d82346adb10859a982166, type: 2}
   projectileType: 3
+  projectileName: 
   projectileDamage: 0
   projectileSpeed: 0
   projectileRange: 0
@@ -155,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
