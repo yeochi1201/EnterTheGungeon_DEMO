@@ -19,6 +19,7 @@ Software Engineering Team Project
 ## 메뉴 화면
 
 ![스크린샷(590)](https://github.com/yeochi1201/Software/assets/123866834/884b20d1-ccab-4784-941e-3dc95b07805e) 
+--- |
 
 - `PLAY` 버튼을 클릭하면 베이스캠프로 이동합니다.
 - `OPTION` 버튼을 클릭하면 옵션 창으로 이동합니다.
@@ -27,6 +28,7 @@ Software Engineering Team Project
 ## 옵션 화면
 
 ![스크린샷(591)](https://github.com/yeochi1201/Software/assets/123866834/810b4483-a018-49e2-a86b-e4129710154d)
+--- |
 
 - `Game Play` 버튼을 클릭하면 게임 플레이와 관련한 옵션을 변경할 수 있습니다.
 - `Vedio` 버튼을 클릭하면 게임 해상도와 관련한 옵션을 변경할 수 있습니다.
@@ -35,6 +37,7 @@ Software Engineering Team Project
 ### Game Play 옵션창
 
 ![스크린샷(592)](https://github.com/yeochi1201/Software/assets/123866834/8ffd262f-a7ac-49d8-a75a-33b28b0fc0cb)
+--- |
 
 - 왼쪽 버튼과 오른쪽 버튼을 통해 원하는 커서로 변경할 수 있습니다.
   + `Cancel` 버튼을 클릭하면 선택이 취소되고 디폴트 값으로 변경된 뒤 메뉴화면으로 되돌아갑니다.
@@ -64,4 +67,6 @@ Software Engineering Team Project
 
 - 베이스캠프의 출구로 나가면 메뉴화면으로 되돌아갑니다.
 - 베이스캠프의 입구로 들어가면 스테이지 1로 들어갑니다.
+
+  
 
