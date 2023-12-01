@@ -2883,10 +2883,10 @@ TextureImporter:
       name: GameUIAtlas_131
       rect:
         serializedVersion: 2
-        x: 1989
-        y: 869
-        width: 59
-        height: 85
+        x: 1992
+        y: 917
+        width: 43
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -23690,6 +23690,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GameUIAtlas_1122
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 960
+        width: 60
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd962e692ec32540bd47560fe0e34df
+      internalID: 449537145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUIAtlas_1123
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1036
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0410620493bcc48ba8d928e51bfcc3
+      internalID: -304848174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cursor_crosshair
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1054
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82b0cdd9f8ea6c4681755e6ab551148
+      internalID: 539584862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUIAtlas_1124
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 1054
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6235c718af7377d4290bc2f47ebccac0
+      internalID: 668379769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUIAtlas_1125
+      rect:
+        serializedVersion: 2
+        x: 1977
+        y: 699
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9478fb6a70c9a8647a5ea3972abf66b8
+      internalID: -547133845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -23840,6 +23945,10 @@ TextureImporter:
       GameUIAtlas_112: 2006265159
       GameUIAtlas_1120: 1429666454
       GameUIAtlas_1121: -1718022978
+      GameUIAtlas_1122: 449537145
+      GameUIAtlas_1123: -304848174
+      GameUIAtlas_1124: 668379769
+      GameUIAtlas_1125: -547133845
       GameUIAtlas_113: -122888870
       GameUIAtlas_114: 1720535724
       GameUIAtlas_115: 398302194
@@ -24823,6 +24932,7 @@ TextureImporter:
       GameUIAtlas_997: 1796390373
       GameUIAtlas_998: -715400501
       GameUIAtlas_999: -1476691785
+      cursor_crosshair: 539584862
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
