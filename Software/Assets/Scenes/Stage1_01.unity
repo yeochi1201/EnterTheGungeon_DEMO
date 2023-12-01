@@ -5135,7 +5135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  velocityProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
+  velocityProjectilePrefab: {fileID: 2454912851067823375, guid: 97a8124bcde909748972fe480d20aa29, type: 3}
   velocityProjectilePoolCount: 100
   helixProjectilePrefab: {fileID: 528450900961831077, guid: 0407b1ab9e101a2468f117c303f8a274, type: 3}
   helixProjectilePoolCount: 100
@@ -5151,6 +5151,8 @@ MonoBehaviour:
   splitProjectilePoolCount: 100
   enemyBasicProjectilePrefab: {fileID: 2454912851067823375, guid: 3d06737bc3bd62b41b4579fa15a1c510, type: 3}
   enemyBasicProjectilePoolCount: 100
+  enemyAnomalyProjectilePrefab: {fileID: 2454912851067823375, guid: b6a43eea3dd4e424584c7b73f9afbea0, type: 3}
+  enemyAnomalyProjectilePoolCount: 500
 --- !u!4 &655774587
 Transform:
   m_ObjectHideFlags: 0
