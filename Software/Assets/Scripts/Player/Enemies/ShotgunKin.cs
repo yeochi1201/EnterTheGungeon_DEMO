@@ -202,18 +202,18 @@ public class ShotgunKin : Enemy
         _bullet3.SetActive(true);
         */
 
-        GameObject _projectile1 = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile1.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        GameObject _projectile1 = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+        _projectile1.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 0, 10, 40, 0, 0, 0, muzzleDirection);
         _projectile1.transform.position = muzzle.transform.position;
         _projectile1.gameObject.SetActive(true);
 
-        GameObject _projectile2 = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile2.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, rotatedUp);
+        GameObject _projectile2 = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+        _projectile2.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 0, 10, 40, 0, 0, 0, rotatedUp);
         _projectile2.transform.position = muzzle.transform.position;
         _projectile2.gameObject.SetActive(true);
 
-        GameObject _projectile3 = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile3.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, rotatedDown);
+        GameObject _projectile3 = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+        _projectile3.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 0, 10, 40, 0, 0, 0, rotatedDown);
         _projectile3.transform.position = muzzle.transform.position;
         _projectile3.gameObject.SetActive(true);
     }
