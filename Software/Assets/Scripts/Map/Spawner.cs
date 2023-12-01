@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
     GameObject telepoter;
 
     private bool isCleared = false;
+    private bool isActived = false;
     private GameObject spawnPoint;
     private float range_X, range_Y;
     private BoxCollider2D spawnRange;
@@ -24,8 +25,8 @@ public class Spawner : MonoBehaviour
 
     public void SpawmEnemies()
     {
-       
-        if (!isCleared)
+
+        if (!isCleared && !isActived)
         {
              if (enemies.Length == 0)
             {
@@ -35,23 +36,27 @@ public class Spawner : MonoBehaviour
                 }
                 isCleared = true;
             }
-            foreach (GameObject obj in door)
+            else
             {
-                obj.SetActive(true);
-            }
-            for (int i = 0; i < spawnCount; i++)
-            {
-                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-                spawnRange = spawnPoint.GetComponent<BoxCollider2D>();
-                range_X = spawnRange.bounds.size.x;
-                range_Y = spawnRange.bounds.size.y;
-                originPosition = spawnPoint.transform.position;
-                float randRange_X = Random.Range(0, range_X);
-                float randRange_Y = Random.Range(0, range_Y);
-                Vector2 randomPosition = new Vector2(randRange_X, randRange_Y);
+                foreach (GameObject obj in door)
+                {
+                    obj.SetActive(true);
+                }
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+                    spawnRange = spawnPoint.GetComponent<BoxCollider2D>();
+                    range_X = spawnRange.bounds.size.x;
+                    range_Y = spawnRange.bounds.size.y;
+                    originPosition = spawnPoint.transform.position;
+                    float randRange_X = Random.Range(0, range_X);
+                    float randRange_Y = Random.Range(0, range_Y);
+                    Vector2 randomPosition = new Vector2(randRange_X, randRange_Y);
 
-                Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity).transform.parent = this.transform;
+                    Instantiate(enemies[Random.Range(0, enemies.Length)], originPosition + randomPosition, Quaternion.identity).transform.parent = this.transform;
+                }
             }
+            isActived=true;
         }
     }
     public void CheckEnemyCount()
