@@ -92,7 +92,7 @@ public class WeaponItem : MonoBehaviour
     {
         is_equip = true;
         this.gameObject.SetActive(true);
-        gunPivot = GameObject.Find("Player").transform.GetChild(0).gameObject;
+        gunPivot = GameObject.FindWithTag("Player").transform.GetChild(0).gameObject;
         muzzle = gunPivot.transform.GetChild(0).gameObject;
         ProjectilePooler.Instance.type = (ProjectileType)weapon.proejctileType;
         muzzle.transform.localPosition = weapon.muzzle_loc;
