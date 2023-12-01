@@ -5422,6 +5422,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 290959399965475301, guid: ad64d4a12dce17c4997e2a7008fea084, type: 3}
   m_PrefabInstance: {fileID: 1518584018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1039726146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039726148}
+  - component: {fileID: 1039726147}
+  m_Layer: 0
+  m_Name: ItemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1039726147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039726146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5043152afdfeb5947b1468fb4aafb4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inven: {fileID: 0}
+  ps: {fileID: 0}
+--- !u!4 &1039726148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039726146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 31.635319, y: 27.96402, z: -0.5581305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1069099183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36983,7 +37029,7 @@ PrefabInstance:
       objectReference: {fileID: 1069099184}
     - target: {fileID: 7983652051969753775, guid: de30508a332ba08408372d7f1835c7b2, type: 3}
       propertyPath: enemies.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7983652051969753775, guid: de30508a332ba08408372d7f1835c7b2, type: 3}
       propertyPath: enemies.Array.data[0]
@@ -60414,6 +60460,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 379032352}
     m_Modifications:
     - target: {fileID: 2507720308958123857, guid: d0ded2eacf97fbf45b17c69cae12deab, type: 3}
+      propertyPath: spawnCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507720308958123857, guid: d0ded2eacf97fbf45b17c69cae12deab, type: 3}
       propertyPath: door.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -63724,6 +63774,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
+      propertyPath: spawnCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
       propertyPath: door.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -63737,7 +63791,7 @@ PrefabInstance:
       objectReference: {fileID: 991696955}
     - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
       propertyPath: enemies.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
       propertyPath: enemies.Array.data[0]
@@ -63747,6 +63801,10 @@ PrefabInstance:
       propertyPath: enemies.Array.data[1]
       value: 
       objectReference: {fileID: 5156974051955715665, guid: 96966d4f216e3364fac3451b739e83ca, type: 3}
+    - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 7177039841192952884, guid: 9a62b72ebbb35484fad0f75315406e74, type: 3}
     - target: {fileID: 5439057088076754782, guid: 93b47febbabf05247a7d19c861dfbcfe, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 3
@@ -67266,6 +67324,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1267401164}
     - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
+      propertyPath: spawnCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
       propertyPath: door.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -67279,7 +67341,7 @@ PrefabInstance:
       objectReference: {fileID: 1837922030}
     - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
       propertyPath: enemies.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
       propertyPath: enemies.Array.data[0]
@@ -67288,7 +67350,11 @@ PrefabInstance:
     - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
       propertyPath: enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 5785628508681024138, guid: 77de30b629422ee4cbbba39543e1a5e4, type: 3}
+      objectReference: {fileID: 7177039841192952884, guid: 9a62b72ebbb35484fad0f75315406e74, type: 3}
+    - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
+      propertyPath: enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 5156974051955715665, guid: 96966d4f216e3364fac3451b739e83ca, type: 3}
     - target: {fileID: 5229715124574419143, guid: ed6b879071b16464f8a610d713e9498c, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 3

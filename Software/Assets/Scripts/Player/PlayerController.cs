@@ -1,10 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.WSA;
-using static UnityEngine.GraphicsBuffer;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : PlayerSpecification

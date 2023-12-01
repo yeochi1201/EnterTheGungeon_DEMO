@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,7 +33,7 @@ public class MapManager : MonoBehaviour
     public void RemoveEndPoint()
     {
         endPoint.GetComponent<Animator>().SetTrigger("Exit");
-        Invoke("DisablePlayer", 0.3f);
+        //Invoke("DisablePlayer", 0.3f);
         Invoke("SceneChange", 1.5f);
     }
 
