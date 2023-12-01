@@ -420,3 +420,10 @@ MonoBehaviour:
         colliderType: CIRCLE
         colliderSizeX: 0.8125
         colliderSizeY: 0
+    - Key: EnemyBasic
+      Value:
+        projectileName: EnemyBasic
+        projectileSprite: {fileID: -1426295885, guid: b278feeb05ea4bb42b341b0b5575f413, type: 3}
+        colliderType: CIRCLE
+        colliderSizeX: 0.203125
+        colliderSizeY: 0

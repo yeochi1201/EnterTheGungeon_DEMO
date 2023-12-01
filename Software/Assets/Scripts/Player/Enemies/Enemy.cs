@@ -14,4 +14,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float moveRange = 20.0f;
     [SerializeField] public float attackRange = 2.0f;
     [SerializeField] public float attackCooldown = 3.0f;
+
+    public void GetDamage(float _damage)
+    {
+        if(health > 0) 
+        {
+            health -= _damage;
+        }        
+    }
 }

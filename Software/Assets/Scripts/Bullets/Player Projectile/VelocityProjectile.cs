@@ -10,9 +10,5 @@ public class VelocityProjectile : Projectile
         ProjectileRotate();
     }
 
-    protected override void ProjectileMove()
-    {
-        base.ProjectileMove();
-        //projectileRigidbody.velocity = projectileDirection * projectileSpeed * 50 * Time.deltaTime;
-    }
+    
 }

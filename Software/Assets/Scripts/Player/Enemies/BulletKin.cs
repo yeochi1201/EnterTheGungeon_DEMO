@@ -108,6 +108,7 @@ public class BulletKin : Enemy
         }
     }
 
+
     private void UpdateIdleState()
     {
         enemyAnim.SetBool("isWalking", false);
@@ -192,8 +193,8 @@ public class BulletKin : Enemy
         _bullet.SetActive(true);
         */
 
-        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+        _projectile.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 0, 10, 40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
     }

@@ -124,7 +124,7 @@ public class Projectile : MonoBehaviour
         projectileDirection = Vector2.zero;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
@@ -151,14 +151,14 @@ public class Projectile : MonoBehaviour
         {
             if(projectilePierce > 0) //Pierce
             {
-                //collision.GetComponent<>().GetDamage(projectileDamage);
+                collision.GetComponent<Enemy>().GetDamage(projectileDamage);
 
                 projectilePierce--;
             }
             else
             {
                 ProjectileInit();
-                //collision.GetComponent<>().GetDamage(projectileDamage);
+                collision.GetComponent<Enemy>().GetDamage(projectileDamage);
             }
         }
         /*

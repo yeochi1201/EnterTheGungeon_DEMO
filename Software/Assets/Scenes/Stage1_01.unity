@@ -5149,6 +5149,8 @@ MonoBehaviour:
   rayProjectilePoolCount: 0
   splitProjectilePrefab: {fileID: 2054312101317733949, guid: 1f61d8fb4a3a1234dac7d35e287fa2be, type: 3}
   splitProjectilePoolCount: 0
+  enemyBasicProjectilePrefab: {fileID: 2454912851067823375, guid: 3d06737bc3bd62b41b4579fa15a1c510, type: 3}
+  enemyBasicProjectilePoolCount: 100
 --- !u!4 &655774587
 Transform:
   m_ObjectHideFlags: 0
