@@ -17,14 +17,11 @@ public class Inven : MonoBehaviour
 
     void Start()
     {
+        basicGun = Instantiate(basicGun);
+        basicGun.GetComponent<WeaponItem>().PlayerGetGun();
+        basicGun.SetActive(true);
         GetWeapon(basicGun);
     }
-
-    void Update()
-    {
-        
-    }
-
     public void SwapWeapon(float wheelMove)
     {
         if (!invenUI.IsPaused)
