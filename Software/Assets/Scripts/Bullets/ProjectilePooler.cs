@@ -11,6 +11,7 @@ public enum ProjectileType
     RAY,
     SPLIT,
     ENEMY_BASIC,
+    ENEMY_ANOMALY,
     MAX_SIZE
 }
 
@@ -43,6 +44,9 @@ public class ProjectilePooler : MonoBehaviour
     [SerializeField] GameObject enemyBasicProjectilePrefab;
     [SerializeField] int enemyBasicProjectilePoolCount;
 
+    [SerializeField] GameObject enemyAnomalyProjectilePrefab;
+    [SerializeField] int enemyAnomalyProjectilePoolCount;
+
     List<GameObject>[] projectilePool = new List<GameObject>[(int)ProjectileType.MAX_SIZE];
 
 
@@ -58,6 +62,7 @@ public class ProjectilePooler : MonoBehaviour
         projectilePool[(int)ProjectileType.RAY] = new List<GameObject>();
         projectilePool[(int)ProjectileType.SPLIT] = new List<GameObject>();
         projectilePool[(int)ProjectileType.ENEMY_BASIC] = new List<GameObject>();
+        projectilePool[(int)ProjectileType.ENEMY_ANOMALY] = new List<GameObject>();
 
         for (int i = 0; i < velocityProjectilePoolCount; i++)
         {
@@ -129,6 +134,15 @@ public class ProjectilePooler : MonoBehaviour
             _projectile.transform.SetParent(transform);
 
             projectilePool[(int)ProjectileType.ENEMY_BASIC].Add(_projectile);
+        }
+
+        for (int i = 0; i < enemyAnomalyProjectilePoolCount; i++)
+        {
+            GameObject _projectile = Instantiate(enemyAnomalyProjectilePrefab);
+            _projectile.SetActive(false);
+            _projectile.transform.SetParent(transform);
+
+            projectilePool[(int)ProjectileType.ENEMY_ANOMALY].Add(_projectile);
         }
     }
 

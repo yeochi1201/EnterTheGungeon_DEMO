@@ -23,12 +23,16 @@ public class GatlingGull : Enemy
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject gunPivot;
     [SerializeField] Vector2 muzzleDirection;
+    Vector2 muzzleInitDir;
     [SerializeField] GameObject BossUI;
     GameObject BossUIHP;
     Image BossHP;
     Vector2 target;
     float angle;
 
+    int bulletCount = 30;
+    int angleInterval;
+    bool isPatternStart = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,7 +44,13 @@ public class GatlingGull : Enemy
         BossHP = BossUIHP.transform.Find("BossHP").GetComponent<Image>();
         playertrans = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-    // 정의할 상태 열거형(Enum)
+    // 정의할 상태
+    // 열거형(Enum)
+
+    private void Start()
+    {
+        muzzleInitDir = muzzle.transform.right;
+    }
     public enum EnemyState
     {
         Idle,
@@ -147,7 +157,7 @@ public class GatlingGull : Enemy
 
         attackTimer = 0f;
 
-        int randAction = Random.Range(0, 2);
+        int randAction = Random.Range(0, 4);
 
         switch (randAction)
         {
@@ -157,6 +167,18 @@ public class GatlingGull : Enemy
             case 1:
                 StartCoroutine(Pattern2());
                 break;
+            case 2:
+                {
+                    StartCoroutine(CirclePattern(50, Random.Range(1, 3)));
+                    break;
+                }                
+            case 3:
+                {
+                    StartCoroutine(CircleRotatePattern(30, Random.Range(1, 3)));
+                    break;
+                }
+            default:
+                break;                
         }
 
         yield return null;
@@ -245,7 +267,8 @@ public class GatlingGull : Enemy
         yield return null;
     }
 
-    IEnumerator Pattern3(){
+    IEnumerator Pattern3()
+    {
         yield return null;
     }
 
@@ -272,27 +295,122 @@ public class GatlingGull : Enemy
 
     void FollowPlayer() //조준
     {
-        // 몬스터의 위치에서 플레이어의 위치를 향하는 벡터를 계산
-        Vector3 directionToPlayer = playertrans.position - gunPivot.transform.position;
+        if(!isPatternStart)
+        {
+            // 몬스터의 위치에서 플레이어의 위치를 향하는 벡터를 계산
+            Vector3 directionToPlayer = playertrans.position - gunPivot.transform.position;
 
-        float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
-        gunPivot.transform.rotation = Quaternion.AngleAxis(angleToPlayer, Vector3.forward);
+            float angleToPlayer = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+            gunPivot.transform.rotation = Quaternion.AngleAxis(angleToPlayer, Vector3.forward);
+        }       
     }
 
     void Shooting()
     {
         muzzleDirection = muzzle.transform.right;
-
-        /*
-        GameObject _bullet = BulletPooler.Instance.GetBullet(BulletOwner.PLAYER);
-        _bullet.transform.position = muzzle.transform.position;
-        _bullet.GetComponent<Bullet>().SetDirection(muzzleDirection);
-        _bullet.SetActive(true);
-        */
-
-        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.HOMING);
-        _projectile.GetComponent<HomingProjectile>().SetProjectileProperty("YariLauncher", 0, 10, 40, 0, 0, 0, muzzleDirection);
+        GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+        _projectile.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
         _projectile.transform.position = muzzle.transform.position;
         _projectile.gameObject.SetActive(true);
     }
+
+
+#region //LSH CODE//
+
+    IEnumerator CirclePattern(int _bulletCount, int patternCount)//Pattern 2 or higher -> cross pattern, bulletSpeed = 8f
+    {
+        isCoroutine = true;
+
+        rb.velocity = Vector2.zero;
+
+        enemyAnim.SetBool("isShooting", true);
+
+        isPatternStart = true;
+        if (patternCount <= 1)
+        {
+            bulletCount = _bulletCount;
+            angleInterval = 360 / bulletCount;
+            for (int i = 0; i < patternCount; i++)
+            {
+                for (int j = 1; j <= bulletCount; j++)
+                {
+                    muzzleDirection = muzzle.transform.right;
+                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_ANOMALY);
+                    _projectile.GetComponent<AnomalyProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
+                    _projectile.transform.position = muzzle.transform.position;
+                    _projectile.gameObject.SetActive(true);
+
+                    muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
+                }
+            }
+        }
+        else if (patternCount > 1)
+        {
+            bulletCount = _bulletCount;
+            angleInterval = 360 / bulletCount;
+
+            for (int i = 0; i < patternCount; i++)
+            {
+                for (int j = 1; j <= bulletCount; j++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * (j + 0.5f)));
+                    }
+                    else
+                    {
+                        muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
+                    }
+                    muzzleDirection = muzzle.transform.right;
+                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_ANOMALY);
+                    _projectile.GetComponent<AnomalyProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
+                    _projectile.transform.position = muzzle.transform.position;
+                    _projectile.gameObject.SetActive(true);
+                }
+
+                yield return new WaitForSeconds(.3f);
+
+            }
+        }
+        isPatternStart = false;
+        muzzleDirection = muzzleInitDir;
+        attackTimer = 0f;
+        isCoroutine = false;
+        enemyAnim.SetBool("isShooting", false);
+    }
+
+    IEnumerator CircleRotatePattern(int _bulletCount, int patternCount)
+    {
+        isCoroutine = true;
+
+        rb.velocity = Vector2.zero;
+
+        enemyAnim.SetBool("isShooting", true);
+        isPatternStart = true;
+        bulletCount = _bulletCount;
+        angleInterval = 360 / bulletCount;
+
+        for (int i = 0; i < patternCount; i++)
+        {
+            for (int j = 1; j <= bulletCount; j++)
+            {
+                yield return new WaitForSeconds(0.05f);
+
+                muzzleDirection = muzzle.transform.right;
+                GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_BASIC);
+                _projectile.GetComponent<EnemyBasicProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
+                _projectile.transform.position = muzzle.transform.position;
+                _projectile.gameObject.SetActive(true);
+
+                muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
+
+            }
+        }
+        isPatternStart = false;
+        muzzleDirection = muzzleInitDir;
+        attackTimer = 0f;
+        isCoroutine = false;
+        enemyAnim.SetBool("isShooting", false);
+    }
+ #endregion
 }
