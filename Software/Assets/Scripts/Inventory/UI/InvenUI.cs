@@ -53,6 +53,11 @@ public class InvenUI : MonoBehaviour
         GameObject btn = Instantiate(itemButton);
         btn.transform.SetParent(weaponFrame);
 
+        ItemButton itemBtnInfo = btn.GetComponent<ItemButton>();
+
+        itemBtnInfo.itemName = newWeapon.GetComponent<WeaponItem>().weapon.itemName;
+        itemBtnInfo.itemTitle = newWeapon.GetComponent<WeaponItem>().weapon.title;
+
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
         buttonRectTransform.sizeDelta = new Vector2(originalSprite.rect.width, originalSprite.rect.height);
