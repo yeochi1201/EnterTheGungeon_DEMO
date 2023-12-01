@@ -42,9 +42,9 @@ public class EnemyBasicProjectile : Projectile
                 projectilePierce--;
             }
             else
-            {
-                ProjectileInit();
+            {                
                 collision.GetComponent<PlayerController>().GetDamage(projectileDamage);
+                ProjectileInit();
             }
         }
         /*
