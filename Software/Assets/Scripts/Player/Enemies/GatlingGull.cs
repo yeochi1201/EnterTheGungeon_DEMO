@@ -169,7 +169,7 @@ public class GatlingGull : Enemy
                 break;
             case 2:
                 {
-                    StartCoroutine(CirclePattern(50, Random.Range(1, 3)));
+                    StartCoroutine(CirclePattern(30, Random.Range(4, 6)));
                     break;
                 }                
             case 3:

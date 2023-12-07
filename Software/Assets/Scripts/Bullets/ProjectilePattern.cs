@@ -20,7 +20,7 @@ public class ProjectilePattern : MonoBehaviour
 {
     [SerializeField] ProjectilePatternType projectilePatternType;
     [SerializeField] GameObject muzzle;
-
+    Vector2 muzzleDirection;
     //CIRCLE Properties
     int bulletCount;
     float distance;
@@ -31,6 +31,7 @@ public class ProjectilePattern : MonoBehaviour
 
     private void Update()
     {
+        muzzleDirection = muzzle.transform.right;
         if (Input.GetMouseButtonDown(0))
         {
             PatternStart();
@@ -75,10 +76,11 @@ public class ProjectilePattern : MonoBehaviour
             {
                 for (int j = 1; j <= bulletCount; j++)
                 {
-                    GameObject bullet = BulletPooler.Instance.GetBullet(BulletOwner.ENEMY);
-                    bullet.transform.position = muzzle.transform.position;
-                    bullet.GetComponent<Bullet>().SetDirection(muzzle.transform.right);
-                    bullet.gameObject.SetActive(true);
+                    muzzleDirection = muzzle.transform.right;
+                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_ANOMALY);
+                    _projectile.GetComponent<AnomalyProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
+                    _projectile.transform.position = muzzle.transform.position;
+                    _projectile.gameObject.SetActive(true);
 
                     muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
                 }
@@ -101,11 +103,11 @@ public class ProjectilePattern : MonoBehaviour
                     {
                         muzzle.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angleInterval * j));
                     }
-
-                    GameObject bullet = BulletPooler.Instance.GetBullet(BulletOwner.ENEMY);
-                    bullet.transform.position = muzzle.transform.position;
-                    bullet.GetComponent<Bullet>().SetDirection(muzzle.transform.right);
-                    bullet.gameObject.SetActive(true);
+                    muzzleDirection = muzzle.transform.right;
+                    GameObject _projectile = ProjectilePooler.Instance.GetProjectile(ProjectileType.ENEMY_ANOMALY);
+                    _projectile.GetComponent<AnomalyProjectile>().SetProjectileProperty("EnemyBasic", 1, 10, 40, 0, 0, 0, muzzleDirection);
+                    _projectile.transform.position = muzzle.transform.position;
+                    _projectile.gameObject.SetActive(true);
                 }
 
                 yield return new WaitForSeconds(.3f);
