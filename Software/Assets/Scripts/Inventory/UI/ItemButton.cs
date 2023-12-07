@@ -10,7 +10,7 @@ public class ItemButton : MonoBehaviour
     public string itemName;
     public string itemTitle;
     public string itemType;
-
+    public string itemDescription;
     private void Start()
     {
         itemButton.onClick.AddListener(OnButtonClicked);
@@ -23,8 +23,10 @@ public class ItemButton : MonoBehaviour
         Image itemImage = Util.FindChild<Image>(invenUI, "ItemImage", true);
         Text name = Util.FindChild<Text>(invenUI, "ItemName", true);
         Text title = Util.FindChild<Text>(invenUI, "ItemTitle", true);
+        Text description = Util.FindChild<Text>(invenUI, "ItemDescription", true);
         name.text = itemName;
         title.text = itemTitle;
+        description.text = itemDescription;
 
         RectTransform buttonRectTransform = itemButton.GetComponent<RectTransform>();
         RectTransform imageSize = itemImage.GetComponent<RectTransform>();

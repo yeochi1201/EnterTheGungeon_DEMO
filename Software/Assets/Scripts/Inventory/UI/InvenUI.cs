@@ -57,6 +57,7 @@ public class InvenUI : MonoBehaviour
 
         itemBtnInfo.itemName = newWeapon.GetComponent<WeaponItem>().weapon.itemName;
         itemBtnInfo.itemTitle = newWeapon.GetComponent<WeaponItem>().weapon.title;
+        itemBtnInfo.itemDescription = newWeapon.GetComponent<WeaponItem>().weapon.description;
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newWeapon.GetComponent<WeaponItem>().weapon.sprite;
@@ -84,6 +85,7 @@ public class InvenUI : MonoBehaviour
 
         itemBtnInfo.itemName = newActive.GetComponent<ActiveItem>().active.itemName;
         itemBtnInfo.itemTitle = newActive.GetComponent<ActiveItem>().active.title;
+        itemBtnInfo.itemDescription = newActive.GetComponent<ActiveItem>().active.description;
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newActive.GetComponent<ActiveItem>().active.sprite;
@@ -112,6 +114,7 @@ public class InvenUI : MonoBehaviour
 
         itemBtnInfo.itemName = newPassive.GetComponent<PassiveItem>().passive.itemName;
         itemBtnInfo.itemTitle = newPassive.GetComponent<PassiveItem>().passive.title;
+        itemBtnInfo.itemDescription = newPassive.GetComponent<PassiveItem>().passive.description;
 
         RectTransform buttonRectTransform = btn.GetComponent<RectTransform>();
         Sprite originalSprite = newPassive.GetComponent<PassiveItem>().passive.sprite;
