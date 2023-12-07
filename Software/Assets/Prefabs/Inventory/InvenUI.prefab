@@ -2893,6 +2893,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 6334944763204965571}
   itemButton: {fileID: 9146818159311673961, guid: 5950c7cae7349a54994267deca053ebf, type: 3}
+  itemName: {fileID: 648759653392362367}
+  itemTitle: {fileID: 2549837467515058489}
+  itemDescription: {fileID: 7606240898027061537}
 --- !u!1 &8221565742616954433
 GameObject:
   m_ObjectHideFlags: 0

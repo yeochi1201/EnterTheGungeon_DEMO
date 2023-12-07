@@ -10,6 +10,9 @@ public class InvenUI : MonoBehaviour
     List<GameObject> passiveList = new List<GameObject>();
     public GameObject inventory;
     public GameObject itemButton;
+    public Text itemName;
+    public Text itemTitle;
+    public Text itemDescription;
     Canvas canvas;
     bool activeInventory = false;
     bool isPaused;
@@ -133,6 +136,10 @@ public class InvenUI : MonoBehaviour
         RectTransform buttonRectTransform = weaponList[0].GetComponent<RectTransform>();
         RectTransform itemRectTransform = itemImage.GetComponent<RectTransform>();
 
+        ItemButton itemBtnInfo = weaponList[0].GetComponent<ItemButton>();
+        itemName.text = itemBtnInfo.itemName;
+        itemTitle.text = itemBtnInfo.itemTitle;
+        itemDescription.text = itemBtnInfo.itemDescription;
         Image image = weaponList[0].GetComponent<Image>();
 
         itemRectTransform.sizeDelta = buttonRectTransform.sizeDelta;
