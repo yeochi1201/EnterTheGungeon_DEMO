@@ -3616,6 +3616,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &440534664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6334944763204965571, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
+  m_PrefabInstance: {fileID: 2080696647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &452143886
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,7 +5238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5241,7 +5246,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ef22907d965b7a941a1e36a9bcf58372, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -5500,8 +5505,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7d66e3673f9a52144911f81cc82e7508, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -26350,6 +26355,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 656854162}
     - target: {fileID: 225048268954461066, guid: 404d82f23ea7360488996c579b3e1d15, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 440534664}
+    - target: {fileID: 225048268954461066, guid: 404d82f23ea7360488996c579b3e1d15, type: 3}
       propertyPath: minimapUI
       value: 
       objectReference: {fileID: 1840588172}
@@ -27119,6 +27128,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3995704524686947622, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
+      propertyPath: minimapUI
+      value: 
+      objectReference: {fileID: 1840588172}
     - target: {fileID: 8172474534967079922, guid: 039e2613c6e1c684789ea99763bbba80, type: 3}
       propertyPath: m_Name
       value: InvenUI

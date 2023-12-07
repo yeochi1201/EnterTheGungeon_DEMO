@@ -10,9 +10,10 @@ public class MinimapCamera : MonoBehaviour
 
     public GameObject playerUI;
     public GameObject minimapUI;
+    public GameObject inventory;
 
     public float turnSpeed;
-    private bool clickTab;
+    public bool clickTab;
     
     void Awake() {
         minimapCam = gameObject.GetComponent<Camera>();
@@ -43,6 +44,7 @@ public class MinimapCamera : MonoBehaviour
         {
             if (clickTab)
             {
+                inventory.SetActive(false);
                 ZoomMap();
                 Teleport();
                 if (Input.GetKeyDown(KeyCode.Tab))
@@ -53,6 +55,7 @@ public class MinimapCamera : MonoBehaviour
                     minimapCam.orthographicSize = 20f;
                     transform.position = playerTransform.position + Vector3.back * 10;
                     clickTab = false;
+                    
                 }
             }
             else
